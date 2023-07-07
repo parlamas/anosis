@@ -12,8 +12,8 @@ export default function RootLayout({
       <div className="text-center bg-slate-12000 p-8 my-6 rounded-md">
         <Image
           src="/logo.jpg"
-          width={40}
-          height={40}
+          width={320}
+          height={256}
           className="mx-auto"
           alt={"logo"}
         />
