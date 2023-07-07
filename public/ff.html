@@ -1,0 +1,3928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ff</title>
+
+<style>
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    .y {background-color:blue; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .z {background-color:black; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .l {color:lime;}
+    .c {color:gold;}
+    .b {color:blue;}
+    .r {color:red;}
+    .g {color:lime; background-color:black; padding:1px; padding-left:4px; padding-right:4px;}
+    .w {background-color:blue; color:white; padding:5px; font-size:12pt;}
+    .syn {background-color:beige; color:brown; padding:5px; font-size:12pt;}
+
+    
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  background-color:black;
+  color:white;
+  padding:10px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  left:10px;
+  top:30px;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  width:500px;
+  height:470px;
+  background-color:brown;
+  color:gold;
+  padding:20px;
+  text-align:justify;
+  font-size:15pt;
+}
+
+a .hover-img { 
+  position:relative;
+ }
+a .hover-img span {
+  position:absolute; left:-9999px; top:-9999px; z-index:9999;
+ }
+a:hover .hover-img span { 
+  top: 20px; 
+  left:0;
+ }
+
+ .b {color:blue;}
+    
+</style>
+
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="tooltip"><span style="font-size:11pt; color:beige;">Isidoros Parlamas</span> &rarr; How to search...
+  <span class="tooltiptext">
+  <center><span class="l">-m-</span> modal verbs <span style="color:white;">&bull;</span> 
+                    <span class="l">*</span> irregular verbs <span style="color:white;">&bull;</span> 
+                    <span class="l">-er-</span> perfect with "være"<hr></center>
+                
+                        
+                        <span class="c">To find a verb, type <span style="color:beige;">-infinitive-</span>, using either only English letters or Danish letters. For example, to find READ, you can type either <span style="color:beige;">-laese-</span> or <span style="color:beige;">-læse-</span> or <span style="color:beige;">-read-</span>; to find UNDERSTAND, type <span style="color:beige;">-forsta-</span> or <span style="color:beige;">-forstå-</span> or <span style="color:beige;">-understand-</span>; to find DO, type <span style="color:beige;">-gore-</span> or <span style="color:beige;">-gøre-</span> or <span style="color:beige;">-do-</span>.</span><p>
+
+                            To find 2-letter verbs, type <span style="color:white;">2-</span>; to find irregular verbs, type <span style="color:white;">-irr-</span>; to find regular verbs, type <span style="color:white;">-reg-</span>; to find verbs that take <span style="color:white;">være</span> in the perfect tenses, type <span style="color:white;">er-</span>.<p>
+                        To see which, if any, verbs start with the same 3 letters, type <span style="color:white;">3 first letters-</span>; for example, <span style="color:white;">bet-</span> will filter out <span style="color:white;">betyle</span> and <span style="color:white;">betale</span>.<p>
+                            
+</div><p>
+
+<table id="example" class="display" style="width:100%">
+        <thead>
+
+            <tr>
+                <th width=8%>number<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=46%>dansk<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=46%>English<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        
+        
+
+
+        <tr valign=top>
+            <td>001
+             </td>
+
+            <td>
+                på vej til dansk
+            </td>
+
+            <td class="b">
+                on the way to Danish
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>002
+             </td>
+
+            <td>
+                trin for trin
+            </td>
+
+            <td class="b">
+                step by step
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                Jeg hedder Nick.
+            </td>
+
+            <td class="b">
+                My name is Nick.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>004
+             </td>
+
+            <td>
+                Hvad hedder du?
+            </td>
+
+            <td class="b">
+                What's your name?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>005
+             </td>
+
+            <td>
+                Hvor kommer du fra?
+            </td>
+
+            <td class="b">
+                Where are you from?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>006
+             </td>
+
+            <td>
+                Hvad sprog taler du?
+            </td>
+
+            <td class="b">
+                What language do you speak?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>007
+             </td>
+
+            <td>
+                Hvad med dig?
+            </td>
+
+            <td class="b">
+                What about you?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>008
+             </td>
+
+            <td>
+                Hvad hedder du til fornavn?
+            </td>
+
+            <td class="b">
+                What's your first name?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>009
+             </td>
+
+            <td>
+                Hvad hedder du til efternavn?
+            </td>
+
+            <td class="b">
+                What's your last name?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>010
+             </td>
+
+            <td>
+                Hvordan staver du det?
+            </td>
+
+            <td class="b">
+                How do you spell that?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>011
+             </td>
+
+            <td>
+                Hvem er det?
+            </td>
+
+            <td class="b">
+                Who is that?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>012
+             </td>
+
+            <td>
+                Det er Nick.
+            </td>
+
+            <td class="b">
+                That's Nick.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>013
+             </td>
+
+            <td>
+                &mdash; Taler de også fransk?<p>
+                &mdash; Ja, lidt.
+            </td>
+
+            <td class="b">
+                &mdash; Do they speak French, too?<p>
+                &mdash; Yeah, a bit.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>014
+             </td>
+
+            <td>
+                &mdash; Hvad er Annas nationalitet?<p>
+
+                &mdash; Hun er polsk.
+            </td>
+
+            <td class="b">
+                &mdash; What's Anna's nationality?<p>
+
+                &mdash; She's polsk.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>015
+             </td>
+
+            <td>
+                &mdash; Hvad er hendes modersmål?<p>
+
+                &mdash; Det er polsk.
+            </td>
+
+            <td class="b">
+                &mdash; What's her mother tongue?<p>
+
+                &mdash; It's Polish.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>016
+             </td>
+
+            <td>
+                Hvad er din nationanlitet?
+            </td>
+
+            <td class="b">
+                What's your nationality?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>017 *
+             </td>
+
+            <td>
+                Hvad er dit modersmål?
+            </td>
+
+            <td class="b">
+                What's your mother tounge?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>018
+             </td>
+
+            <td>
+                lyt og gentag
+            </td>
+
+            <td class="b">
+                listen and repeat
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>019
+             </td>
+
+            <td>
+                sæt tryk
+            </td>
+
+            <td class="b">
+                set the stress
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>020
+             </td>
+
+            <td>
+                som vist
+            </td>
+
+            <td class="b">
+                as shown
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>021 -2-
+             </td>
+
+            <td>
+                stavelse
+            </td>
+
+            <td class="b">
+                syllable
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>022
+             </td>
+
+            <td>
+                placer ordene under ...
+            </td>
+
+            <td class="b">
+                classify-sort the words below ...
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>023
+             </td>
+
+            <td>
+                egennavn
+            </td>
+
+            <td class="b">
+                proper name
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>024
+             </td>
+
+            <td>
+                sustantiv
+            </td>
+
+            <td class="b">
+                noun
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>025
+             </td>
+
+            <td>
+                adjektiv
+            </td>
+
+            <td class="b">
+                adjective
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>026
+             </td>
+
+            <td>
+                engelsk
+            </td>
+
+            <td class="b">
+                English (-adj- -noun- e.g. language)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>027
+             </td>
+
+            <td>
+                englænder
+            </td>
+
+            <td class="b">
+                English (-noun- people)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>028
+             </td>
+
+            <td>
+                (mængde)taler
+            </td>
+
+            <td class="b">
+                numbers
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>029 -3-
+             </td>
+
+            <td>
+                nogle tal
+            </td>
+
+            <td class="b">
+                some numbers
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>030 -adj-
+             </td>
+
+            <td>
+                lysegrøn
+            </td>
+
+            <td class="b">
+                light green
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>031 *
+             </td>
+
+            <td>
+                Hvad er dit cpr+nummer?
+            </td>
+
+            <td class="b">
+                Whatøs your CPR number?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>032
+             </td>
+
+            <td>
+                ved tocifrede tal siger vi enere før tiere
+            </td>
+
+            <td class="b">
+                in the 2-digit numbers, the units precede the tens
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>033
+             </td>
+
+            <td>
+                Hvor gammel er du?
+            </td>
+
+            <td class="b">
+                How old are you?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>034
+             </td>
+
+            <td>
+                &mdash; Hvor bor du?<p>
+                &mdash; Jeg bor in Havegade.<p>
+                &mdash; Hvor i Havegade?<p>
+                &mdash; I nummer 40 (fyrre).
+            </td>
+
+            <td class="b">
+                &mdash; Where do you live?<p>
+                &mdash; I live on Havegade (street).<p>
+                &mdash; Where on Havegade?<p>
+                &mdash; On number 40.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>035
+             </td>
+
+            <td>
+                &mdash; Hvad sal bor du på?<p>
+                &mdash; Anden sal til højre.
+            </td>
+
+            <td class="b">
+                &mdash; What floor do you live on?<p>
+                &mdash; Second floor to the right.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>036
+             </td>
+
+            <td>
+                &mdash; Bor du alene?<p>
+                &mdash; Nej, jeg bor sammen med min familie.
+            </td>
+
+            <td class="b">
+                &mdash; Do you live alone?<p>
+                &mdash; No, I live with my family.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>037
+             </td>
+
+            <td>
+                alder
+            </td>
+
+            <td class="b">
+                age
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>038
+             </td>
+
+            <td>
+                adresse
+            </td>
+
+            <td class="b">
+                address
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>039
+             </td>
+
+            <td>
+                Hvem bor du sammen med?
+            </td>
+
+            <td class="b">
+                Who do you live with?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>040
+             </td>
+
+            <td>
+                &mdash; Har du telefon?
+                &mdash; Ja, det har jeg.
+            </td>
+
+            <td class="b">
+                &mdash; Do you have a phone?
+                &mdash; Yes, I do.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>041 *
+             </td>
+
+            <td>
+                Hvad er dit telefonnummer?
+            </td>
+
+            <td class="b">
+                Whatøs your phone number?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>042
+             </td>
+
+            <td>
+                snabel-a
+            </td>
+
+            <td class="b">
+                @ (at)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>043
+             </td>
+
+            <td>
+                punktum
+            </td>
+
+            <td class="b">
+                period/full stop ( . )
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>044
+             </td>
+
+            <td>
+                bindestreg
+            </td>
+
+            <td class="b">
+                dash/hyphen ( - )
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>045
+             </td>
+
+            <td>
+                underscore
+            </td>
+
+            <td class="b">
+                underscore ( _ )
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>046
+             </td>
+
+            <td>
+                til venstre (tv.)
+            </td>
+
+            <td class="b">
+                to the left
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>047
+             </td>
+
+            <td>
+                midt for (mf.)
+            </td>
+
+            <td class="b">
+                in the middle
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>048
+             </td>
+
+            <td>
+                i stuen
+            </td>
+
+            <td class="b">
+                on the ground floor
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>049
+             </td>
+
+            <td>
+                stemmen går ned mod punktum
+            </td>
+
+            <td class="b">
+                the voice descends towards the full stop
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>050
+             </td>
+
+            <td>
+                parvis
+            </td>
+
+            <td class="b">
+                in pairs
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>051
+             </td>
+
+            <td>
+                ordstilling
+            </td>
+
+            <td class="b">
+                word order
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>052 -3-
+             </td>
+
+            <td>
+                hv-ord
+            </td>
+
+            <td class="b">
+                question words
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>053
+             </td>
+
+            <td>
+                uden
+            </td>
+
+            <td class="b">
+                without
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>054
+             </td>
+
+            <td>
+                ligefrem ordstilling
+            </td>
+
+            <td class="b">
+                subject-first syntax(is)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>055
+             </td>
+
+            <td>
+                inersion
+            </td>
+
+            <td class="b">
+                inverted syntax(is)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>056
+             </td>
+
+            <td>
+                rækkefølge
+            </td>
+
+            <td class="b">
+                syntax(is)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>057
+             </td>
+
+            <td>
+                mobiltelefon
+            </td>
+
+            <td class="b">
+                cell/mobile phone
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>058
+             </td>
+
+            <td>
+                lyt til lydfilen
+            </td>
+
+            <td class="b">
+                listen to the audio files
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>059
+             </td>
+
+            <td>
+                fortæl om dig selv
+            </td>
+
+            <td class="b">
+                talk about yourself
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>060
+             </td>
+
+            <td>
+                antal børn
+            </td>
+
+            <td class="b">
+                number of children
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>061
+             </td>
+
+            <td>
+                etage
+            </td>
+
+            <td class="b">
+                floor (first etc.)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>062
+             </td>
+
+            <td>
+                dato
+            </td>
+
+            <td class="b">
+                date
+            </td>
+        </tr>
+
+
+
+        <tr valign=top>
+            <td>063
+             </td>
+
+            <td>
+                underskrift
+            </td>
+
+            <td class="b">
+                signature
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>064
+             </td>
+
+            <td>
+                civilstand
+            </td>
+
+            <td class="b">
+                marital status
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>065
+             </td>
+
+            <td>
+                sæt kryds i boksen
+            </td>
+
+            <td class="b">
+                tick the box
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>066
+             </td>
+
+            <td>
+                Jeg tror, han er fra Grækenland.
+            </td>
+
+            <td class="b">
+                I think he's from Greece.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>067
+             </td>
+
+            <td>
+                nå du gætter på noget
+            </td>
+
+            <td class="b">
+                when you guess sth
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>068
+             </td>
+
+            <td>
+                &mdash; Hvordan går det?<p>
+                &mdash; Det går godt.
+            </td>
+
+            <td class="b">
+                &mdash; How is it going.<p>
+                &mdash; It's going fine.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>069
+             </td>
+
+            <td>
+                &mdash; Hvordan har du det?<p>
+                &mdash; Fint.
+            </td>
+
+            <td class="b">
+                &mdash; How are you doing<p>
+                &mdash; Fine
+            </td>
+        </tr>
+
+
+
+        <tr valign=top>
+            <td>070 -2-
+             </td>
+
+            <td>
+                &mdash; Vil du med in kantinen?<p>
+                &mdash; Jeg, det vil jeg godt.
+            </td>
+
+            <td class="b">
+                &mdash; You wanna join us to the cafeteria?
+                &mdash; OK.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>071
+             </td>
+
+            <td>
+                Nej, jeg bliver her.
+            </td>
+
+            <td class="b">
+                No, I'm staying here.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>072
+             </td>
+
+            <td>
+                &mdash; Tak for i dag.<p>
+                &mdash; Selv tak.
+            </td>
+
+            <td class="b">
+                 &mdash; Thanks for today.<p>
+                 &mdash; Thank you, too.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>073
+             </td>
+
+            <td>
+                Vi ses i morgen.
+            </td>
+
+            <td class="b">
+                See you tomorrow.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>074
+             </td>
+
+            <td>
+                Vi ses på mandag.
+            </td>
+
+            <td class="b">
+                See you on Monday.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>075
+             </td>
+
+            <td>
+                gennemgå dialogerne en ad gangen med fokus på udtalen
+            </td>
+
+            <td class="b">
+                go through/review the dialogs one at a time focusing on the pronunciation
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>076
+             </td>
+
+            <td>
+                peger på en ting på billedet eller i klassen
+            </td>
+
+            <td class="b">
+                point to sth on the picture or in class
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>077
+             </td>
+
+            <td>
+                &mdash; Hvis jakke er det?<p>
+                &mdash; Det er Marias.
+            </td>
+
+            <td class="b">
+                &mdash; Whose jacket is this?<p>
+                &mdash; It's Maria's.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>078
+             </td>
+
+            <td>
+                &mdash; Det er ikke min.<p>
+                &mdash; Hvis er det så?
+            </td>
+
+            <td class="b">
+                &mdash; It's not mine.<p>
+                &mdash; Whose is it then?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>079 *
+             </td>
+
+            <td>
+                et viskelæder
+            </td>
+
+            <td class="b">
+                an eraser
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>080
+             </td>
+
+            <td>
+                måske
+            </td>
+
+            <td class="b">
+                maybe
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>081
+             </td>
+
+            <td>
+                Saml nogle ting fra forskellige personer i klassen og læg dem på et bord.*
+            </td>
+
+            <td class="b">
+                Collect some things from several people in the class and put them on a table.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>082
+             </td>
+
+            <td>
+                Klokken er ni.
+            </td>
+
+            <td class="b">
+                It's nine o'clock.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>083
+             </td>
+
+            <td>
+                Der er ikke nogen skandivaver.
+            </td>
+
+            <td class="b">
+                There are no Scandinavians.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>084
+             </td>
+
+            <td>
+                Er der nogen grækere i klassen?
+            </td>
+
+            <td class="b">
+                Are there any Greeks in the class?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>085
+             </td>
+
+            <td>
+                Svar på spørgsmålene til teksten.
+            </td>
+
+            <td class="b">
+                Answer the questions in the text.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>086
+             </td>
+
+            <td>
+                Hvor mange kvinder er der?
+            </td>
+
+            <td class="b">
+                How many women are there?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>087
+             </td>
+
+            <td>
+                endelse
+            </td>
+
+            <td class="b">
+                ending (word)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>088
+             </td>
+
+            <td>
+                in the plural
+            </td>
+
+            <td class="b">
+                i flertal
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>089
+             </td>
+
+            <td>
+                i ental
+            </td>
+
+            <td class="b">
+                in the singular
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>090
+             </td>
+
+            <td>
+                bestemt
+            </td>
+
+            <td class="b">
+                definite
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>091
+             </td>
+
+            <td>
+                ubestemt
+            </td>
+
+            <td class="b">
+                indefinite
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>092
+             </td>
+
+            <td>
+                landkort
+            </td>
+
+            <td class="b">
+                map
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>093
+             </td>
+
+            <td>
+                grundform
+            </td>
+
+            <td class="b">
+                stem (word)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>094
+             </td>
+
+            <td>
+                Gruppe I: grundform + (e)r<p>
+                Gruppe II: grundform + e<p>
+                Gruppe III: flertal = ental
+            </td>
+
+            <td class="b">
+                Group I: stem + (e)r<p>
+                Group II: stem + e<p>
+                Group III: no change
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>095 *
+             </td>
+
+            <td>
+                et gardin
+            </td>
+
+            <td class="b">
+                curtain
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>096 *
+             </td>
+
+            <td>
+                et skab
+            </td>
+
+            <td class="b">
+                closet
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>097 *
+             </td>
+
+            <td>
+                et ur
+            </td>
+
+            <td class="b">
+                watch; clock
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>098 *
+             </td>
+
+            <td>
+                et bord
+            </td>
+
+            <td class="b">
+                table
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>099 *
+             </td>
+
+            <td>
+                et fjersyn
+            </td>
+
+            <td class="b">
+                TV set
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>100 * 
+             </td>
+
+            <td>
+                et sprog
+            </td>
+
+            <td class="b">
+                language
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>101 *
+             </td>
+
+            <td>
+                et vindue
+            </td>
+
+            <td class="b">
+                window
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>102 *
+             </td>
+
+            <td>
+                et minut
+            </td>
+
+            <td class="b">
+                minute
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>103
+             </td>
+
+            <td>
+                ordbog
+            </td>
+
+            <td class="b">
+                dictionary
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>104
+             </td>
+
+            <td>
+                vokalskift
+            </td>
+
+            <td class="b">
+                vowel change
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>105
+             </td>
+
+            <td>
+                doppeltkonsonant
+            </td>
+
+            <td class="b">
+                double consonant
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>106
+             </td>
+
+            <td>
+                øvelse
+            </td>
+
+            <td class="b">
+                exercise
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>107
+             </td>
+
+            <td>
+                praktiske vendinger
+            </td>
+
+            <td class="b">
+                useful phrases
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>108
+             </td>
+
+            <td>
+                Jeg har et* spørgsmål.
+            </td>
+
+            <td class="b">
+                I ahave a question.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>109
+             </td>
+
+            <td>
+                Hvordan siger man "doubt" på dansk?
+            </td>
+
+            <td class="b">
+                How do you say "doubt" in Danish?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>110
+             </td>
+
+            <td>
+                Hvad hedder det på dansk?
+            </td>
+
+            <td class="b">
+                How do you call that in Danish?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>111
+             </td>
+
+            <td>
+                Hvad betyder "udtale"?
+            </td>
+
+            <td class="b">
+                What does "udtale" mean?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>112
+             </td>
+
+            <td>
+                Hvordan udtaler man "gentag"?
+            </td>
+
+            <td class="b">
+                How do you pronounce "gentag?"<p>
+                How is "gentag" pronounced?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>113
+             </td>
+
+            <td>
+                på skift
+            </td>
+
+            <td class="b">
+                alternately
+            </td>
+        </tr>
+
+        
+
+        <tr valign=top>
+            <td>114
+             </td>
+
+            <td>
+                Hun han været i Danmark i to år og syv månader.
+            </td>
+
+            <td class="b">
+                She's been in Denmark for two years and seven months.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>115
+             </td>
+
+            <td>
+                Han har ikke nogen børn.
+            </td>
+
+            <td class="b">
+                He desn't have any children.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>116
+             </td>
+
+            <td>
+                Hun savder sit* land.
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>117
+             </td>
+
+            <td>
+                Sæt tryk i teksten efter gehør.
+            </td>
+
+            <td class="b">
+                Set the accent in the text by ear.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>118
+             </td>
+
+            <td>
+                pas på udtalen
+            </td>
+
+            <td class="b">
+                concentrate on the pronunciation
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>119
+             </td>
+
+            <td>
+                tid i Danmark
+            </td>
+
+            <td class="b">
+                time in Denmark
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>120
+             </td>
+
+            <td>
+                Hvor længe har du arbejdet her?
+            </td>
+
+            <td class="b">
+                How long have you been working here?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>121
+             </td>
+
+            <td>
+                Jeg har en datter på fem et halvt år.
+            </td>
+
+            <td class="b">
+                I have a 5-and-a-half year old daughter.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>122
+             </td>
+
+            <td>
+                sygeplejerske på et sygehus*
+            </td>
+
+            <td class="b">
+                nurse at a hospital
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>123
+             </td>
+
+            <td>
+                regnvejr*
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>124
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>125
+             </td>
+
+            <td>
+                hele
+            </td>
+
+            <td class="b">
+                whole
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>126
+             </td>
+
+            <td>
+                Hvem er hun gift med? 
+            </td>
+
+            <td class="b">
+                Who is she married to?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>127
+             </td>
+
+            <td>
+                Hvad tid møder du?
+            </td>
+
+            <td class="b">
+                What time do you start?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>128
+             </td>
+
+            <td>
+                Hvad tid får du fri?
+            </td>
+
+            <td class="b">
+                What time do you finish?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>129
+             </td>
+
+            <td>
+                Hvor lang tid tager det?
+            </td>
+
+            <td class="b">
+                How long does it take? (time)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>130
+             </td>
+
+            <td>
+                Hvad synes du om Danmark?
+            </td>
+
+            <td class="b">
+                What do you think of Denmark?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>131
+             </td>
+
+            <td>
+                Hvad laver du?
+            </td>
+
+            <td class="b">
+                What do you do (for a living)?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>132
+             </td>
+
+            <td>
+                Hvorfor det?
+            </td>
+
+            <td class="b">
+                How come?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>133
+             </td>
+
+            <td>
+                Hvilken bus tager du?
+            </td>
+
+            <td class="b">
+                Which bus do you take?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>134
+             </td>
+
+            <td>
+                Det danske "t" er aspireret.
+            </td>
+
+            <td class="b">
+                The Danish "t" is aspirated.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>135
+             </td>
+
+            <td>
+                bogstav
+            </td>
+
+            <td class="b">
+                letter (alphabet)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>136
+             </td>
+
+            <td>
+                brev
+            </td>
+
+            <td class="b">
+                letter (written/mail)
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>137 *
+             </td>
+
+            <td>
+                ord
+            </td>
+
+            <td class="b">
+                word
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>138
+             </td>
+
+            <td>
+                efterfulgt
+            </td>
+
+            <td class="b">
+                successively
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>139
+             </td>
+
+            <td>
+                efterfulgt af
+            </td>
+
+            <td class="b">
+                followed by
+            </td>
+        </tr>
+
+
+
+        <tr valign=top>
+            <td>140
+             </td>
+
+            <td>
+                Hvor langt ligger det?
+            </td>
+
+            <td class="b">
+                How far is it?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>141
+             </td>
+
+            <td>
+                Hvordan kommer du til arbejde?
+            </td>
+
+            <td class="b">
+                How do you get to work?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>142
+             </td>
+
+            <td>
+                ordene må bruges flere gange
+            </td>
+
+            <td class="b">
+                the words can be used varoius times
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>143
+             </td>
+
+            <td>
+                De taler ikke dansk sammen.
+            </td>
+
+            <td class="b">
+                They don't speak Danish to each other.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>144
+             </td>
+
+            <td>
+                Han er kok.
+            </td>
+
+            <td class="b">
+                Heøs a cook.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>145
+             </td>
+
+            <td>
+                Fortæl alt, hvad du kan om dig selv på dansk.
+            </td>
+
+            <td class="b">
+                Say eveything that you can about yourself in Danish.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>146
+             </td>
+
+            <td>
+                Snak om venner.
+            </td>
+
+            <td class="b">
+                Talk about friends.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>147
+             </td>
+
+            <td>
+                Hun har to søskende her in Danmark.
+            </td>
+
+            <td class="b">
+                She has two siblings here in Denmark.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>148
+             </td>
+
+            <td>
+                Han er skilt.
+            </td>
+
+            <td class="b">
+                He's divorced.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>149
+             </td>
+
+            <td>
+                Han studerer. Hn læser medicin.
+            </td>
+
+            <td class="b">
+                He is a student. He studies medicin.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>150
+             </td>
+
+            <td>
+                Hun er 97 år, og hun arbejder selvfølgelig ikke. Hun e enke.
+            </td>
+
+            <td class="b">
+                She's 97 and, of course, she doesn't work. She's a widow.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>151
+             </td>
+
+            <td>
+                Hun tænkt tit på ham. Hum savner ham.
+            </td>
+
+            <td class="b">
+                She thinks about/of him often. She misses him.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>152
+             </td>
+
+            <td>
+                Hvad hedder dine forældre?
+            </td>
+
+            <td class="b">
+                What are your parents' names?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>153
+             </td>
+
+            <td>
+                Lever din mormor?
+            </td>
+
+            <td class="b">
+                Is your grandmother on your motherøs side alive?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>154
+             </td>
+
+            <td>
+                &mdash; Hvad er klokken?<p>
+                &mdash; Den er halv ti.
+            </td>
+
+            <td class="b">
+                &mdash; What time is it?<p>
+                &mdash; It's 9:30.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>155
+             </td>
+
+            <td>
+                &mdash; Hvornår har I pause?<p>
+                &mdash; Vi holder pause nu.<p>
+                &mdash; Hvor lang pause har I?<p>
+                &mdash; Vi har et kvarter...til kvart i ti.<p>
+                &mdash; Vis ses om lidt.
+            </td>
+
+            <td class="b">
+                &mdash; When do you have a break?<p>
+                &mdash; We're having a break now.<p>
+                &mdash; How long is break?<p>
+                &mdash; A quarter...till a qurter past ten.<p>
+                &mdash; See you in a bit.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>156 *
+             </td>
+
+            <td>
+                et minute, et kvartet, et døgn
+            </td>
+
+            <td class="b">
+                a minute, a quarter, a day
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>157
+             </td>
+
+            <td>
+                morgen (? - 09:00)<p>
+                formiddag (09:00 - 12:00)<p>
+                eftermiddag (12:00 - 18:00)<p>
+                aften (18:00 - 24:00)<p>
+                nat (24:00 - ?)
+            </td>
+
+            <td class="b">
+                morning<p>
+                ???<p>
+                afternoon<p>
+                evening<p>
+                night
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>158
+             </td>
+
+            <td>
+                Den er to minutter over halv ni<p>
+                Den er tre minutter i halv seks.
+            </td>
+
+            <td class="b">
+                08:32<p>
+                05:27
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>159
+             </td>
+
+            <td>
+                Vækkeuret ringer.
+            </td>
+
+            <td class="b">
+                The alarm clock goes off.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>160
+             </td>
+
+            <td>
+                Hun vågner.
+            </td>
+
+            <td class="b">
+                She wakes up.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>161
+             </td>
+
+            <td>
+                Hun står op.
+            </td>
+
+            <td class="b">
+                She gets up.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>162
+             </td>
+
+            <td>
+                Hun tager brisebad.
+            </td>
+
+            <td class="b">
+                She takes a shower.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>163
+             </td>
+
+            <td>
+                Hun børster tænde.
+            </td>
+
+            <td class="b">
+                She brushes her teeth.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>164
+             </td>
+
+            <td>
+                Hun lægger make-up.<p>
+                Hun sminker sig.
+            </td>
+
+            <td class="b">
+                She wears make up.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>165
+             </td>
+
+            <td>
+                Han barberersig.
+            </td>
+
+            <td class="b">
+                He shaves.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>166
+             </td>
+
+            <td>
+                Han tager tøj på.
+            </td>
+
+            <td class="b">
+                He gets dressed.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>167
+             </td>
+
+            <td>
+                Hun vækker børnene.
+            </td>
+
+            <td class="b">
+                She wakes up the children.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>168
+             </td>
+
+            <td>
+                Hun laver morgenmad.
+            </td>
+
+            <td class="b">
+                She makes breakfast.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>169
+             </td>
+
+            <td>
+                De spiser morgenmad. De drikker kaffe.
+            </td>
+
+            <td class="b">
+                They have breakfast. They drink coffee.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>170
+             </td>
+
+            <td>
+                Hun afleverer børnene i børnehaven/i vuggestuen.
+            </td>
+
+            <td class="b">
+                She takes the children to the kindergarten/to the nursery. 
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>171
+             </td>
+
+            <td>
+                Han tager af sted hjemmefra. Han tager på arbejde.
+            </td>
+
+            <td class="b">
+                He leaves home. He goes to work.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>172
+             </td>
+
+            <td>
+                Snak om billerne.
+            </td>
+
+            <td class="b">
+                Talk about the pictures.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>173
+             </td>
+
+            <td>
+                morgenrytme
+            </td>
+
+            <td class="b">
+                morning routine
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>174
+             </td>
+
+            <td>
+                nutidsendelse
+            </td>
+
+            <td class="b">
+                present tense ending
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>175
+             </td>
+
+            <td>
+                Lav spørgsmål og svar til tegningerne.
+            </td>
+
+            <td class="b">
+                Ask and answer questions related to the pictures/drawings.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>176
+             </td>
+
+            <td>
+                Han går ud i køkkenet.
+            </td>
+
+            <td class="b">
+                He goes to the kitchen.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>177
+             </td>
+
+            <td>
+                Han tit hører til nyheder om morgenen.
+            </td>
+
+            <td class="b">
+                He often listens to the news in the morning.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>178
+             </td>
+
+            <td>
+                Pas på tryk og rytme.
+            </td>
+
+            <td class="b">
+                Concentrate on stress and intonation.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>179
+             </td>
+
+            <td>
+                Hvad dag er det?
+            </td>
+
+            <td class="b">
+                What day is it?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>180
+             </td>
+
+            <td>
+                Hvordan har Hun det om morgenen?
+            </td>
+
+            <td class="b">
+                How does does she feel in the morning?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>181
+             </td>
+
+            <td>
+                Er du frisk om morgenen?
+            </td>
+
+            <td class="b">
+                Do you feel rested in the morning?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>182
+             </td>
+
+            <td>
+                Er du sulten om morgenen?
+            </td>
+
+            <td class="b">
+                Are you hungry in the morning?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>183
+             </td>
+
+            <td>
+                Hun køber ind.
+            </td>
+
+            <td class="b">
+                She buys groceries.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>184
+             </td>
+
+            <td>
+                Hun tager hjem.
+            </td>
+
+            <td class="b">
+                She goes home.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>185
+             </td>
+
+            <td>
+                Hun spiser frokost.
+            </td>
+
+            <td class="b">
+                She has lunch.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>186
+             </td>
+
+            <td>
+                Hun slapper af.
+            </td>
+
+            <td class="b">
+                She rests/relaxes.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>187
+             </td>
+
+            <td>
+                Han skriver en e-mail.
+            </td>
+
+            <td class="b">
+                She's writing an e-mail.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>188
+             </td>
+
+            <td>
+                Hun spiller computerspil.
+            </td>
+
+            <td class="b">
+                She plays video games.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>189
+             </td>
+
+            <td>
+                Hun laver jhemmearbejde.
+            </td>
+
+            <td class="b">
+                She does housework.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>190
+             </td>
+
+            <td>
+                Hun henter børnene.
+            </td>
+
+            <td class="b">
+                She picks up the children.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>191
+             </td>
+
+            <td>
+                Hun vasker tøj.
+            </td>
+
+            <td class="b">
+                She does the laundry.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>192
+             </td>
+
+            <td>
+                Hun taler i telefon.
+            </td>
+
+            <td class="b">
+                She speaks on the phone.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>193
+             </td>
+
+            <td>
+                Hun er sammen med nogle venner.
+            </td>
+
+            <td class="b">
+                She's with some friends.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>194
+             </td>
+
+            <td>
+                Hun laver mad.
+            </td>
+
+            <td class="b">
+                She's cooking.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>195
+             </td>
+
+            <td>
+                De spiser aftensmad.
+            </td>
+
+            <td class="b">
+                They're having dinner.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>196
+             </td>
+
+            <td>
+                Hun vasker op.
+            </td>
+
+            <td class="b">
+                She washes the dishes.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>197
+             </td>
+
+            <td>
+                Hun læser en bog.
+            </td>
+
+            <td class="b">
+                She's reading a book.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>198
+             </td>
+
+            <td>
+                Hun går en tur.
+            </td>
+
+            <td class="b">
+                She goes for a walk.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>199
+             </td>
+
+            <td>
+                Hun besøger en ven.
+            </td>
+
+            <td class="b">
+                She's visiting a friend.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>200
+             </td>
+
+            <td>
+                Hun får gæster.
+            </td>
+
+            <td class="b">
+                She's having friends over.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>201
+             </td>
+
+            <td>
+                Hun ringer til en ven
+            </td>
+
+            <td class="b">
+                She calling a friend.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>202
+             </td>
+
+            <td>
+                Hun sender en sms.
+            </td>
+
+            <td class="b">
+                She's texting someone.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>203
+             </td>
+
+            <td>
+                Hun hører til musik.
+            </td>
+
+            <td class="b">
+                She's listening to the music.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>204
+             </td>
+
+            <td>
+                Hun taler med sin kæreste.
+            </td>
+
+            <td class="b">
+                She's talking with her boyfriend.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>205
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>206
+             </td>
+
+            <td>
+                Hun ser fjernsyn.
+            </td>
+
+            <td class="b">
+                She's watching TV.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>207
+             </td>
+
+            <td>
+                Hun sover.
+            </td>
+
+            <td class="b">
+                She's asleep.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>208
+             </td>
+
+            <td>
+                Hvad gør du en almindelig dag?
+            </td>
+
+            <td class="b">
+                What do you do on a normal day?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>209
+             </td>
+
+            <td>
+                konstaterende sætninger
+            </td>
+
+            <td class="b">
+                declarative/affirmative sentences
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>210
+             </td>
+
+            <td>
+                tidsadverbial
+            </td>
+
+            <td class="b">
+                time adverbials
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>211
+             </td>
+
+            <td>
+                kronologi
+            </td>
+
+            <td class="b">
+                Chronology
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>212
+             </td>
+
+            <td>
+                Hvad tid står du op?
+            </td>
+
+            <td class="b">
+                What time do you get up?
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>213
+             </td>
+
+            <td>
+                Fortæl kronologi on en almindelig dag fra morgen til aften.
+            </td>
+
+            <td class="b">
+                Talk about the chronological flow on a normal day from morning to evening. 
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>214
+             </td>
+
+            <td>
+                dyrlæge
+            </td>
+
+            <td class="b">
+                veterinarian
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>215
+             </td>
+
+            <td>
+                Han har en travl hverdag.
+            </td>
+
+            <td class="b">
+                His days are busy.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>216
+             </td>
+
+            <td>
+                De har store ambitioner, og de vinder tit.
+            </td>
+
+            <td class="b">
+                They are very ambitious and they win often.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>217
+             </td>
+
+            <td>
+                De skyndes.
+            </td>
+
+            <td class="b">
+                They argue/quarrel.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>218
+             </td>
+
+            <td>
+                De bliver sur.
+            </td>
+
+            <td class="b">
+                They get angry.
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>219
+             </td>
+
+            <td>
+                sætningsmelodi
+            </td>
+
+            <td class="b">
+                prosody
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>220
+             </td>
+
+            <td>
+                kortsvar
+            </td>
+
+            <td class="b">
+                short answers
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>123
+             </td>
+
+            <td>
+                regnvejr*
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>123
+             </td>
+
+            <td>
+                regnvejr*
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>123
+             </td>
+
+            <td>
+                regnvejr*
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>003
+             </td>
+
+            <td>
+                
+            </td>
+
+            <td class="b">
+                
+            </td>
+        </tr>
+
+
+    -->
+
+
+
+
+
+        
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Number</th>
+                <th>dansk</th>
+                <th>English</th>
+            </tr>
+        </tfoot>
+    </table>
+
+        
+<script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable({
+        initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+    });
+ 
+} );
+</script>
+
+</body>
+</html>
