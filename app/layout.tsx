@@ -11,7 +11,7 @@ export default function RootLayout({
     <header>
       <div className="text-center bg-slate-800 p-8 my-6 rounded-md">
         <Image
-          src="/logo.png"
+          src="/logo.jpg"
           width={40}
           height={40}
           className="mx-auto"
