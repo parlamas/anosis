@@ -17,7 +17,7 @@ export default function RootLayout({
           className="mx-auto"
           alt={"logo"}
   />*/}
-        <span style={{ color: "lime" }}>D & H</span>
+        <span style={{ color: "beige" }}>D & H</span>
         <Link href="/">
           <h1 className="text-2xl text-white font-bold mt-4">Horistics Blog</h1>
         </Link>
