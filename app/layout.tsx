@@ -17,6 +17,7 @@ export default function RootLayout({
           className="mx-auto"
           alt={"logo"}
   />*/}
+        D & H
         <Link href="/">
           <h1 className="text-2xl text-white font-bold mt-4">Horistics Blog</h1>
         </Link>
