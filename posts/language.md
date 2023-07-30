@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>foc</title>
+
 ---
 title: "What is 'Language?'"
 subtitle: "I. Parlamas"
@@ -5,11 +13,13 @@ date: " c. 430 BC"
 ---
 
 **Language** is communication governed by grammar.<p>
+</head>
 
+<body>
 <div class="test">
     <b>TEST 1</b><br>
 <table border=0 cellpadding=5>
-    <tr><td>Interlocutor A</td><td>(1)</td><td>Tell us about <span class="b">the weather</span>.</td><td>Fortæl os om <span class="b">vejret</span>.![Alt Text](https://dialectics.education/public/images/dansk.png)<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
+    <tr><td>Interlocutor A</td><td>(1)</td><td>Tell us about <span class="b">the weather</span>.</td><td>Fortæl os om <span class="b">vejret</span>.![Alt Text](https://dialectics.education/public/images/dansk.png)</td></tr>
 
     <tr><td>Interlocutor B</td><td style="background-color:white;">(2a)</td><td><span class="b">The weather</span> was fine.</td><td><span class="b">Vejret</span> var fint.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
 
@@ -43,3 +53,6 @@ date: " c. 430 BC"
     <tr><td>Interlocutor B</td><td>(2f)</td><td>So <span class="b">Jill</span> is a great person.</td><td>Så <span class="b">Jill</span> er en fantastisk person.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
 </table>
 </div><p>
+
+</body>
+</html>
