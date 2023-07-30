@@ -6,4 +6,4 @@ date: " c. 430 BC"
 
 **Language** is communication governed by grammar.<p>
 
-	![The San Juan Mountains are beautiful!](https://www.dialectics.education/public/images/dansk.png "San Juan Mountains")
+	![The San Juan Mountains are beautiful!](/public/images/dansk.png "San Juan Mountains")
