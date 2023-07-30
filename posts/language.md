@@ -7,9 +7,9 @@ date: " c. 430 BC"
 **Language** is communication governed by grammar.<p>
 
 <div class="test">
-    <b>TEST 1</b><br>
+    <b>TEST 1</b><br>https://www.dialectics.education/posts/dansk.png
 <table border=0 cellpadding=5>
-    <tr><td>Interlocutor A</td><td>(1)</td><td>Tell us about <span class="b">the weather</span>.</td><td>Fortæl os om <span class="b">vejret</span>![dansk](/public/images/dansk.png) ![dansk](/dansk.png) ![dansk](/posts/dansk.png)</td></tr>
+    <tr><td>Interlocutor A</td><td>(1)</td><td>Tell us about <span class="b">the weather</span>.</td><td>Fortæl os om <span class="b">vejret</span>![dansk](https://www.dialectics.education/posts/dansk.png)</td></tr>
 
     <tr><td>Interlocutor B</td><td style="background-color:white;">(2a)</td><td><span class="b">The weather</span> was fine.</td><td><span class="b">Vejret</span> var fint.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
 
@@ -42,3 +42,4 @@ date: " c. 430 BC"
 
     <tr><td>Interlocutor B</td><td>(2f)</td><td>So <span class="b">Jill</span> is a great person.</td><td>Så <span class="b">Jill</span> er en fantastisk person.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
 </table>
+
