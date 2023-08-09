@@ -1,0 +1,3516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adverb Clauses</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie Flower&display=swap" rel="stylesheet">
+    <style>
+        .container {
+  display: inline-block;
+  margin-top: 50px;
+  border: 1px solid #aaa;
+  padding: 3px 8px 0 0;
+}
+
+token {
+  margin-left: 6px;
+}
+
+elem[type="drug"],
+elem[type="person"],
+elem[type="disease"] {
+  position: relative;
+}
+
+elem[type="drug"]::after,
+elem[type="person"]::after,
+elem[type="disease"]::after {
+  content: "";
+  position: absolute;
+  top: -1em;
+  left: 3%;
+  width: 94%;
+  height: 0.5em;
+  border-top: 1px solid #aaa;
+  border-left: 1px solid #aaa;
+  border-right: 1px solid #aaa;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  z-index: 10;
+}
+
+.label {
+  position: absolute;
+  top: -3em;
+  left: 3%;
+  width: 94%;
+  z-index: 10;
+  text-align: center;
+}
+
+.label:after {
+  content: "|";
+  position: absolute;
+  top: 1.2em;
+  left: 3%;
+  width: 94%;
+  z-index: 10;
+  text-align: center;
+  color: #aaa;
+}
+
+.drug {
+  color: red;
+}
+
+.person {
+  color: blue;
+}
+
+.disease {
+  color: green;
+}
+        .t15 {font-size:15pt;}
+        .test {background-color:#ffcbcb; color:black; padding-left:4px; padding-right:4px; padding-top:2px; padding-bottom:0px; font-weight:normal;}
+        .rem {background-color:red; color:yellow; padding-left:4px; padding-right:4px; padding-top:2px; padding-bottom:2px; font-weight:bold;}
+        .log {border: 2px solid brown; background-color:white; color:blue; padding-left:4px; padding-right:4px; padding-top:1px; padding-bottom:2px; font-weight:bold;}
+        .ast {font-size:20pt; color:red;}
+        .s1 {font-size:9pt; color:brown;}
+        .s2 {font-size:9pt; color:blue;}
+        .dif {background-color:yellow; color:red; padding-left:4px; padding-right:4px; padding-top:2px; padding-bottom:2px; font-weight:bold;}
+        .syn {background-color:black; color:yellow; padding-left:0px; padding-right:0px; padding-top:0px; padding-bottom:0px; font-weight:normal;}
+        .cj {background-color:#2294c6; color:white; padding-left:4px; padding-right:4px; padding-top:2px; padding-bottom:2px; font-weight:bold;}
+        .sr {background-color:orange; color:white; padding-left:4px; padding-right:4px; padding-top:2px; padding-bottom:2px; font-weight:bold;}
+        .nr {background-color:blue; color:yellow; padding-left:4px; padding-right:4px; padding-top:2px; padding-bottom:2px; font-weight:bold;}
+        .pt {background-color:green; color:white; padding-left:4px; padding-right:4px; padding-top:2px; padding-bottom:2px; font-weight:bold;}
+        .ax {background-color:olive; color:yellow; padding-left:4px; padding-right:4px; padding-top:2px; padding-bottom:2px; font-weight:bold;}
+        .dex {background-color:yellow; color:black; padding-left:4px; padding-right:4px; padding-top:2px; padding-bottom:2px; font-weight:bold;}
+        .phr {background-color:brown; color:cyan; padding-left:4px; padding-right:4px; padding-top:2px; padding-bottom:2px; font-weight:bold;}
+        .dan {background-color:#c70039; color:white; padding-left:4px; padding-right:4px; padding-top:2px; padding-bottom:2px; font-weight:bold;}
+        .k1 {font-family: 'Kalam', sans-serif; font-size:11pt; color:blue;}
+        .g {color:gold;}
+        .br {color:brown;}
+        .fu {color:fuchsia;}
+        .gray {color:gray;}
+        .bl {color:black;}
+        .u1 {border-bottom: 2px dotted #000; border-color:red; text-decoration: none;}
+        .u2 {border-bottom: 2px dotted #000; border-color:blue; text-decoration: none;}
+        .sent {background-color:lightgray; color:black; padding-left:4px; padding-right:4px; padding-top:2px; padding-bottom:2px; font-weight:bold;}
+        .cl {background-color:lightgray; color:black; padding-left:4px; padding-right:4px; padding-top:2px; padding-bottom:2px; font-weight:bold;}
+        .dial {background-color:beige; color:black; padding-left:4px; padding-right:4px; padding-top:2px; padding-bottom:2px; font-weight:normal;}
+        .rel {background-color:fuchsia; color:white; padding-left:4px; padding-right:4px; padding-top:2px; padding-bottom:2px; font-weight:bold;}
+        .def {background-color:yellow; color:black; padding-left:4px; padding-right:4px; padding-top:2px; padding-bottom:2px; font-weight:bold;}
+        .ex {background-color:lightgray; color:black; padding-left:4px; padding-right:4px; padding-top:2px; padding-bottom:2px; font-weight:bold;}
+        .i {
+  width: 6in;
+  border: 2px solid green;
+  padding: 5px;
+  margin: 5px;
+  text-align:left;
+}
+.box {border: 2px solid green; padding: 5px; text-align:justify;}
+
+/*
+ol {
+  counter-reset: items;
+  background-color: yellow;
+  padding:7px;
+}
+li {
+  display: block;
+  counter-increment: items;
+}
+li:before {
+  content: "00" counter(items)". ";
+  color:blue;
+  font-weight:bold;
+}
+li:nth-child(n+10):before {
+  content: "0" counter(items)". ";
+}
+li:nth-child(n+100):before {
+  content: counter(items)". ";
+}
+*/
+
+.yb {background-color:yellow; color:black; padding:5px;}
+.z {font-family: 'Indie Flower', sans-serif; font-size:13pt;}
+        sup {color:red;}
+        sub {color:red;}
+        .k {font-family: 'Kalam', sans-serif;}
+        .b {color:blue;}
+        .u1 {border-bottom: 2px dotted #000; border-color:red; text-decoration: none;}
+        .e {width:90%; text-align:justify; font-size:12pt;}
+        .r {color:red;}
+        .fl{
+    float: left;
+    padding-right:10px;
+    padding-top:5px;
+    padding-bottom:5px;
+    }
+    .f2{
+    float: right;
+    padding-left:10px;
+    padding-top:5px;
+    padding-bottom:5px;
+    }
+    .p {position:relative; top:0px; left:10px; color:blue; font-size:8pt;}
+    @media print {
+    .pagebreak { page-break-before: always; } /* page-break-after works, as well */
+}
+    </style>
+</head>
+<body>
+            <!--
+            <div class="pagebreak"> </div>
+            <div class="p"><b>page 9</b></div><p>
+            -->
+
+
+    <center>
+
+<div style="width:6.125in; height:1000in; border: 1px solid red; padding-top: 25px; padding-left:25px; padding-right:35px; margin: 0px; text-align:justify; font-size:10pt; line-height:22px;">
+
+        <div style="background-color:white; color:blue; font-size:12pt; padding-bottom:3px; height:90px; border: 2px solid red;">
+            <span style="position:relative; top:10px; left:10px; font-size:20pt; color:green;"><b>æøå</b></span>
+            <center>
+            <table width=100% border=0 style="position:relative; top:-30px; left:-10px;">
+                <tr>
+            <td width=20%><div style="position:relative;top:4px; left:20px;"></td>
+            <td align=center><div style="position:relative;top:0px; left:-25px;"><span style="color:black; font-size:9pt;">Horistics</span><br>
+                Laying The Groundwork On The Very Basics Of Grammar<br><span class="k">Om det helt grundlæggende i grammatik</span> <img valign=bottom src="dansk.png" width="25" height="25"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="p"><b>page 1</b> <img style="position:relative; top:-30px; left:15px; padding-bottom:3px;" src="df.png" width="46" height="31"></div><p>
+
+            <div class="box"><p>Those Danes who will read this book, not only do they stand to improve their English significantly, but they will also gain a deeper understanding of what a language really is.<p>
+            On the other hand, those readers who study Danish will see their learning curve get substantially steeper, thus speeding up the process of learning the language.</div><p>
+
+            First off, let us distinguish between the <b>what</b> and the <b>how</b>.<p>
+
+            Let us say we intend to embark on a study of a human organ, say the <i>heart</i>. The <i>dialectical</i> way to go about it is to first <span class="b">(a)</span>define the heart, the <b>what</b>, and then <span class="b">(b)</span>study it, the <b>how</b>, that is how the heart works and to what end.<p>
+
+            Our being able to formulate a valid definition does not mean we know the inner workings of the concept defined.<p>
+
+            The definition of the <i>heart</i> might be a couple of lines long but its inner workings are millions of lines long.<p>
+
+            However, despite the huge difference in the quantity of text between the <i>what</i> and the <i>how</i>, they are equally important, especially when the concept defined does not have a visual representation like, for example, <i>Justice</i>.<p>
+
+            The definition serves to bring into sharp focus the object of our study. If our definition is wrong, we will end up studying some other concept instead. If, for example, our definition of <i>Justice</i> were really the definition of <i>punishment</i>, then we would be studying <i>punishment</i> instead of <i>Justice</i>.
+
+            Therefore, the stakes involved in formulating a valid definition are really high.<p>
+
+                <center>&bull; &bull; &bull;</center><p>
+
+            In this book we are going to talk about and study in depth the grammar of <b>adverb clauses</b>, both in English and Danish, focusing on the similarities and differences between the 2 languages with respect to them, that is to adverb clauses.<p>
+
+            <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k">I denne bog skal vi tale om og dybtstudere grammatikken i adverbialsætninger, både på engelsk og dansk, med fokus på lighederne og forskellene mellem de 2 sprog med hensyn til dem, det vil sige adverbialsætninger.</span><p>
+
+            But if we are to be successful in our endeavour, we had better consider first a number of issues before we get to the point of actually studying adverb clauses.<p>
+
+            However, let it not escape us that studying grammar means studying language as well. It makes a lot of sense, then, to start by defining <i>language</i> and <i>grammar</i>, for it would not serve us well if we started to study adverb clauses without having a clue about the nature of grammar and language, which are of course concepts.<p>
+
+            But even before we define grammar and language, shouldn't we define, well, the terms <i>concept</i> and <i>definition</i>?<p>
+
+            And, what about our methodology?<p>
+
+            The methodology we are going to follow in writing this book is based on <i>Dialectics</i> and <i>Horistics</i>.<p>
+
+            Would it not then be a good idea to start by first defining <i>Dialectics</i> and <i>Horistics</i> instead?<p>
+
+            Let us do just that.<p>
+
+            Starting, then, in logical order, that is from top to bottom, we are going to define <span class="b">(a)</span>definition, <span class="b">(b)</span>concept, <span class="b">(c)</span>dialectics, <span class="b">(d)</span>horistics,  <span class="b">(e)</span>language, and <span class="b">(f)</span>grammar.<p>
+
+            <span class="def">def. 1</span> A <b>definition</b> is a set of properties which <u>exclusively</u> identifies a unique concept.<br>(Isidoros Parlamas 1980)<p>
+
+            For a statement to qualify as a definition, it must fulfill a number or requirements, one of which is that only 1 unique concept can fit into it.<p>
+
+            <span class="def">def. 2</span> A <b>concept</b> is a representation of a given definition. (Isidoros Parlamas 1980)<p>
+
+            For instance, if we define the word "horse," the way opens to consider different reprentations of the term defined. We can think of the concept of <span class="b">(a)</span>a real horse, the concept of <span class="b">(b)</span>a horse on a computer screen, the concept of <span class="b">(c)</span>a horse in a physical photo, <span class="b">(d)</span>in a physical painting, the concept of <span class="b">(e)</span>the word "horse" itself et al.<p>
+
+            <span class="def">def. 3</span> <b>Dialectics</b> is asking the <u>right</u> questions and providing the <u>right</u> answers with an eye to uncovering the truth regarding the issue under examination. (Socrates in Plato's Cratylus 390c)<p>
+
+            In everyday language, this refers to the ability to <i>think straight</i> or to <i>avoid making mistakes</i> when we think critically. Arriving at a conclusion involves, inevitably, asking questions and providing answers. If we ask the right questions and provide the right answers, we will arrive at the right conclusion, thus reaping benefits; if not, we will arrive at the wrong conclusion, thus suffering the consequences.<p>
+
+            <span class="def">def. 4</span> <b>Horistics</b> is the art of defining. (Isidoros Parlamas 1980)<p>
+
+            It should be mentioned at this point that horistics is the cornerstone of dialectics.<p>
+
+            Meaningfully, the word <i>horizon</i> has the same origin as the word <i>horistics</i>, from the Greek verb <span class="br"><b>ΟΡΙΖΕΙΝ / ὁρίζειν</b></span> (horizein), which means <i>to delineate</i>. Each definition has its own <i>horizon</i> or <i>delineation</i>, and it had better not spill over to other horizons of adjacent concepts because, if it does, then our definition is invalid.<p>
+
+            
+            Time to define language.<p>
+
+            We'd better be careful here not to confuse <i>interaction</i> with language. So, what is language?<p>
+
+            <span class="def">def. 5</span> <b>Language</b> is communication governed by grammar. (Isidoros Parlamas 1980)<p>
+
+            What is grammar?<p>
+
+            <span class="def">def. 6</span> <b>Grammar</b> is the set of rules that governs a language. (Isidoros Parlamas 1980)<p>
+
+            Now, armed with this set of instrumental definitions of very basic concepts, we are better equipped to proceed further.<p>
+
+            But, you will ask, why did we have to go through all those definitions?<p>
+
+            Well, the importance of the reason we had to do this cannot be underestimated.<p>
+
+            By defining our terms, we open ourselves up to being held accountable for what we say.<p>
+
+            <b>Defining one's terms promotes accountability.</b><p>
+
+            Definitions make it easier for nonsense, owned either to ignorance, bad faith, or indulging oneself in malicious manipulation, to be detetcted.<p>
+            
+                    <center>&bull; &bull; &bull;</center><p>
+
+            <center>A WORD ON CONCEPTS &bull; <span class="k">EN KOMMENTER OM BEGREBER</span> <img valign=bottom src="dansk.png" width="25" height="25"></center><p>
+
+    Literally <b>everything</b> that exists, be it animate or inanimate, is, among other things, a concept. Definitions describe concepts. All concepts have at least one representation, be it physical, visual, lexical, or conceptual.<p>
+
+    For instance, an <span class="b">apple</span>, a concrete noun, can be represented in 4 objective ways:
+
+<div>
+    <ol>
+        <li><b>physical</b> (real apples) <span style="position:relative; top:15px; border-radius:10%;"><img src="aaa.png" width="40" height="40" style="vertical-align: bottom"></span><p>
+        <li><b>visual</b> (on a screen or in a photo or in a painting): <span style="position:relative; top:10px; border-radius:10%;"><img src="aaa.avif" width="62" height="42" style="vertical-align: bottom"></span><p>
+        <li><b>lexical</b> (the word): apple<p>
+        <li><b>conceptual</b> (definition): <b>An apple</b> is typically round or oblong fruit with smooth or slightly textured skin. The skin color can vary depending on the variety and can be shades of red, green, yellow, or a combination of those colors. Apples have a firm and juicy flesh and their taste can range from sweet to tart.
+    </ol>
+</div><p>
+
+    But <span class="b">kindness</span>, an abstract noun,  can be represented only in 2 objective ways:<p>
+
+        <ol start=5>
+        <li><b>lexical</b> (the word): kindness<p>
+        <li><b>conceptual</b> (definition): <span class="def">def. 7</span> <b>Kindness</b> is a positive quality or characteristic demonstrated through compassionate and considerate behavior towards others.
+    </ol><p>
+
+    The thing to understand here is that <span class="b">(a)</span>since representations of concepts are <b>something</b> and <span class="b">(b)</span>since <b>everything</b> is, among other things, a concept, <span class="b">(c)</span>it follows that representations of concepts are also concepts.<p>
+
+    We can therefore refer to <span class="b">(a)</span>the concept of the physical representation of an apple or <span class="b">(b)</span>the concept of the lexical  representation of an apple and so on.<p>
+
+    Some concepts are universal while others are not. For example, lexical representations, that is words or vocabulary, are not universal because they are language dependent, while conceptual represenations are universal. Indeed, the lexical representation of an <span style="position:relative; top:0px; border-radius:10%;"><img src="aaa.avif" width="62" height="42" style="vertical-align: bottom"></span> in English is <span class="b">apple</span>, while in Danish is <span class="b">æble</span>; however, the conceptual representation of an apple, that is its definitions, is universal.<p>
+
+        <center>&bull; &bull; &bull;</center><p>
+
+
+        <center>A WORD ON LANGUAGE &bull; <span class="k">EN KOMMENTER OM SPROG</span> <img valign=bottom src="dansk.png" width="25" height="25"></center><p>
+
+
+A language can be broken down into <span class="b">(a)</span>lexicon (words or vocabulary), <span class="b">(b)</span>phonetics (pronunciation) rules, <span class="b">(c)</span>punctuation rules, <span class="b">(d)</span>syntax (word order) rules, and <span class="b">(e)</span>morphology* rules, part of which are periphrases.**<hr>
+
+    *<b>morphology</b> refers to internal structure and formation of words in a language, which involves, among other things, prefixes, suffixes, inflection, declension, conjugation, and periphrases. In English, we <b>decline</b> nouns, adjectives, and pronouns, and we <b>conjugate</b> verbs. For instance, the subject of verbs in English is indicated by nouns or subject pronouns: <span class="ex">example 1</span> <i><b>Helen</b> works</i> or <i><b>she</b> works</i>, but in Spanish, it is indicated by the ending of the verb as the verb is conjugated: <i>Helena trabaj<span class="r">a</span></i> or <i>ella trabaj<span class="r">a</span></i> or <i>trabaj<span class="r">a</span></i>; <i>Helena y Juan trabaj<span class="r">an</span></i> or <i>ellos trabaj<span class="r">an</span></i> or trabaj<span class="r">an</span>.<p>
+
+    **<b>perifrasis</b>, plural <b>periphrases</b>, is part of morphology and refers to polylexical (multi-worded) forms of Parts of Speech. For example, <i>to be fond of</i> is a periphrasis of <i>to like</i>, but they are both verbs and their meaning is roughly the same. <i>Even though</i> is a periphrasis of <i>although</i>, but they are both conjunctions and their meaning is roughly the same. Periphrases do not always occur in pairs. For example, <i>look forward to</i> does not have a monolexical (single-worded) counterpart.<hr>
+
+<span class="b">(f)</span>There are far more concepts than words and <span class="b">(g)</span>each word represents only one concept at a time and <span class="b">(h)</span>each concept has a definition and <span class="b">(i)</span>there is only one valid definition for each concept and <span class="b">(j)</span>there is not a single word which represents only one concept. <span style="font-size:9pt;">(Isidoros Parlamas &bull; Applied Dialectics & Horistics)</span><p>
+
+    Let me elaborate on the statement above:<p>
+
+    <span class="b">(f)</span><i>There are far more concepts than words</i><p>
+    For every word and in every developed language there are at least 2 concepts associated with it. As an example, let us think of <b>water</b>. How many concepts does <b>water</b> represent? Well, let's see how many of them we can think of off hand.<p>
+
+            
+    
+        <span class="ex">example 2</span> I drink 2 liters of <b>water</b> every day. (H<sub style="font-size:8pt;">2</sub>O &rarr; uncountable noun)<br>
+        <img valign=bottom src="dansk.png" width="25" height="25"><span class="k">Jeg drikker 2 liter vand hver dag.</span><p>
+        <span class="ex">example 3</span> My eyes <b>water</b> when I see homeless children. (intransitive verb)<br>
+        <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k">Mine øjne løber i vand, når jeg ser hjemløse børn.</span><p>
+        <span class="ex">example 4</span> My mouth <b>waters</b> when I smell fresh fish. (intransitive verb)<br>
+        <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k">Min mund løber i vand, når jeg lugter frisk fisk.</span><p>
+        <span class="ex">example 5</span> I <b>water</b> my garden  once a week. (transitive verb)<br>
+        <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k">Jeg vander min have en gang om ugen.</span><p>
+    
+
+    We see that <b>water</b> represents at least 4 different concepts.<p>
+
+    <span class="b">(g)</span><i>Each word represents only one concept at a time</i><p>
+    But even though <b>water</b> represents various concepts, it represents <u>only one concept at a time</u>. As you can see, in each of the 4 sentences above, <b>water</b> represents only one concept. For example, in sentence 1, it represents only H<sub style="font-size:8pt;">2</sub>O.<p>
+
+    <span class="b">(h)</span><i>each concept has a definition</i><p>
+        The definition of <b>water</b> in <span class="ex">example 1</span> above is its chemical formula: <span class="def">def. 8</span> <span class="b">H<sub style="font-size:8pt;">2</sub>O.</span><p>
+        The definition of <b>water</b> in <span class="ex">example 2</span> above is <span class="b"> <span class="def">def. 9</span> overflowing of the eyes with tears.</span><p>
+        The definition of <b>water</b> in <span class="ex">example 3</span> above is <span class="b"> <span class="def">def. 10</span> the production of an abnormally large amount of saliva in the mouth.</span><p>
+        The definition of <b>water</b> in <span class="ex">example 4</span> above is <span class="b"> <span class="def">def. 11</span> providing moisture to plants and/or trees by applying water to the soil.</span><p>
+
+
+        <span class="b">(i)</span><i>there is only one valid definition for each concept</i><p>
+
+
+    Of course, anyone can attempt to define a concept. If, for example, we ask 10 people to define <b>Justice</b>, we will most probably end up with 10 different definitions, of which, most probably, none will be apposite.<p>
+
+    <b>Justice</b>, just like all other words, represents more than one concept, but each specific concept of <b>Justice</b> has only one valid definition which is different from  the definitions of the other concept(s) of the term.<p>
+
+    It takes a lot of training in <i>Dialectics</i> and <i>Horistics</i> to be able to come up with valid definitions.<p>
+
+    <span class="b">(j)</span><i>there is not a single word which represents only one concept</i><p>
+    This may sound impossible, but it is true. Even very common words, such as <b>and</b>, represent more than one concept. (this not the same as <span class="b">(f)</span> above)<p>
+
+        Let us take a look.<p>
+
+    
+        <span class="ex">example 5</span> He ate two peaches <b>and</b> drank one coke.<p>
+        <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k">Han spiste to ferskner <b>og</b> drak en cola.</span><p>
+        <span class="rel">Rel.</span> (cummulative relationship &bull; <b>and</b> here conveys the concept of increase or addition)<p>
+        <span class="ex">example 6</span> George invited Helen to dinner, <b>and</b> he didn't pay for it.<p>
+        <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k">George inviterede Helen til middag, <b>og</b> han betalte ikke for det.</span><p>
+        <span class="rel">Rel.</span> (relationship of contrast &bull; <b>and</b> here means <b>but</b>)<p>
+        <span class="ex">example 7</span> Jill was anxious about her date, <b>and</b> she canceled it.<p>
+        <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k">Jill var bekymret for sin date, <b>og</b> hun aflyste den.</span><p>
+        <span class="rel">Rel.</span> (aetiology or cause-and-effect relationship &bull; <b>and</b> here means <b>so</b>)
+    <p>
+
+        You get the idea...<p>
+
+            <center>&bull; &bull; &bull;</center><p>
+
+
+<center>PARTS OF SPEECH &bull; <span class="k">DELE AF TALE</span> <img valign=bottom src="dansk.png" width="25" height="25"></center><p>
+
+    At this point, it is necessary to define <b>truth</b>.<p>
+
+    Most people believe that <i>truth</i> exists only as a word because they feel that its meaning, if it has one, is and will remail elusive for ever.<p>
+
+    It turns out, though, that most people think so because they live a life hypocrisy and they would rather accept as truth whatever helps them to sweep under the rug their negative traits and the uncomfortable feeling of guilt.<p>
+
+    One of the basic premises of <i>Dialectics</i> tells us that each concept has a valid definition, and so does <i>truth</i>.<p>
+
+    So, what is <i>truth</i>?<p>
+
+    <span class="def">def. 12</span> <b>Truth</b> is what happens or takes place without exception. (Isidoros Parlamas 1985)<p>
+
+    Let me expain by example.<p>
+
+    <div class="dial">
+
+    <span class="br">dialog 1</span><br>
+
+    1. <span class="b">Jill</span> &mdash; Is it true that the sun rises in the east?<br>
+
+    2. <span class="b">Steve</span> &mdash; No.<br>
+
+    3. <span class="b">Jill</span> &mdash; Why not?<br>
+
+    4. <span class="b">Steve</span> &mdash; Because there are exceptions.<br>
+
+    5. <span class="b">Jill</span> &mdash; How so?<br>
+
+    6. <span class="b">Steve</span> &mdash; Well, on planet Venus, the sun rises in the west.<br>
+
+    7. <span class="b">Jill</span> &mdash; Is it true that on planet Eart the sun rises in the east?<br>
+
+    8. <span class="b">Steve</span> &mdash; Yes, it is.<p>
+
+    Notice that after we narrowed down question 1 enough, we arrived at question 7 and answer 8, that is we arrived at the truth; we know for sure now that the answer to question 7 is positive because the statement <i>On planet Earth, the sun rises in the east</i> is devoid of any exceptions.<p>
+
+    <span class="dex">Dialectic Exercise 1</span> Can you think of another example to demonstrate that <span class="def">def. 12</span> is valid?
+    </div><p>
+
+
+
+            <span style="text-align:justify;">
+    <span class="ax">Truth 1</span> <span class="b"><span class="r">(a)</span>Parts of Speech are concepts. <span class="r">(b)</span>There are 10 Parts of Speech and <span class="r">(c)</span>each word belongs in at least one of them. Parts of Speech are <span class="r">(d)</span><b>language independent</b>, meaning that they are <span class="r">(e)</span>lexicon independent, <span class="r">(f)</span>punctuation independent, <span class="r">(g)</span>syntax independent, <i><span class="r">(h)</span>morphology<span style="color:black;"></span> independent</i>, and <span class="r">(i)</span>periphrases<span style="color:black;"></span> independent</i>.</span><p>
+
+    A verb, then, remains a <b>verb</b> in all languages regardless of the lexicon or punctuation or syntax or morphology or periphrasis involved.<p>
+
+    You really &nbsp; need to understand that while <b>lexicon, syntax, punctuation</b>, <b>morphology</b>, and <b>periphrasis</b> are language dependent, <span class="r">Parts of Speech, are not</span>. That is to say that Parts of Speech are <u>universal</u>.<p>
+            
+        For instance, <b>working hard</b> is a concept. <span class="ex">example 9</span> <b>They work hard</b> <u>is expressed</u> in all countries, irrespective of lexicon, punctuation, syntax, morphology or periphrases. So, in all languages on planet Earth, in this specific example, <b>they</b> will always be a subject pronoun, <b>work</b> will always be a verb, and <b>hard</b> will always be an adverb.<p>
+
+        Let us see this same sentence in a few different languages:<p>
+
+            
+                <b>English:</b><span class="fu"><b>They</b></span> <span class="b">work</span> <span class="r">hard</span>.<p>
+
+                <b>Danish:</b> <span class="fu"><b>De</b></span> <span class="b">arbejder</span> <span class="r">hårdt</span>.<p>
+
+                <b>Modern Greek:</b> <span class="fu"><b>Αυτοί</b></span> <span class="b">εργάζονται</span> <span class="r">σκληρά</span>.<p>
+
+                <b>Spanish:</b> <span class="fu"><b>Ellos</b></span> <span class="b">trabajan</span> <span class="r">duro</span>.<p>
+
+                <b>Polish:</b> <span class="fu"><b>Oni</b></span> <span class="b">pracują</span> <span class="r">ciężko</span>.<p>
+
+                <b>Russian:</b> <span class="fu"><b>Они</b></span> <span class="r">много</span> <span class="b">работают</span>. (The syntax is different here, but Parts of Speech remain unaffected.)<p>
+
+                <b>Mandarin Chinese:</b> <span class="fu"><b>他们</b></span> <span class="b">工作</span> <span class="r">努力</span>。<p>
+
+            <p>
+
+            We can see that in every single language above, <span class="fu"><b>fuchsia</b></span> is <u>the subject pronoun</u>, <span class="b"><b>blue</b></span> is <u>the verb</u> and <span class="r"><b>red</b></span> is <u>the adverb</u>, which demonstrates neatly that Parts of Speech are universal.<p>
+
+    Parts of Speech are, then, strictly <b>function dependent</b>, which means that each Part of Speech plays a distinct nonvariable role in the clause; in other words, the role of verbs is invariably the same, the role of nouns is invariably the same, and so on.<p>
+
+    The role that each Part of Speech has in clauses is spelled out in its own definition, meaning the definition of each Part of Speech is really the description of its role in the clause.
+    
+
+                    <center>&bull; &bull; &bull;</center><p>
+
+
+        These are the 10 Parts of Speech in alphabetical order:
+
+        <ol type=A>
+            <li>adjectives (<span class="r">good</span> food)<p>
+
+            <li>adverbs (<span class="r">well</span> done)<p>
+
+            <li>articles (<span class="r">the</span> right choice)<p>
+
+            <li>conjunctions (He's in Europe, <span class="r">but</span> I'm in Africa.)<p>
+
+            <li>interjections (<span class="r">Wow!</span> Do you mean that?)<p>
+
+            <li>nouns (high <span class="r">quality</span>)<p>
+
+            <li>participles (an <span class="r">extended</span> period of time &bull; an <span class="r">interesting</span> book)<p>
+
+            <li>prepositions (<span class="r">at</span> home)<p>
+
+            <li>pronouns (It's <span class="r">them</span>!)<p>
+
+            <li>verbs (We <span class="r">meet</span> often.)<p>
+        </ol>
+
+                
+
+        There are also a handful of words, usually less than 10, called <b>particles</b>, which do not fit into any of the definitions of the Parts of Speech. For example, in English, the word <b>to</b>, when part of the infinitive, is sometimes, but not always, a <b>particle</b>.<p>
+
+    Mostly directly, but also indirectly, Parts of Speech are noun-centered, that is nouns are the sun of the solar system of the Parts of Speech. All other 9 Parts of Speech revolve around nouns.<p>
+
+    
+        <span class="def">def. 13</span> <b>Nouns</b> are names.<p>
+            George, Helen, apple, kindness<p>
+            <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k">hest, brød, Jens, vand</span><p>
+
+                <center>&mdash; &mdash; &mdash;</center><p>
+
+        <span class="def">def. 14</span> Articles qualify* <b>nouns</b> in terms of gender, person, number et al.<p>
+            <i>the, a/an, of</i><p>
+            <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k"><i>det, den, de, af</i></span><p>
+            Some languages, for example, Polish, lack articles.<hr>
+
+                *In English, when we talk about grammar, <b>qualify</b> and <b>modify</b> are synonyms.<hr><p>
+
+        <span class="def">def. 15</span> Adjectives qualify <b>nouns</b>.<p>
+            <b>good</b> weather, <b>bad</b> advice, <b>heavy</b> rain, <b>this</b> book, <b>those</b> boys<p>
+            <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k"><b>godt</b> vejr, <b>dårlige</b> råd, <b>kraftig</b> regn, <b>den her</b> bog, <b>de der</b> drenge</span><p>
+
+                <center>&mdash; &mdash; &mdash;</center><p>
+
+        <span class="def">def. 16</span> Participles derive from verbs and, just like adjectives, they qualify <b>nouns</b>.<p>
+            <b>interesting</b> film, <b>concerned</b> parents, <b>complicated</b> story, <b>living</b> legend<p>
+            <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k"><b>interessant</b> film, <b>bekymrede</b> forældre, <b>kompliceret</b> historie, <b>levende</b> legende</span><p>
+
+                <center>&mdash; &mdash; &mdash;</center><p>
+
+        <span class="def">def. 17</span> Pronouns replace <b>nouns</b>.<p>
+            <b>he &bull; she &bull; it &bull; them</b> &bull; <b>this</b> is my book &bull; <b>those</b> are my friends &bull; <b>she</b> did <b>it herself</b><p>
+            <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k"><b>han &bull; hun &bull; det &bull; dem</b> &bull; <b>denne</b> er min bog &bull; <b>det</b> er mine venner &bull; <b>hun</b> gjorde <b>det selv</b></span><p>
+
+                <center>&mdash; &mdash; &mdash;</center><p>
+
+        <span class="def">def. 18</span> Verbs denote an action, occurrence, or state of being, in which <b>nouns</b> or <b>pronouns</b> are the protagonsists.<p>
+            go, put, write, sleep, be, think, work, give<p>
+            <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k">gå, sætte, skrive, være, tænke, arbejde, give</span><p>
+
+                <center>&mdash; &mdash; &mdash;</center><p>
+
+        <span class="def">def. 19</span> Prepositions qualify <b>nouns</b> in terms of <i>time, place, manner, degree, quantity, quality et al.</i><p>
+            <b>at</b> home &bull; <b>in</b> the country &bull; <b>around</b> the corner &bull; <b>on</b> the wall &bull; <b>under</b> the table<p>
+            <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k">hjem<b>me</b> &bull; <b>i</b> landet &bull; <b>rundt om</b> hjørnet &bull; <b>på</b> væggen &bull; <b>under</b> bordet</span><p>
+
+                <center>&mdash; &mdash; &mdash;</center><p>
+
+        <span class="def">def. 20</span> Adverbs qualify <span class="r">(a)</span>verbs, <span class="r">(b)</span>adjectives, <span class="r">(c)</span>other adverbs, <span class="r">(d)</span>clauses, and <span class="r">(e)</span>sentences.<p>
+            <ul>
+            <li>she lives <b>well</b> <img valign=bottom src="dansk.png" width="25" height="25"><span class="k">hun lever <b>godt</b></span><p>
+            <li>he is <b>reasonably</b> fluent <img valign=bottom src="dansk.png" width="25" height="25"><span class="k">han er <b>rimelig</b> flydende</span><p>
+            <li>they run <b>fast enough</b> <img valign=bottom src="dansk.png" width="25" height="25"><span class="k">de løber <b>hurtigt nok</b></span><p>
+            <li>Interestingly, they all insisted on paying for everyone's drinks.<br>
+                <img valign=bottom src="dansk.png" width="25" height="25"><span class="k">Interessant nok insisterede de alle på at betale for alles drinks.</span>
+            </ul><p>and answer to questions related to <span class="r">(f)</span>when, <span class="r">(g)</span>where, <span class="r">(h)</span>how, <span class="r">(i)</span>how much, and <span class="r">(j)</span>why.<p>
+
+                <center>&mdash; &mdash; &mdash;</center><p>
+
+        <span class="def">def. 21</span> Conjunctions connect clauses while, at the same time, they <b>establish</b> fundamental relationships between them.<p>
+            and, or, therefore, for, while, before<p>
+            <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k">og, eller, derfor, for, mens, før</span></p>
+
+            <center>&mdash; &mdash; &mdash;</center><p>
+
+        <span class="def">def. 22</span> Interjections  are stand alone words or phrases which express strong emotions, sudden reactions, or short exclamations.<p>
+            Wow! Ouch! Oh no! Yay! Oops! Ah... Ugh!<p>
+            <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k">Wow! Av! Åh nej! Yay! Ups! Åh... Åh!</span><p>
+
+                <center>&mdash; &mdash; &mdash;</center><p>
+
+        The same word can be more than one Part of Speech depending on its function in the clause or phrase*. This phenomenon is language dependent.<hr>
+        * <span class="def">def.23</span> A <b>phrase</b> is a word or a group of words that conveys a meaning but does not have the subject-verb unit.<p>
+
+                For example:<p>
+
+            
+                <img src="phrase.png" width="40" height="11"> Good!<p>
+                <img src="phrase.png" width="40" height="11"> Weather permitting.<p>
+                <img src="phrase.png" width="40" height="11"> Once upon a time.<p>
+                <img src="phrase.png" width="40" height="11"> God willing!<p>
+                <img src="phrase.png" width="40" height="11"> Damn it!
+            <p>
+
+                are all phrases.<hr>
+
+
+        
+            Some nouns can also be adjectives.<p>
+                <span class="ex">example 10</span> This <b>animal</b> is beautiful. (noun)<br>
+                <span class="ex">example 11</span> <b>Animal</b> feed can be expensive. (adjective)<p>
+
+            Some adjectives can also be nouns or adverbs.<p>
+                <span class="ex">example 12</span> This is a <b>good</b> job. (adjective)<br>
+                <span class="ex">example 13</span> I am thinking of the greater <b>good</b>. (noun)<br>
+                <span class="ex">example 14</span> They look <b>good</b>. (adverb)<p>
+
+            Some present/active participles can also be nouns.<p>
+                <span class="ex">example 15</span> The children are <b>swimming</b>. (present/active participle)<br>
+                <span class="ex">example 16</span> <b>Swimmimg</b> is a great sport. (noun/gerund)<p>
+
+            Some past participles can also be adjectives.<p>
+                <span class="ex">example 17</span> This issue has always <b>complicated</b> things. (past participle)<br>
+                <span class="ex">example 18</span> This is a <b>complicated</b> situation. (adjective)<p>
+
+            Some pronouns can also be adjectives.<p>
+                <span class="ex">example 19</span> <b>This</b> is beautiful. (demonstrative pronoun)<br>
+                <span class="ex">example 20</span> <b>This</b> flower is beautiful. (demonstrative adjective)<p>
+
+            Some verbs can also be nouns.<p>
+                <span class="ex">example 21</span> I <b>sleep</b> well. (verb)<br>
+                <span class="ex">example 22</span> Adequate <b>sleep</b> is crucial for overall health. (noun)<p>
+
+            Some prepositions can also be conjunctions or adverbs.<p>
+                <span class="ex">example 23</span> He is standing <b>before</b> her. (preposition)<br>
+                <span class="ex">example 24</span> He had called <b>before</b> she arrived. (conjunction)<br>
+                <span class="ex">example 25</span> She has done that <b>before</b>. (adverb)<p>
+
+            Some adverbs can also be adjectives.<p>
+                <span class="ex">example 26</span> We work <b>hard</b>. (adverb)<br>
+                <span class="ex">example 27</span> The soil is very <b>hard</b>. (adjective)<p>
+
+            Some conjunctions can also be prepositions.<p>
+                <span class="ex">example 28</span> She stayed home <b>for</b>, as she said, she was feeling unwell. (conjunction)<br>
+                <span class="ex">example 29</span> I am doing this <b>for</b> you. (preposition)<p>
+    
+                                <center>&bull; &bull; &bull;</center><p>
+
+    <center>A LITTLE HISTORY</center><p>
+
+        Of course, everything started when the <b>Creator</b> created the cosmos.<p>
+
+        But here, on planet Earth, <b>civilization</b>, not architecture, not agriculture, not irrigation, not know-how of any sort, but civilization started with Socrates (469 - 399 BC) in Athens.<p>
+
+        Socrates was the first to be concerned primarily, both in his private and public discourse, about <b>Justice and Ethics</b>.<p>
+
+        It was Socrates who introduced to the world the Dialectical Methodology of Reasoning, the Dialectics, which did away once and for all with superstition, bias, and economic and social discrimination, thus giving a tremendous boost to philosophy and social politics.<p>
+
+        The way Socrates lived and died has been <b>anathema</b> to this day to all psychopaths, strongmen, fascists, dictators, and tyrants from China to Chile...and beyond. But it also has been the guding light of Freedom and Justice for various peoples, but first and foremost for the Scandinavian peoples.<p>
+
+        Most Scandinavians may not know it, but the way they have lived their lives for the last 150 years is aligned to a great extent with the Socratic view on social politics and political ethos.<p>
+
+            <center>&bull; &bull; &bull;</center><p>
+
+        Then, there was <span class="b">(a)</span>Plato, Socrates' student, and then <span class="b">(b)</span>Aristotle, Plato's student, and finally <span class="b">(c)</span>Alexander the Great, Aristotle's student.<p>
+            <center>
+        <table style="background-color:black; color:white;">
+            <tr valign=top>
+                <td><img src="soc.jpg" width="100" height="74"><br>Socrates</td>
+                <td><img src="plato.jpg" width="100" height="96"><br>Plato</td>
+                <td><img src="aris.jpg" width="100" height="125"><br>Aristotle</td>
+                <td><img src="alex.jpg" width="100" height="139"><br>Alexander the Great</td>
+            </tr>
+        </table>
+    </center><p>
+
+        The first university ever, the Academy, was founded by Plato in Athens and lasted for about 1000 years; the second universsity, the Lyceum, was founded by Aristotle in Athens and lasted for about 300 years. As for Alexander the Great, he was the one who, through his conquests in Asia and North Africa, deliberately and methodically spread the Classical Greek Civilization from the Atlantic ocean to India and caused the phenomenon called <i>Hellenization</i>, which has been transforming the whole world ever since.<p> 
+
+        <span class="b">Socrates</span>, in Plato's Cratylus, and, subsequently, Plato's student, <span class="b">Aristotle</span>, were the first known individuals to have formulated the concept of The Parts of Speech. But it was <span class="b">Dionysius the Thrax</span>, an ancient Greek grammarian and scholar who lived during the 2nd century BC, and <span class="b">Apollonius Dyscolus</span>, an ancient Greek grammarian and scholar who lived during the 2nd century AD, who spelled out 9 of today's 10 Parts of Speech, leaving out <b>interjections</b>. Dionysius the Thrax is known for his work on  grammar, specifically his treatise 
+        <img class="fl" src="thrax.jpg" width="180" height="270">called <span class="b">"The Art of Grammar"</span> (τέχνη γραμματική). Apollonius Dyscolus, on the other hand, was the founder of scientific syntax and wrote specifically on adverbs, conjunctions and pronouns. <img class="f2" src="dyscolus.jpg" width="180" height="270">Apollonius Dyscolus' son, <span class="b">Aelius Herodian</span>, also influenced significantly later grammarians; he wrote extensively on prosody.<p>
+
+    Their work are the foundational texts in the field of Greek grammar and had a significant influence on subsequent grammatical studies in both Greek and Latin; they are still regarded as the groundwork of the entire Western grammatical tradition and beyond.<p>
+
+In "The Art of Grammar," Dionysius the Thrax described the parts of speech in Greek including <b>onomata</b> (nouns and adjectives), verbs, participles, articles, pronouns, prepositions, adverbs, and conjunctions. He also discussed topics such as syntax (sentence structure), and morphology (word formation).<p>
+
+Dionysius the Thrax and Apollonius Dyscolus' works have had a lasting impact on the study of grammar worldwide. Their classification of the Parts of Speech and their grammatical analysis methods became fundamental principles in subsequent grammatical studies and have been influencing the development of grammatical theories in most languages to this day.</span><p>
+
+    <center>&bull; &bull; &bull;</center><p>
+
+
+    The Parts of Speech and their definitions are universal, which means that all languages have exactly the same Parts of Speech.<p>
+
+    However, grammarians are notoriously inaccurate and will tell you that different languages have different Parts of Speech, which is totally untrue.<p>
+
+    What they really mean is that Parts of Speech in different languages may consist of different or more or fewer types or classes or subcategories. For example, they will tell you that English has 1 class of adjectives while Japanese has 3.<p>
+
+    It is true that some languages, such as Russian, lack articles, but the remaining Parts of Speech are the same ones as in every other language.<p>
+
+    But why are The Parts of Speech important?<p>
+
+    Because each one of them defines a distinct role/function of words in clauses and, because of that, they help us study and learn languages infinitely more efficiently.<p>
+
+    The definition of each Part of Speech spells out its role/function in a clause and those definitions are formulated on the basis of universal conceptual criteria. That means that if a word satisfies the definition of <i>verbs</i> in a given clause, then it is a verb regardless of language, punctuation, syntax, morphology, or any periphrases involved. (<b>Truth 1 on page 6</b>)<p>
+
+
+            In clauses or phrases, words as well as groups of words can be identified on two levels, <span class="b">(a)</span> Parts of Speech (PoS) analysis level  and <span class="b">(b)</span> syntactical analysis level (word order).<p>
+
+            Let us take a look at this sentence.<p>
+
+                <span class="b"><span class="ex">example 30</span> Both of them work hard.</span><p>
+
+                <b>PoS Analysis:</b><p>
+
+                <ul>
+                    <li>both (<span class="b">pronoun / stedord</span>)<p>
+                    <li>of (<span class="b">partitive article / delingsartikel</span>)<p>
+                    <li>them (<span class="b">pronoun / stedord</span>)<p>
+                    <li>work (<span class="b">verb / udsagnsord</span>)<p>
+                    <li>hard (<span class="b">adverb / biord</span>)<p>
+                </ul><p>
+
+                <b>Syntactical Analysis:</b><p>
+
+                <ul>
+                    <li>both of them (<span class="b">subject / subjekt</span>)<p>
+                    <li>work hard (<span class="b">predicate / udsagnsled</span>)
+                </ul><p>
+
+                <center><img src="sep.jpg"></center><p>
+            
+
+        <div style="background-color:white; color:blue; font-size:12pt; padding-bottom:3px; height:90px; border: 2px solid red;">
+            <span style="position:relative; top:10px; left:10px; font-size:20pt; color:green;"><b>æøå</b></span>
+            <center>
+            <table width=100% border=0 style="position:relative; top:-30px; left:-10px;">
+                <tr>
+            <td width=20%><div style="position:relative;top:4px; left:20px;"></td>
+            <td align=center><div style="position:relative;top:0px; left:-25px;"><span style="color:black; font-size:9pt;">Horistics</span><br>
+                On Sentences vs Clauses<br>Om Helsætninger vs Hovedsætninger/Ledsætninger</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="p"><b>page 20</b> <img style="position:relative; top:-30px; left:15px; padding-bottom:3px;" src="df.png" width="46" height="31"></div><p>
+
+            
+
+        <!--<center>MAIN / INDEPENDENT CLAUSES vs SUBORDINATE / DEPENDENT CLAUSES<br>
+HOVEDSÆTNINGER vs LEDSÆTNINGER</center><p>
+
+    <center class="yb">STREAMLINING & UNIVERSALIZING THE GRAMMAR OF CLAUSES & CONJUNCTIONS<br>
+        <span class="b">Strømlining og universalisering af grammatikken for hoved-led/sætninger og konjunktioner</span>
+    </center><p>-->
+At this point we need to understand the concepts <span class="b">(a)</span>clause, <span class="b">(b)</span>main/independent clause, <span class="b">(c)</span>subordinate/dependent clause, <span class="b">(d)</span>sentence, and <span class="b">(e)</span>conjunction.<p>
+
+    <span class="def">def. 24</span> A <b>clause</b> is a word or a group of words which, as a minimum, contains a subject and a verb.<p>
+
+    <div class="box">
+        <span class="def">def. 25a</span> A <b>main clause</b> is a clause which can stand on its own.<p>
+            Alternatively,<p>
+        <span class="def">def. 25b</span> A <b>main clause</b> is a clause which contains no conjunctions.<p>
+
+        <span class="def">def. 26a</span> A <b>subordinate clause</b> is a clause that cannot stand on its own.<p>
+
+        Alternatively,<p>
+
+    <span class="def">def. 26b</span> A <b>subordinate clause</b> is a clause which contains a conjunction.<p>
+    <span style="font-size:17pt; color:red;">&nbsp; &nbsp; <b>No asterisks or exceptions or hidden meanings!</b></span><p>
+    <img valign=bottom src="dansk.png" width="25" height="25"><span class="k"><span style="font-size:17pt; color:red;">Ingen stjerner eller undtagelser eller skjulte betydninger!</span></span>
+</div><p>
+
+    <span class="def">def. 27</span> A <b>sentence</b> is either a lone main clause or a mixture of main and subordinate clauses.<p>
+
+    <span class="def">def. 21</span> <b>Conjunctions</b> are words or groups of words that connect clauses while, at the same time, establish fundamental relationships between them. (page 9)<p>
+
+        <center>Points to Internalize*</center><p>
+
+<span class="pt">point 1</span> Provided we have at least one subject, we have as many clauses as we have verbs. (see <span class="ex">example 31</span> through <span class="ex">example 37</span> below)<p>
+
+<span class="pt">point 2</span> In English, the terms <b>clause</b> and <b>sentence</b> are not synonyms and therefore they cannot be used interchangeably. The term <b>clause</b> is used <u>only</u> when we examine whether a group of words is a <i>main clause</i> or a <i>subordinate clause</i> or when we differentiate between <i>main clauses</i> and <i>subordinate clauses</i>. In all other circumstances, the term <b>sentence</b> is used.<p>
+
+<span class="pt">point 3</span> A <u>lone</u> main clause can be referred to as either a <i>clause</i> or a <i>sentence</i>, depending on the context, but a <u>lone</u> subordinate clause can <b>only</b> be referred to as a <i>clause</i>.<p>
+
+We could say, for example, <span class="r">(a)</span><span class="ex">example 32</span> below is a <b>sentence</b> whose subject is "we," or <span class="r">(b)</span><span class="ex">example 32</span> is a <b>main clause</b> while <span class="ex">example 33/2</span> (= and study), is a <b>subordinate clause</b></span> because it cannot stand on its own.<p>
+
+<span class="pt">point 4</span> Main clauses can be <b>one-word</b> clauses, like <span class="ex">example 31</span>, but subordinate clauses cannot because they must contain a conjunction.<p>
+
+<span class="pt">point 5</span> Only <span class="b">(a)</span>lone main clauses and <span class="b">(b)</span>a mixture of main and subordinate clauses can be referred to as <b>sentences</b>.<hr>
+
+* To <b>internalize</b> means to take something external, such as information, values, beliefs, or experiences, and incorporate or integrate it into one's own mind or understanding. When you internalize something, you make it a part of your own thinking, perspective, or behavior.<br>
+
+<img valign=bottom src="dansk.png" width="25" height="25"> <span class="k">At <b>internalisere</b> betyder at tage noget eksternt, såsom information, værdier, tro, eller oplevelser, og inkorporere eller integrere det i ens eget sind eller forståelse. Når man internaliserer noget, gør man det til en del af ens eget tænkning, perspektiv eller adfærd.</span><hr><p>
+     
+
+        <ul type=circle>
+
+            <sup>cj</sup> = conjunction<p>
+
+    <li><span class="ex">example 31</span> <span class="u1">Eat!</span><sup>1</sup> (one clause)<p>
+
+    <li><span class="ex">example 32</span> We <span class="u1">work</span><sup>1</sup> at a bank. (one clause)<p>
+
+    <li><span class="ex">example 33</span> We <span class="u1">work</span><sup>1</sup> <span class="u1">and</span><sup>cj</sup> <span class="u1">study</span>.<sup>2</sup> (we work &bull; and we study) (two clauses)<p>
+
+    <li><span class="ex">example 34</span> We <span class="u1">work</span><sup>1</sup>, <span class="u1">study</span>,<sup>2</sup> <span class="u1">and</span><sup>cj</sup> <span class="u1">party</span>.<sup>3</sup> 
+    (we work &bull; [we] study &bull; and we party) (three clauses)<p>
+
+    <li><span class="ex">example 35</span> <span class="u1">As</span><sup>cj</sup> you <span class="u1">know</span><sup>1</sup>... (as<sup>cj</sup> you know ...) (one clause)<p>
+
+    <li><span class="ex">example 36</span> <span class="u1">As</span><sup>cj</sup> you <span class="u1">know</span><sup>1</sup>, it <span class="u1">has</span><sup>2</sup> been confirmed ... (as<sup>cj</sup> you know &bull; it has) (two clauses)<p>
+
+    <li><span class="ex">example 37</span> <span class="u1">As</span><sup>cj</sup> you <span class="u1">know</span><sup>1</sup>, the situation <span class="u1">has</span><sup>2</sup> been evaluated <span class="u1">but</span><sup>cj</sup> your proposition <span class="u1">has</span><sup>3</sup> not been adopted.<br>
+    [(1)as<sup>cj</sup> you know &bull; (2)the situation has &bull; (3)but your proposition has] (3 clauses)
+    </ul><p>
+
+        <center>&bull; &bull; &bull;</center><p>
+
+        <div>
+            <span class="ax">Truth 2</span> <span class="b">From Socrates to Plato to Aristotle to Dionysius the Thrax to Apollonius Dyscolus to Noam Chomsky, who turned 94 this year, that is in the year 2023, a <b>main clause</b> is a clause that can stand on its own (<span class="def">def. 25a</span>). Interestingly, it so happens that a clause can stand on its own <u>only if it does not contain</u> any conjunctions (<span class="def">def. 25b</span>)</span>.
+        </div><p>
+
+            <center>&bull; &bull; &bull;</center><p>
+
+            <center>Making use of <span class="ex">example 31</span> through <span class="ex">example 37</span> above to interpret <span class="def">def. 24</span> through <span class="def">def. 27</span></center><p>
+
+    How to use the words <i>clause</i> and <i>sentence</i> in English is a tangle, but we are going to untangle this mess in no time. Just pay close attention. See also <span class="pt">point 2</span><p>
+
+    In <span class="ex">example 31</span>, we have <span class="b">(a)</span>the implicit subject <b>you</b> and <span class="b">(b)</span>a verb, which makes it a <b>one-word</b> clause (<span class="def">def. 24</span>). We can also see that this one word <span class="b">(c)</span>can stand on its own, which makes it a <b>main  clause</b> (<span class="def">def. 25a</span> and <span class="def">def. 25b</span>). Indeed, no additional information is required for this clause to make sense and it contains no conjunctions.<p>
+        Of course, we are dealing here with the imperative mood / bydemåde &bull; imperativ. <img valign=bottom src="dansk.png" width="25" height="25"> <span class="b"><span class="k">Spis!</span></span><p>
+
+        <span class="ex">example 31</span> also satisfies <span class="def">def. 27</span>.<p>
+
+            <center>&mdash; &mdash; &mdash;</center><p>
+
+    In <span class="ex">example 32</span>, we have <span class="b">(a)</span>a subject and <span class="b">(b)</span>a verb, which makes this specific group of words a <b>clause</b>. We can also see that this group of words <span class="b">(c)</span>can stand on its own, which makes it a <b>main clause</b>. Indeed, no additional information is required for this clause to make sense.<p>
+
+    If we observe carefully, we will notice that <span class="ex">example 32</span> satisfies simultaneously <span class="def">def. 24</span>, <span class="def">def. 25a</span>, <span class="def">def. 25b</span>, and <span class="def">def. 27</span>.<p>
+
+    The fact that <span class="ex">example 31</span> and <span class="ex">example 32</span> satisfy <span class="def">def. 26</span> means that, depending on the context, <span class="ex">example 31</span> and <span class="ex">example 32</span> can be referred to also as <b>sentences</b>, something about which we are going to talk in a second.<p>
+
+    <span class="def">def. 25a</span> and <span class="def">def. 25b</span> are equivalent and, of course, they are absolutely <b>not</b> contradictory, because it so happens that clauses which cannot stand on their own <u>always</u> contain a conjunction and clauses which can stand on their own <u>never</u> contain a conjunction.<p>
+
+        <center>&mdash; &mdash; &mdash;</center><p>
+
+    In <span class="ex">example 33</span>, we have <span class="b">(a)</span>a main clause (we work) and <span class="b">(b)</span>a subordinate clause (and study).<p>
+    The whole group together is a sentence comprised of 1 main clause and 1 subordinate clause.<p>
+
+        <center>&mdash; &mdash; &mdash;</center><p>
+
+
+    In <span class="ex">example 34</span>, we have 2 main clauses (we work, we study) and 1 subordinate clause (and we party). The whole group together is a sentence comprised of 2 main clauses and 1 subordinate clause.<p>
+
+        <center>&mdash; &mdash; &mdash;</center><p>
+
+    In <span class="ex">example 35</span>, we have 1 subordinate clause (as you know ...). Lone subordinate clauses cannot be refereed to as sentences under any circumstances.<p>
+
+    <center>&mdash; &mdash; &mdash;</center><p>
+
+    In <span class="ex">example 36</span>, we have 1 subordinate clause (as you know ...) and one main clause (it has been confirmed). The whole group together is a sentence comprised of 1 subordinate clause and 1 main clause.<p>
+
+    <center>&mdash; &mdash; &mdash;</center><p>
+
+    In <span class="ex">example 37</span>, we have 2 subordinate clauses [(1)as you know &bull; (2)but your proposition has not been adopted] and 1 main clause (the situation has been evaluated). The whole group together is a sentence comprised of 2 subordinate clauses and 1 main clause.<p>
+
+                                                    <center><img src="sep.jpg"></center><p>
+
+
+        <div style="background-color:white; color:blue; font-size:12pt; padding-bottom:3px; height:90px; border: 2px solid red;">
+            <span style="position:relative; top:10px; left:10px; font-size:20pt; color:green;"><b>æøå</b></span>
+            <center>
+            <table width=100% border=0 style="position:relative; top:-30px; left:-10px;">
+                <tr>
+            <td width=20%><div style="position:relative;top:4px; left:20px;"></td>
+            <td align=center><div style="position:relative;top:0px; left:-25px; z-index:100; font-size:9pt;"><span style="color:black; font-size:9pt;">Horistics</span><br>
+                <b>S</b>ubject &bull; <b>V</b>erb &bull; <b>A</b>dverb &bull; SVA &bull; SAV &bull; VSA &bull; AVS<br>
+                STREAMLINING & UNIVERSALIZING THE ROLE OF CONJUNCTIONS<br>AT EFFEKTIVISERE OG UNIVERSALISERE AF KONJUNKTIONERNES ROLLE
+            </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="p"><b>page 30</b> <img style="position:relative; top:-30px; left:15px; padding-bottom:3px;" src="df.png" width="46" height="31"></div><p>
+
+    Is there a way to test if a clause is main or not?<p>
+
+    Obviously, we need to test if a clause fulfills the definition of main clauses.<p>
+
+    <span class="def">25a</span> A main clause is a clause that can stand on its own.<p>
+
+    <span class="def">25a</span> En hovedsætning er en sætning som kan stå alene.<img valign=bottom src="dansk.png" width="25" height="25"><p>
+
+    The question now becomes, is there a way to test if a clause can stand on its own?<p>
+
+    The answer is affirmative, <i>Yes, there is.</i><p>
+
+    We prompt our interlocutor to talk to us about something or someone. Our interlocutor's sentence starts with that <b>something</b> or <b>someone</b>.<p>
+
+<div class="test">
+    <b>TEST 1</b><br>
+<table border=0 cellpadding=5>
+    <tr><td>Interlocutor A</td><td>(1)</td><td>Tell us about <span class="b">the weather</span>.</td><td>Fortæl os om <span class="b">vejret</span>.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
+
+    <tr><td>Interlocutor B</td><td style="background-color:white;">(2a)</td><td><span class="b">The weather</span> was fine.</td><td><span class="b">Vejret</span> var fint.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
+
+    <tr><td>Interlocutor B</td><td>(2b)</td><td>And <span class="b">the weather</span> was fine.</td><td>Og <span class="b">vejret</span> var fint.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
+
+    <tr><td>Interlocutor B</td><td>(2c)</td><td>But <span class="b">the weather</span> was fine.</td><td>Men <span class="b">vejret</span> var fint.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
+
+    <tr><td>Interlocutor B</td><td>(2d)</td><td>Or <span class="b">the weather</span> was fine.</td><td>Eller <span class="b">vejret</span> var fint.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
+
+    <tr><td>Interlocutor B</td><td>(2e)</td><td>For <span class="b">the weather</span> was fine.</td><td>For <span class="b">vejret</span> var fint.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
+
+    <tr><td>Interlocutor B</td><td>(2f)</td><td>So <span class="b">the weather</span> was fine.</td><td>Så <span class="b">vejret</span> var fint.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
+</table>
+</div><p>
+
+<div class="test">
+    <b>TEST 2</b><br>
+<table border=0 cellpadding=5>
+    <tr><td>Interlocutor A</td><td>(1)</td><td>Tell us about <span class="b">Jill</span>.</td><td>Fortæl os om <span class="b">Jill</span>.<img valign=bottom src="https://dialectics.education/iamges/dansk.png" width="25" height="25"></td></tr>
+
+    <tr><td>Interlocutor B</td><td style="background-color:white;">(2a)</td><td><span class="b">Jill</span> is a great person.</td><td><span class="b">Jill</span> er en fantastisk person.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
+
+    <tr><td>Interlocutor B</td><td>(2b)</td><td>And <span class="b">Jill</span> is a great person.</td><td>Og <span class="b">Jill</span> er en fantastisk person.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
+
+    <tr><td>Interlocutor B</td><td>(2c)</td><td>But <span class="b">Jill</span> is a great person.</td><td>Men <span class="b">Jill</span> er en fantastisk person.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
+
+    <tr><td>Interlocutor B</td><td>(2d)</td><td>Or <span class="b">Jill</span> is a great person.</td><td>Eller <span class="b">Jill</span> er en fantastisk person.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
+
+    <tr><td>Interlocutor B</td><td>(2e)</td><td>For <span class="b">Jill</span> is a great person.</td><td>For <span class="b">Jill</span> er en fantastisk person.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
+
+    <tr><td>Interlocutor B</td><td>(2f)</td><td>So <span class="b">Jill</span> is a great person.</td><td>Så <span class="b">Jill</span> er en fantastisk person.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
+</table>
+</div><p>
+
+As we can see in the tables above, in both Test 1 and Test 2, only clause <b>2a</b> can stand on its own, which means clause <b>2a</b> is a main clause, whereas clauses <b>2b</b> through <b>2f</b> are subordinate clauses.<p>
+
+It follows that main clauses cannot be introduced by or start with a conjunction...any conjunction. Period!<p>
+
+In this way, the definition of a main clause is upheld. <span class="def">def. 25a</span> (page 13)<p>
+
+So, every time you want to make sure if a clause is a main one or not, just run the above test.<p>
+
+Now, a lot of naive people, grammarians among them, claim that if we take out the conjunction, we will end up with a main clause, which is correct. But if we were to think like that, then all clauses would be main clauses...there would not be any subordinate clauses at all.<p>
+
+There is not one single subordinate clause which would not turn into a main clause if we took out the conjunction.<p>
+
+Those people fail to see that it is precicely the conjunction that makes a sentence subordinate. No conjunction, no subordinate clause. Conjunctions always connect main clauses. The thing is that the clause which starts with a conjunction is no longer a main one exactly because it starts with a conjunction.<p>
+
+One cannot bend definitions at will just because they have gotten wrong something as basic as the difference between a main and a subordinate clause.<p>
+
+For example:<p>
+
+
+<center>
+
+        <div class="container">
+<span class="ex">example 38</span>
+  <elem type="drug">
+    <token class="b"><b>Even though it was very cold,</b></token>
+    <div class=" label drug">
+      <span class="s2">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br"><b>he took off his jacket.</b></token>
+    <div class=" label person">
+      <span class="s1">Subordinate Clause</span>
+    </div>
+  </elem>
+
+</div></center><p>
+
+    If we were to ignore <i>although</i>, the conjunction, we would be left with 2 main clauses: (1)<i>it was very cold</i> and (2)<i>he took off his jacket</i>. Now, how is that a surpsire? Of course, we would be left with 2 main clauses!<p>
+
+    <span class="r">All subordinate clauses will become main clauses if we remove the conjunction.</span><p>
+
+    Conjunctions in subordinate clauses are inseparable from those clauses. We don't get to include them or exclude them at will to cover contradictions or inconsistencies created on account of having adopted theories that cannot stand to logical scrutiny.<p>
+
+So, where does that leave FANBOYS (for &bull; and &bull; nor &bull; but &bull; or &bull; yet &bull; so), in English, and OMEFS (og &bull; men &bull; eller &bull; for &bull; så), in Danish?<p>
+
+Well, they are totally redundant since they do not add or contribute anything useful or meaningful to grammar. On the contrary, they create a lot of confusion. No benefit, but a lot of confusion.<p>
+
+It happens all the time in all fields of knowledge. Some scholars, usually scholars who enjoy a lot of misplaced prestige, introduce concepts into their field which make no sense, either to make an impression or out of outright ignorance.<p>
+
+If we were to ask the question <i>Why are FANBOYS/OMEFS any different from other conjunctions?</i> the only answer we would get is <i>Because they connect equivalent clauses</i>, which sometimes is true and sometimes isn't. But if we were to ask a second question, <i>How does that contribute to the theory of grammar?</i> the answer is that <i>They do not contribute in any way.</i><p>
+
+For example:<p>
+
+<center>
+
+        <div class="container">
+<span class="ex">example 39</span>
+  <elem type="drug">
+    <token class="b"><b>They play tennis</b></token>
+    <div class=" label drug">
+      <span class="s2">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br"><b>or they go swimming every day.</b></token>
+    <div class=" label person">
+      <span class="s1">Subordinate Clause</span>
+    </div>
+  </elem>
+
+</div>
+
+  <div class="container">
+
+    <elem type="drug">
+    <token class="b"><b>De spiller tennis</b></token>
+    <div class=" label drug">
+      <span class="s2">Hovedsætning</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br"><b>eller svømmer hver dag.</b></token>
+    <div class=" label person">
+      <span class="s1">Ledsætning</span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><p>
+
+
+<center>
+
+        <div class="container">
+<span class="ex">example 39</span>
+  <elem type="drug">
+    <token class="b"><b>They go swimming</b></token>
+    <div class=" label drug">
+      <span class="s2">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br"><b>or they play tennis every day.</b></token>
+    <div class=" label person">
+      <span class="s1">Subordinate Clause</span>
+    </div>
+  </elem>
+
+</div>
+
+  <div class="container">
+
+    <elem type="drug">
+    <token class="b"><b>De svømmer,</b></token>
+    <div class=" label drug">
+      <span class="s2">Hovedsætning</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br"><b>eller spiller tennis hver dag.</b></token>
+    <div class=" label person">
+      <span class="s1">Ledsætning</span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><p>
+
+
+It is true that both sentences are equivalent, which means <b>they carry equivalent contextual weight</b>.<p>
+And so what? How is that useful to us? The second clause will always be a subordinate clause anyway because it cannot stand on its own.<p>
+
+    <center>
+
+        <div class="container">
+<span class="ex">example 40</span>
+  <elem type="drug">
+    <token class="b"><b>They are tired</b></token>
+    <div class=" label drug">
+      <span class="s2">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br"><b>&nbsp; &nbsp; but she is not. &nbsp; &nbsp;</b></token>
+    <div class=" label person">
+      <span class="s1">Subordinate Clause</span>
+    </div>
+  </elem>
+
+</div><p>
+
+  <div class="container">
+
+    <elem type="drug">
+    <token class="b"><b>De er trætte,</b></token>
+    <div class=" label drug">
+      <span class="s2">Hovedsætning</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br"><b>men det er hun ikke.</b></token>
+    <div class=" label person">
+      <span class="s1">Ledsætning</span>
+    </div>
+  </elem>
+
+</div> (VSA)<img valign=bottom src="dansk.png" width="25" height="25">
+</center><p>
+
+<center>
+
+        <div class="container">
+<span class="ex">example 40</span>
+  <elem type="drug">
+    <token class="b"><b>She is not tired</b></token>
+    <div class=" label drug">
+      <span class="s2">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br"><b>&nbsp; &nbsp; &nbsp; but they are. &nbsp; &nbsp; &nbsp;</b></token>
+    <div class=" label person">
+      <span class="s1">Subordinate Clause</span>
+    </div>
+  </elem>
+
+</div><p>
+
+  <div class="container">
+
+    <elem type="drug">
+    <token class="b"><b>Hun er ikke træt,</b></token>
+    <div class=" label drug">
+      <span class="s2">Hovedsætning</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br"><b>men det er de.</b></token>
+    <div class=" label person">
+      <span class="s1">Ledsætning</span>
+    </div>
+  </elem>
+
+</div> (VS)<img valign=bottom src="dansk.png" width="25" height="25">
+</center><p>
+
+Both sentences are equivalent here also. But the distinction is useless because the second clause will always be a subordinate one.<p>
+
+They say that FANBOYS connect main clauses, but what they mean is that if we take out the conjunction, we are left with two main clauses. But that is true in all cases, not just when we are dealing with FANBOYS.<p>
+
+Moreover, we are not supposed to remove the conjunction because the conjunctions is an integral part of both clauses and sentences.<p>
+
+
+    <center>
+
+        <div class="container">
+<span class="ex">example 41</span>
+  <elem type="drug">
+    <token class="b"><b>They rejected her allegations</b></token>
+    <div class=" label drug">
+      <span class="s2">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br"><b>but she insisted on pressing charges.</b></token>
+    <div class=" label person">
+      <span class="s1">Subordinate Clause</span>
+    </div>
+  </elem>
+
+</div><p>
+
+  <div class="container">
+
+    <elem type="drug">
+    <token class="b"><b>She insisted on pressing charges</b></token>
+    <div class=" label drug">
+      <span class="s2">Hovedsætning</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br"><b>although they rejected her allegations.</b></token>
+    <div class=" label person">
+      <span class="s1">Ledsætning</span>
+    </div>
+  </elem>
+
+</div>
+</center><p>
+
+<span class="r">These two clauses are not even equivalent</span> because the conjunction establishes a <span class="rel">relationship</span> of conflict between the two clauses and it turns out that relationships of conflict are not comprised of equivalent clauses.<p>
+
+We see, then, that clauses connected with FANBOYS are not always equivalent, but even if they were, it would not help us in any way. So, much ado about nothing, which reminds us of Shakespear's homonymous play.<p>
+
+Some will say that FANBOYS/OMEFS help us apply the rules of punctuation correctly, but that is not the case either; however, I will not take the time to demonstrate why that is not the case since punctuation per se is beyond the scope of this book.<p>
+
+Now, if any of the readers believe that the concept of FANBOYS or the concept of OMEFS contributes to grammar, please enlighten me and I will sincerely be grateful to you. (horistics@gmail.com)<p>
+
+<center class="t15">&bull; &bull; &bull; <b>VSA SYNTAX</b> &bull; &bull; &bull;</center><p>
+
+<div class="box"><span class="ax">Truth 3</span><p>
+<span class="r">Internalize:</span><p>
+Classifying clauses as either main or subordinate is not syntax dependent but rather <b>stand-on-one's-own</b> dependent.<p>
+
+<span class="r">Internaliser:</span><p>
+At klassificere sætninger som enten hoved- eller hed-sætninger er ikke syntaksafhængig, men snarere <b>stå-alene</b> afhængig.<img valign=bottom src="dansk.png" width="25" height="25">
+</div><p>
+
+
+
+Danish, along with English, German, Dutch, Swedish, Norwegian, and Icelandic, belongs in the Germanic family of languages. Those languages share many similarities in vocabulary and grammar, but they also share, with the notable and sole exception of English, almost identical syntax rules.<p>
+
+These syntax rules, which have been confused with the Parts of Speech, are at the heart of the contradictions and inconsistencies in both Danish and the other Germanic grammars, save English, as they are presented in grammar books.<p>
+
+As stated above, generally speaking, English does not share the syntactic peculiarities of the rest of the Germanic languages.<p>
+
+When Danes study main and subordinate clauses, they are presented with the following 4 pillars of Danish syntax: SVA, SAV, VSA, and AVS; S stand for <i>subject</i>, V stands for <i>verb</i> and A or CA stands for <i>central adverb</i>.<p>
+
+We all know what a subject, a verb, and an adverb is, but what about <i>Central Adverbs</i>? What are they?<p>
+
+I am currently studying Danish at Sprogskole and we've been talking about <i>central adverbs</i> a lot, but, so far, never has a defintion of them been provided. So, what are they?<p>
+
+Adverbs are defined in <span class="def">def. 20</span>, but what is the difference between adverbs in general and central adverbs?<p>
+
+<span class="def">def. 28</span> In Danish, <b>Central Adverbs</b> are a specific group of adverbs which relate to the subject and verb in a clause in terms of how they are positioned with respect to one another: SV<b>A</b>, S<b>A</b>V, VS<b>A</b>, or <b>A</b>VS. <b>S</b> stands for <i>subject</i>, <b>V</b> stands for <i>verb</i>, and <b>A</b> stands for <i>adverb</i>.<p>
+
+På dansk er centrale adverbier en specifik gruppe af adverbier, der relaterer til subjektet og verbum i en sætning i forhold til, hvordan de er placeret i forhold til hinanden: SV<b>A</b>, S<b>A</b>V, VS<b>A</b> eller <b>A</b>VS. S står for <i>subjekt</i>, V står for <i>verbum</i>, og A står for <i>adverb</i>.<img valign=bottom src="dansk.png" width="25" height="25"><p>
+
+Now, the syntax we are considering in this section is VSA, that is <span class="b">verb + subject + adverb</span>.<p>
+
+For example:<p>
+
+<span class="ex">example 42</span><br><span class="b">Surprisingly, he also won the second race. / <span class="b"><span class="k">Overraskende <span class="u1">vandt</span><sup>V</sup> <span class="u1">han</span><sup>S</sup> <span class="u1">også</span><sup>A</sup> det andet løb.</span></span></span> (VSA)<img valign=bottom src="dansk.png" width="25" height="25"><p>
+
+
+We observe that in both languages the intruductory adverb comes first, but in English it is offset by a comma while the Danish clause undergoes inversion. Another difference is that, in Danish, the Central Adverb (også) must come after the verb.<p>
+
+
+<span class="ex">example 42</span> is a main clause because it can stand on its own with or without the introductory adverb. Notwithstanding syntax, <span class="ex">example 42</span> is a main clause in both languages. We need to understand that the definition of a main clause has nothing to do with syntax. If the clause can stand on its own, it is a main clause. Period!<p>
+
+In Germanic languages, save English, we are forced to deal with chaos and a host of contradictions and inconsistencies.<p>
+
+Let us examine the following main clause:<p>
+
+<span class="ex">example 43</span> <span class="b">The salary is also low. / Lønnen er også lav.</span> (SVA)<img valign=bottom src="dansk.png" width="25" height="25"><p>
+
+Let us introduce a few sementic nuances by way of introducing the above clause with an adverb.<p>
+
+
+<span class="ex">example 44</span> <span class="b">Surprisingly, the salary is also low. / Overraskende er lønnen også lav.</span> (VSA)<img valign=bottom src="dansk.png" width="25" height="25"><p>
+
+<span class="ex">example 45</span> <span class="b">Unfortunately, the salary is also low. / Desværre er lønnen også lav.</span> (VSA)<img valign=bottom src="dansk.png" width="25" height="25"><p>
+
+<span class="ex">example 46</span> <span class="b">Coincidentally, the salary is also low. / Tilfældigvis er lønnen også lav.</span> (VSA)<img valign=bottom src="dansk.png" width="25" height="25"><p>
+
+<span class="ex">example 47</span> <span class="b">Usually, the salary is also low. / Normalt er lønnen også lav.</span> (VSA)<img valign=bottom src="dansk.png" width="25" height="25"><p>
+
+<span class="ex">example 48</span> <span class="b">Strangely, the salary is also low. / Mærkeligt er lønnen også lav.</span> (VSA)<img valign=bottom src="dansk.png" width="25" height="25"><p>
+
+First let us confirm that <span class="ex">example 44</span> through <span class="ex">example 48</span> are all main clauses with or without the adverb introducing the clause.<p>
+
+Now, the words <i>surprisingly, unfortunately, coincidentally, usually</i>, and <i>strangely</i> are adverbs. But are they? How can we know for sure?<p>
+
+Well, we compare them to the definition of adverbs. That is why we need definitions.<p>
+
+Let us remind ourselves of the definition of adverbs. (pages 8-9)<p>
+
+<div class="box">
+<span class="def">def. 20</span> Adverbs qualify <span class="r">(a)</span>verbs, <span class="r">(b)</span>adjectives, <span class="r">(c)</span>other adverbs, <span class="r">(d)</span>clauses, and <span class="r">(e)</span>sentences.<p>
+            <ul>
+            <li>she lives <b>well</b> <img valign=bottom src="dansk.png" width="25" height="25"><span class="k">hun lever <b>godt</b></span><p>
+            <li>he is <b>reasonably</b> fluent <img valign=bottom src="dansk.png" width="25" height="25"><span class="k">han er <b>rimelig</b> flydende</span><p>
+            <li>they run <b>fast enough</b> <img valign=bottom src="dansk.png" width="25" height="25"><span class="k">de løber <b>hurtigt nok</b></span><p>
+            <li>Interestingly, they all insisted on paying for everyone's drinks.<br>
+                <img valign=bottom src="dansk.png" width="25" height="25"><span class="k">Interessant nok insisterede de alle på at betale for alles drinks.</span>
+            </ul><p>
+            and answer to questions related to <span class="r">(f)</span>when, <span class="r">(g)</span>where, <span class="r">(h)</span>how, <span class="r">(i)</span>how much, and <span class="r">(j)</span>why.
+        </div><p>
+
+We notice that <span class="ex">example 44</span> through <span class="ex">example 48</span> fall under <span class="b">(e)</span> and <span class="b">(h)</span> because <span class="b">(1)</span>they qualify sentences and <span class="b">(2)</span>answer to the question <i>In what way?</i> or <i>How do we feel about the salary being also low?</i><p>
+
+<ol>
+    <li>We feel surprise &rarr; <span class="b">surprisingly</span><p>
+
+    <li>We feel it's unfortunate &rarr; <span class="b">unfortunately<p>
+
+    <li>We feel it is worth mentioning it &rarr; <span class="b">coincidentally</span> (by the way)<p>
+
+    <li>We feel it is usual &rarr; <span class="b">usually</span><p>
+
+    <li>We feel it is strange &rarr; <span class="b">strangely</span>
+</ol><p>
+
+Now, let us look at this example:<p>
+
+<span class="ex">example 49</span> <span class="b">Therefore, the salary is also low. / Derfor er lønnen også lav.</span> (VSA)<img valign=bottom src="dansk.png" width="25" height="25"><p>
+
+First and foremost, <b>therefore</b> is a conjunction, not an adverb!<p>
+
+Secondly, <span class="ex">example 49</span> is a subordinate clause because it cannot stand on its own, which is consistent with the theory.<p>
+
+
+
+"What?!" will the Danish/German/Dutch/Swedish/Norwegian grammarian exclaim. "Of course <b>therefore</b> is an adverb! / Selvfølgelig er "derfor" et adverbium!<img valign=bottom src="dansk.png" width="25" height="25"><p>
+
+And if we ask <i>why</i>, they will tell us, "Look at the syntax! It's VSA! / Se på syntaksen! Det er VSA!"<img valign=bottom src="dansk.png" width="25" height="25"><p>
+
+And how should we respond to that?<p>
+
+Well, we should say the obvious: "My dear fellow, we suggest you look at the definition of adverbs, not the syntax."<p>
+
+Of course, there is no mention of <i>syntax</i> in the definition of adverbs and, as we have already seen, the Parts of Speech are language independent.<p>
+
+Now, let us run a test to see if the clause can stand on its own:<p>
+    
+    <div class="test">
+    <b>TEST 3</b><br>
+<table border=0 cellpadding=5>
+    <tr><td>Interlocutor A</td><td>(1)</td><td>Tell us about <span class="b">the salary</span>.</td><td>Fortæl os om <span class="b">lønnen.</span>.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
+
+    <tr><td>Interlocutor B</td><td>(2a)</td><td>Surprisingly, <span class="b">the salary</span> is also low.</td><td>Overraskende er <span class="b">lønnen</span> også lav.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
+
+    <tr><td>Interlocutor B</td><td>(2b)</td><td>Unfortunatelyly, <span class="b">the salary</span> is also low.</td><td>Desværre er <span class="b">lønnen</span> også lav.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
+
+    <tr><td>Interlocutor B</td><td>(2c)</td><td>Coincidentally, <span class="b">the salary</span> is also low.</td><td>Tilfældigvis er <span class="b">lønnen</span> også lav.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
+
+    <tr><td>Interlocutor B</td><td>(2d)</td><td>Usually, <span class="b">the salary</span> is also low.</td><td>Normalt er <span class="b">lønnen</span> også lav.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
+
+    <tr><td>Interlocutor B</td><td>(2e)</td><td>Strangely, <span class="b">the salary</span> is also low.</td><td>Mærkeligt er <span class="b">lønnen</span> også lav.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
+
+    <tr><td>Interlocutor B</td><td style="background-color:white;">(2f)</td><td>Therefore, <span class="b">the salary</span> is also low.</td><td>Derfor er <span class="b">lønnen</span> også lav.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
+</table>
+</div><p>
+
+    We see that only clause (2f) cannot stand on its own and therefore it is a subordinate clause.<p>
+
+    <b>Remember</b> that Parts of Speech are language independent and, therefore, they are also punctuation independent, which means no hollow arguments about punctuation may be admitted to defend the claim that <i>therefore</i> is an adverb.<p>
+
+    Furthermore, <span class="ex">example 49</span> does not answer to anything since only statements, that is either affirmations or negations, as opposed to questions, are true answers; but statements can only be main clauses. In other words, no answer can start with <b>therefore</b>, which drives us to the conclusion that <b>therefore</b> does not conform to the definition of adverbs since adverbs must, among other things, answer to specific categories of questions.<p>
+
+    In addition, <i>therefore</i> does not qualify either <span class="b">(a)</span>a verb, or <span class="b">(b)</span>an adjective, or <span class="b">(c)</span>another adverb, or <span class="b">(d)</span>a clause, which means that <i>therefore</i> does not fulfill the requirements to be an adverb.<p>
+    Yes, <i>therefore</i> precedes the clause but it does not qualify it in any way because it does not relate at all to the context of the clause.<p>
+
+    Indicative of the confusion surrounding <i>therefore</i>, as well as many other words, is that in English grammar books, <i>therefore</i> is referred to either as <span class="b">(a)</span>a conjunction, or as <span class="b">(b)</span>an adverb, or as <span class="b">(c)</span>a transition, or as <span class="b">(d)</span>conjunctive adverb.<hr>
+
+
+        <center>Let us start with some healthy satire! Is satire always healthy?</center><p>
+Now, don't get me wrong! It's just that I need some humor and irony...whatever...sarcasm? No, no need for sarcasm...I'm in the habit of saying things in a straightforward way...no hypocrisy or bigotry in this book...just politics...no pseudo-politics...no partisan politics...just Politics...and Dialectics...and Horistics...<p>
+
+Wow! Grammarians! What is wrong with you? So, "therefore" is an adverb? Well, that could be forgiven, at least adverbs is one of the Parts of Speech...but transition and conjunctive adverb? <span class="r">transition</span> and <span class="r">conjunctive adverb</span> even mean anyway? Are they the 11th and 12th Parts of Speech? Or, are you re-re-re-inventing the wheel of grammar? Hold your horses for a second and study Dionysius the Thrax and Apollonius Dyscolus...for heaven's sake...or, if you don't like Classical texts, you can read Noam Chomsky! Otherwise, you might as well rip up your PH.D's and Master degrees...it may be that you have attended too many so-called academic conferences...I don't know much about academic tourism...you tell me...but I am certainly having a great time here doing what I am doing...admittedly enjoying a healthy dose of academically flavored schadenfreude...well, not really...just fooling around guys...everyone's entitled to making some mistakes...what is wrong with me? Am I bigheaded? Or are you a rote learning product, professor? Unless you know how to tell a clause of purpose from a clause of result...but you wouldn't know, would you? Unless you've read and understood Dionysius the Thrax or Apollonius Dyscolus, which you haven't, right? Too busy celebrating your social and academic status...well...well...it's time you bought a new outfit for the next conference...come on now...you're not alone out there...stop sobbing...I'll buy you a lollipop...everything will be OK...you will see...I know you wanna project yourself out there as a serious scholar but you feel little more than an outfit...what can you do to feel better? What? Are you used to acting pompous? I know...poor soul...
+
+        <center><img valign=bottom src="dansk.png" width="25" height="25">Lad os starte med noget sund satire! Er satire altid sundt?</center><p>
+
+Nu, misforstå mig ikke! Det er bare, at jeg har brug for noget humor og ironi...hvad som helst...sarkasme? Nej, intet behov for sarkasme...Jeg har for vane at sige tingene på en ligefrem måde...intet hykleri eller bigotteri i denne bog...bare politik...ingen pseudo-politik...ingen partipolitik ...bare politik...og dialektik...og horistik...<p>
+
+Wow! Grammatikere! Hvad er der galt med dig? Så er "derfor" et adverbium? Nå, det kunne tilgives, i det mindste er adverbier en af ordleddene ... men overgang (transition) og konjunktivt adverbium? Hvad betyder <span class="r">overgang</span> og <span class="r">konjunktivt adverb</span> overhovedet? Er det 11. og 12. del af tale? Eller genopfinder du grammatikkens hjul igen? Hold dine heste et øjeblik og studer Dionysius Thrax...for himlens skyld...eller, hvis du ikke kan lide klassiske tekster, kan du læse Noam Chomsky! Ellers kan du lige så godt rive dine ph.d.'er og kandidatgrader op...det kan være, at du har deltaget i for mange såkaldte akademiske konferencer...Jeg ved ikke så meget om akademisk turisme...du fortæller mig ...men jeg har det helt sikkert godt her, og gør det, jeg laver...nyder ganske vist en sund dosis af akademisk smagt skadefreude...nå, egentlig ikke...bare at fjolle fyre...alle har ret til at lave nogle fejl... hvad er der galt med mig? Er jeg storhovedet? Eller er du et udenadslæringsprodukt, professor? Medmindre du ved, hvordan man kan skelne en klausul om formål fra en klausul om resultat ... men du ville ikke vide det, ville du? Medmindre du har læst og forstået Dionysius Thrax eller Apollonius Dyskolus, hvilket du ikke har, vel? For travlt med at fejre din sociale og akademiske status...nå...ja...det er på tide, at du køber et nyt outfit til næste konference...kom nu...du er ikke alene derude...stop hulkende...jeg vil købe en slikkepind til dig...alt vil være i orden...du vil se...jeg ved, du vil projicere dig selv derude som en seriøs lærd, men du føler dig lidt mere end et outfit... hvad kan du gøre for at få det bedre? Hvad? Er du vant til at opføre dig pompøst? Jeg ved...stakkels sjæl...<hr>
+
+    OK, enough is enough. So much for <i>therefore</i> being an adverb. The conclusion is that <i>therefore</i> (= that is why = for that reason) is an aetiological conjunction and, for that reason, it introduces aetiological clauses which happen to be subordinate ones because they cannot stand on their own.<p>
+
+    <img valign=bottom src="dansk.png" width="25" height="25"><span class="k">OK, nok er nok. Så meget for <i>derfor</i> at være et adverbium. Konklusionen er, at derfor (= af den grund) er en ætiologisk konjunktion, og af den grund introducerer den ætiologiske sætninger, som tilfældigvis er ledsætninger, fordi de ikke kan stå af sig selv.</span><p>
+
+    <i>therefore</i> may or may not be offset by commas, depending on context and style.<p>
+
+    <img valign=bottom src="dansk.png" width="25" height="25"><span class="k"><i>derfor</i> kan eller kan ikke være forskudt af kommaer, afhængigt af kontekst og stil.</span><p>
+
+    <span class="ex">example 49</span> is in need of a main clause to make sense.<p>
+
+    For example:<p>
+
+        <center>
+
+        <div class="container">
+<span class="ex">example 50</span>
+  <elem type="drug">
+    <token class="b"><b>There are so many applicans for that position</b></token>
+    <div class=" label drug">
+      <span class="s2">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br"><b>(and) therefore the salary is also low.</b></token>
+    <div class=" label person">
+      <span class="s1">Subordinate Clause</span>
+    </div>
+  </elem>
+
+</div><p>
+
+  <div class="container">
+    <elem type="drug">
+    <token class="b"><img valign=bottom src="dansk.png" width="25" height="25"><b>Der er mange ansøgere til den stilling,</b></token>
+    <div class=" label drug">
+      <span class="s2">Hovedsætning</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br"><b>(og) derfor er lønnen også lav.</b> <span class="bl">(VSA)</span></token>
+    <div class=" label person">
+      <span class="s1">Ledsætning</span>
+    </div>
+  </elem>
+
+</div>
+</center><p>
+
+
+    In <b>all</b> languages, clause <span class="b">(1)</span> is a main clause and clause <span class="b">(2)</span> is a subordinate clause. The <span class="rel">relationship</span> between the clauses is aetiological. Should we need to reverse the order of the clauses, the conjunction needs to be changed also:<p>
+
+    <span class="ex">example 51</span> <span class="b">(1)</span>Because there so many applicants for that position, <span class="b">(2)</span>the salary is also low.<br>
+    <img valign=bottom src="dansk.png" width="25" height="25"><span class="k"><span class="b">(1)</span>Fordi der er så mange ansøgere til den stilling, <span class="b">(2)</span>er lønnen også lav.</span><p>
+
+    In <b>all</b> languages, clause <span class="b">(1)</span> is a subordinate clause and clause <span class="b">(2)</span> is a main clause.<p>
+
+    So, how should the rule governing VSA syntax be reformulated to do away with contradictions, chaos, and inconsistencies?<p>
+
+    Here it goes:<p>
+
+    <span class="log">THE VSA RULE</span> In Danish, *statements which employ VSA syntax are usually, but not always, main clauses introduced by adverbs which qualify the whole clause.<br>
+    <img valign=bottom src="dansk.png" width="25" height="25"><span class="k">På dansk er *udsagn, der anvender VSA-syntaks, sædvanligvis, men ikke altid, hovedsætninger introduceret af adverbier, der modificerer hele sætningen.</span><p>
+
+    <div class="test">
+    <b>TEST 4 (testing the VSA rule)</b><br>
+<table border=0 cellpadding=5>
+    <tr valign=top><td>A</td><td>(A1)</td><td>Tell us about <span class="b">things you've noticed in supermarkets.</span>.</td><td>Fortæl os om <span class="b">ting, du har lagt mærke til i supermarkeder.</span>.<img valign=bottom src="dansk.png" width="25" height="25"></td></tr>
+<tr><td colspan=4><hr></td></tr>
+    <tr valign=top><td>B</td><td>(B1)</td><td><span class="b">(1)</span>In supermarkets you often see parents standing and discussing with their children <span class="b">(2)</span>what they should have for dinner.</td><td><img valign=bottom src="dansk.png" width="25" height="25"><span class="b">(1)</span>I supermarkeder <span class="u2">ser</span> <sub class="b">V</sub> <span class="u2">man</span> <sub class="b">S</sub> <span class="u2">tit</span> <sub class="b">A</sub> forældre, <span class="b">(2)</span>der står og diskuterer med deres børn, <span class="b">(3)</span>hvad de skal have til middag.</td></tr>
+
+    <tr><td colspan=4><hr></td></tr>
+
+    <tr valign=top><td>B</td><td>(B2)</td><td><span class="b">(1)</span>In supermarkets you often see parents standing and discussing with their children.</td><td><img valign=bottom src="dansk.png" width="25" height="25"><span class="b">(1)</span>I supermarkeder <span class="u2">ser</span> <sub class="b">V</sub> <span class="u2">man</span> <sub class="b">S</sub> <span class="u2">tit</span> <sub class="b">A</sub> forældre, <span class="b">(2)</span>der står og diskuterer med deres børn.</td></tr>
+    <tr><td colspan=4><hr></td></tr>
+
+    <tr valign=top><td>B</td><td>(B3)</td><td><span class="b">(1)</span>In supermarkets you often see parents.</td><td style="font-size:9pt;"><img valign=bottom src="dansk.png" width="25" height="25"><span class="b">(1)</span>I supermarkeder <span class="u2">ser</span> <sub class="b">V</sub> <span class="u2">man</span> <sub class="b">S</sub> <span class="u2">tit</span> <sub class="b">A</sub> forældre.</td></tr>
+
+</table><p>
+
+In English, B's response is a sentence which comprises of a main clause and a subordinate clause. Clause (1) is the main clause and clause (2) is the subordinate clause. We notice that clause (1) can stand on its own but clause (2) cannot. <b>In supermarkets</b> is an <i>adverb of place</i> which introduces the main clause modifying all of it. We see that, in Danish, the <b>VSA</b> syntax is employed.<p>
+
+<img valign=bottom src="dansk.png" width="25" height="25">På engelsk er B's svar en sætning, der består af en hovedsætning og en ledsætning. Sætning (1) er hovedsætningen, og sætning (2) er den ledsætning. Vi bemærker, at sætning (1) kan stå alene, men sætning (2) kan ikke. <b>I supermarkeder</b> er et <i>adverbium af sted</i>, som introducerer hovedsætningen og modificerer det hele. Vi ser, at man på dansk anvender <b>VSA</b>-syntaksen.<p>
+
+However, in Danish, the sentence comprises of one main clause and 2 subordinate clauses. Clause <span class="b">(1)</span> is the main clause and clauses <span class="b">(2)</span> and <span class="b">(3)</span> are the subordinate ones. Despite the difference, the theory still holds because in both languages, actually in all languages, clause <span class="b">(1)</span> can stand on its own and therefore it is a main clause. All 3 versions, (B1), (B2), and (B3), can stand on their own <span class="u2">exactly because</span> clause <span class="b">(1)</span> is a main clause. Please, take your time to internalize...<p>
+
+<img valign=bottom src="dansk.png" width="25" height="25">Men på dansk består sætningen af en hovedsætning og 2 ledsætninger. Klausul <span class="b">(1)</span> er hovedsætningen, og sætninger <span class="b">(2)</span> og <span class="b">(3)</span> er de ledsætningerne. På trods af forskellen holder teorien stadig, fordi sætning <span class="b">(1)</span> på begge sprog, faktisk på alle sprog, kan stå alene og derfor er en hovedsætning. Alle 3 versioner, (B1), (B2) og (B3), kan stå alene, <span class="u2">præcis fordi</span> sætning <span class="b">(1)</span> er en hovedsætning. Tag dig tid til at internalisere...
+</div><p>
+
+    However, not all clauses which employ the VSA syntax are main clauses. A notable exception is the conjunction <span class="k"><b>derfor</b></span>. Clauses introduced by <i>derfor</i> are subordinate clauses which employ the VSA syntax.<br>
+
+    <img valign=bottom src="dansk.png" width="25" height="25"><span class="k">Imidlertid er ikke alle sætninger, der anvender VSA-syntaksen, hovedsætninger. En bemærkelsesværdig undtagelse er konjunktionen derfor. Sætninger introduceret af <b>derfor</b> er ledsætninger, der anvender VSA-syntaksen.</span> See <span class="ex">example 50</span><hr>
+
+    *statements can be either affirmations or negations, but not questions.<br>
+    <img valign=bottom src="dansk.png" width="25" height="25"><i>statements</i> kan enten være bekræftelser eller negationer, men ikke spørgsmål.<hr><p>
+
+
+        <center class="t15">&bull; &bull; &bull; <b>SVA SYNTAX</b> &bull; &bull; &bull;</center><p>
+
+<div class="box"><span class="ax">Truth 3</span><p>
+<span class="r">Internalize:</span><p>
+Classifying clauses as either main or subordinate is not syntax dependent but rather <b>stand-on-one's-own</b> dependent.<p>
+
+<span class="r">Internaliser:</span><p>
+At klassificere sætninger som enten hoved- eller hed-sætninger er ikke syntaksafhængig, men snarere <b>stå-alene</b> afhængig.<img valign=bottom src="dansk.png" width="25" height="25">
+</div><p>
+
+<span class="log">THE SVA RULE</span> In Danish, statements which employ the SVA syntax are <span class="b">(1)</span>either main clauses introduced by the subject of the clause itself or <span class="b">(2)</span>subordinate clauses introduced by OMEFS, that is <span class="b">og, men, eller, for,</span> and <span class="b">så</span> (only when <span class="r">så</span> introduces a <b>clause of result</b>)</span>.<br>
+<img valign=bottom src="dansk.png" width="25" height="25"><span class="k">På dansk er udsagn, der anvender SVA-syntaksen, enten hovedsætninger indført af selve sætningens subjekt eller ledsætninger indført af OMEFS, det vil sige <span class="b">og, men, eller, for,</span> og <span class="b">så</span> (kun når <span class="r">så</span> indfører en <b>resultatsledsætning</b>)</span>.</span><p>
+
+<span class="ex">example 52</span><br>
+<span class="b">Most novels never keep a distance from the protagonist.</span> (main clause)<br>
+<img valign=bottom src="dansk.png" width="25" height="25"><span class="k"><span class="b"><span class="u1">De fleste romaner</span><sup>S</sup> <span class="u1">holder</span><sup>V</sup> <span class="u1">aldrig</span><sup>A</sup> afstand til hovedpersonen.</span></span> (hovedsætning)<p>
+
+<span class="ex">example 53</span><br>
+<span class="r">(1)</span><span class="b">I get up early, <span class="r">(2)</span>so I am never late.</span>  [(1)main clause, (2)subordinate clause of result]<br>
+<img valign=bottom src="dansk.png" width="25" height="25"><span class="k"><span class="r">(1)</span><span class="b"><span class="u1">Jeg</span><sup>S</sup> <span class="u1">står</span><sup>V</sup> <span class="u1">tidligt</span><sup>A</sup> op, <span class="r">(2)</span>så <span class="u1">jeg</span><sup>S</sup> <span class="u1">kommer</span><sup>V</sup> <span class="u1">aldrig</span><sup>A</sup> for sent.</span></span><br>
+[(1)hovedsætning, (2)resultatsledsætning]</span><p>
+
+In <span class="ex">example 52</span>, we have an SVA main clause and in <span class="ex">example 53</span> we have another main SVA clause plus a subordinate SVA clause.<p>
+
+    <center class="t15">CLAUSES OF PURPOSE (så)</center><p>
+
+In Danish, the conjunction <b>så</b> introduces <span class="r">(1)</span>clauses of <i>result</i>, <span class="r">(2)</span>clauses of <i>purpose</i>, and <span class="r">(3)</span>clauses of <i>succession</i>.<p>
+
+Now, 99 out 100 grammarians cannot tell the difference between a clause of result from a clause of purpose. To cover their ignorance, they define some clauses as <b>result/purpose</b>, as if clauses of purpose and clauses of result were identical, which of course is not true.<p>
+
+<img valign=bottom src="dansk.png" width="25" height="25">Nu kan 99 ud af 100 grammatikere ikke kende forskel på en resultatssætning fra en formålssætning. For at dække over deres uvidenhed definerer de nogle sætninger som <b>resultat/formål</b>, som om formålssætninger og resultatsætninger var identiske, hvilket selvfølgelig ikke er sandt.
+
+This requires, then, some explaining, so let us do just that.<p>
+
+First we have to define the times. In grammar, we have 4 times:<p>
+
+    <ol>
+        <li>general time <span class="ex">example 54</span> <span class="b">I do my laundry twice a week.</span><p>
+
+        <li>present time <span class="ex">example 55</span> <span class="b">I am doing my laundry right now.</span><p>
+
+        <li>future time <span class="ex">example 56</span> <span class="b">I am going to do my laundry tomorrow.</span><p>
+
+        <li>past time <span class="ex">example 57</span> <span class="b">I did my laundry yesterday.</span><p>
+    </ol><p>
+
+    Next we have to define the concepts of <b>real</b> and <b>unreal</b> clauses.<p>
+
+        <span class="def">def. 29</span> A clause is <b>real</b> if, at the moment it is spoken, it is a fact.<p>
+        <span class="def">def. 30</span> A clause is <b>unreal</b> if, at the moment it is spoken, it is <b>not</b> a fact.<p>
+        <span class="ex">example 58</span> <span class="r">(1)</span>Tim bought one extra ticket for his nephew <span class="r">(2)</span><b>so</b> he would not go alone to the soccer game.<p>
+
+            In <span class="ex">example 58</span>, clause <span class="r">(1)</span> is a <b>main real</b> clause and clause <span class="r">(2)</span>is a <b>subordinate unreal</b> clause.<p> Notice that at the moment <span class="ex">example 58</span> was spoken, clause <span class="r">(1)</span> was a fact but clause <span class="r">(2)</span> was not.<p> That is exactly what makes <span class="ex">example 58/2</span> a clause of purpose. <span class="ex">example 58/2</span> is telling us the purpose <span class="ex">example 58/1</span> happened.<p>
+
+    In English, we could also use <b>so that</b> instead of <b>so</b>.<p>
+
+    <span class="ex">example 58</span> <span class="r">(1)</span>Tim bought one extra ticket for his nephew <span class="r">(2)</span><b>so that</b> he would not go alone to the soccer game.<p>
+
+        <img valign=bottom src="dansk.png" width="25" height="25"><span class="r">(1)</span>Tim købte en ekstra billet til sin nevø, <span class="r">(2)</span>så han ikke skulle gå alene til fodboldkampen.<br>(clause of purpose &rarr; SAV)<p>
+
+        In English, clauses of purpose <span class="r">(1)</span>are not offset by comma and <span class="r">(2)</span>the order of the clauses can be reversed.<p>
+
+        However, if we reverse the order of the clauses, then we have to use comma:<p>
+
+        <span class="ex">example 58</span> <span class="r">(1)</span><b>So that</b> he would not go alone to the soccer game, <span class="r">(2)</span>Tim bought one extra ticket.<p>
+
+        <div class="box">
+            <center>Clauses of <i>purpose</i></center><p>
+            &bull; In English, when main clause comes first, no comma; when subordinate clause comes first, comma. Conjunction can be either <b>so</b> or <b>so that</b>.<p>
+                In all languages, main clause is real, subordinate clause is unreal.<p>
+
+
+                <span class="b">Tim bought one extra ticket for his nephew so (that) he would not go alone to the soccer game.</span><p>
+                <span class="b">So that</b> he would not go alone to the soccer game, Tim bought one extra ticket.</span><p>
+
+            &bull; In Danish, regardless whether main clause comes first or second, always comma and always SAV syntax; when the main clause comes second, it undergoes inversion.<p>
+
+            <span class="b">Tim købte en ekstra billet til sin nevø, så han ikke skulle gå alene til fodboldkampen.</span> (SAV)<p>
+
+            <span class="b">For at han ikke skulle gå til fodboldkampen alene, købte Tim en ekstra billet.</span> (SAV)
+        </div><p>
+
+
+            <center style="font-size:15pt;">CLAUSES OF RESULT (så)</center><p>
+
+
+                <span class="ex">example 59</span> <span class="b"><span class="r">(1)</span>She wanted his full attention, <span class="r">(2)</span>so she also bought an expensive outfit.</span><p>
+
+                <img valign=bottom src="dansk.png" width="25" height="25"><span class="b"><span class="r">(1)</span>Hun ville have hans fulde opmærksomhed, <span class="r">(2)</span>så hun købte også et dyrt outfit.</span> (SVA)<p>
+
+                Clause <span class="r">(1)</span> is a <b>main real</b> clause and clause <span class="r">(2)</span> is a <b>subordinate real</b> clause. As we see, both clauses are real and <span class="r">(3)</span>reversing the order of the clauses is not an option because it makes no logical sense.<p>
+
+                These 3 characteristics is what makes a clause a result clause.<p>
+
+                <img valign=bottom src="dansk.png" width="25" height="25">Sætning (1) er en reel hovedsætning, og sætning (2) er en underordnet en reel hedsætning. Som vi ser, er begge sætninger reelle, og (3) at vende rækkefølgen af sætningerne er ikke en mulighed, fordi det ikke giver nogen logisk mening.
+
+                Disse 3 karakteristika er det, der gør en sætning til en resultatsætning.<p>
+        
+
+                <div class="box">
+            <center>Clauses of <i>result</i></center><p>
+                <ul>
+                <li>As a rule, subordinate clauses expain why main clauses happen. However, in clauses of result, the opposite happens, that is main clauses explain why subordinate clauses happen.<p>
+                <li>In both languages, the two clauses are set off by comma.<p>
+                <li>In all languages, both clauses are real and reversing the order of the clauses is not an option.<p>
+                <li>In Danish, clauses of <i>result</i> employ the SVA syntax.
+                </ul>
+        </div><p>
+
+
+            <center style="font-size:15pt;">TIME CLAUSES (så)</center><p>
+
+
+                <span class="ex">example 60</span> <span class="b"><span class="r">(1)</span>First I have lunch, <span class="r">(2)</span>then I always take a nap.</span><p>
+
+                <img valign=bottom src="dansk.png" width="25" height="25"><span class="b"><span class="r">(1)</span>Først spiser jeg frokost, <span class="r">(2)</span>så tager jeg altid en lur.</span> (VSA)<p>
+
+                Clause <span class="r">(1)</span> is a <b>main real</b> clause and clause <span class="r">(2)</span> is a <b>subordinate real</b> clause. As we see, both clauses are real and <span class="r">(3)</span>reversing the order of the clauses requires changing the conjunction while the main clause undergoes inversion.<p>
+
+                <img valign=bottom src="dansk.png" width="25" height="25">Sætning <span class="r">(1)</span> er en reel hovedsætning, og sætning <span class="r">(2)</span> er en reel hedsætning. Som vi ser, er begge sætninger reelle og <span class="r">(3)</span> at vende rækkefølgen af sætningerne kræver ændring af konjunktionen, mens hovedsætningen gennemgår inversion.<p>
+
+                <span class="ex">example 61</span> <span class="b"><span class="r">(1)</span>After I have lunch, <span class="r">(2)</span>I always take a nap.</span><p>
+
+                <img valign=bottom src="dansk.png" width="25" height="25"><span class="b"><span class="r">(1)</span>Efter jeg har spist frokost, <span class="r">(1)</span>tager jeg altid en lur.</span> (VSA)<p>
+        
+
+                <div class="box">
+            <center><i>Time</i> Clauses</center><p>
+                &bull;&nbsp; In both languages, the two clauses are set off by comma.<p>
+                &bull; In all languages, both clauses are real and reversing the order of the clause requires changing the conjunction while, in Danish, the main clause undergoes inversion.<p>
+
+                &bull;&nbsp; In Danish, <i>time</i> clauses with  <b>så</b> employ the VSA syntax.<p>
+        </div><p>
+
+            Perhaps some of you still do not see clearly the difference between clauses of result and clauses of purpose. In that case, I can say this: the difference is not cosmetic, it is a contextually fundamental difference. Clauses of result and clauses of purpose say totally different things.<p>
+
+
+            <center style="font-size:15pt;">DIGGING A BIT DEEPER</center><p>
+
+
+                Let us look at these 2 sentences:<p>
+
+                    <span class="ex">example 62</span> <span class="b"><span class="r">(1)</span>I only eat a little, <span class="r">(2)</span>so I never feel bad.</span><p>
+
+                    <img valign=bottom src="dansk.png" width="25" height="25"><span class="b"><span class="r">(1)</span>Jeg spiser kun lidt, <span class="r">(2)</span>så jeg har det aldrig dårligt.</span> [<span class="r">(2)</span>SVA]<p>
+
+                    <span class="ex">example 63</span> <span class="b"><span class="r">(1)</span>I only eat a little <span class="r">(2)</span>so I never feel bad.</span><p>
+
+                    <img valign=bottom src="dansk.png" width="25" height="25"><span class="b"><span class="r">(1)</span>Jeg spiser kun lidt, <span class="r">(2)</span>så jeg aldrig har det dårligt.</span> [<span class="r">(2)</span>SAV]<p>
+
+            At first sight, they seem identical, but they are not. The difference is the comma in <span class="ex">example 62</span>. That difference is a huge one because it makes <span class="ex">example 62</span> a clause of result. On the other hand, <span class="ex">example 63</span> is a clause of purpose.<p>
+
+            Let us make a few general obseravations and then let us see what this one difference, the comma, really means:<p>
+
+            <ol>
+            <li>The <i>time</i> of both clauses is <i>general</i>. In other words, both clauses describe what happens in general.<p>
+
+            <li>Both clauses in both languages are comprised of 1 main clause, the 1st clause, and 1 subordinate clause, the 2nd clause.<p>
+
+            <li>While in English it is the comma that makes the difference, in Danish, it is the SVA syntax versus the SAV syntax that makes the difference.<p>
+
+            <li>In English, in <span class="ex">example 63</span>, we have the choice of using <span class="r">so that</span> instead of <span class="r">so</span> without any change in meaning; however, we cannot do the same in <span class="ex">example 62</span>.<p>
+
+            <li>Reversing the order of the clauses in <span class="ex">example 62</span> is not an option because it would make no logical sense, but we can certainly reverse the order of the clauses in <span class="ex">example 63</span>.<p>
+
+            <li>In English, if we reverse the order of clauses in <span class="ex">example 63</span>, we must use a comma and we must use <span class="r">so that</span> instead of <span class="r">so</span>:<p>
+
+                <span class="ex">example 64</span> <span class="b"><span class="r">(1)</span>So that I never feel bad, <span class="r">(2)</span>I only eat a little.</span><p>
+
+            In Danish, if we reverse the order of clauses in <span class="ex">example 63</span>, we must use <span class="r">for at</span> instead of <span class="r">så</span> and the main clause undergoes inversion:<p>
+
+                <img valign=bottom src="dansk.png" width="25" height="25"><span class="b"><span class="r">(1)</span>For at jeg aldrig har det dårligt, <span class="r">(2)</span>spiser jeg kun lidt.</span> [<span class="r">(1)</span>SAV]<p>
+
+            <li>Contextually speaking, both clauses in <span class="ex">example 62</span> are <b>real</b> because both represent facts; but in <span class="ex">example 63</span>, clause <span class="r">(2)</span> is <b>unreal</b> because, being a clause of purpose, it makes sense to represent a hope or a plan or an expectation which is to be materialized sometime after the sentence is spoken; and it doesn't matter that the time of <span class="ex">example 63</span> is general. What the speaker is saying is that each time they eat a little, they do it hoping or expecting not to feel bad after their meal and, until that happens, <span class="ex">example 63b</span> is not a fact.<p>
+
+            Clause <span class="ex">example 62b</span> is a confirmation that it itself happens all the time in a consistent invariable fashion, while <span class="ex">example 63b</span> is a hope or a plan or a highly likely expectation.<p>
+
+            Moreover, clause <span class="ex">example 62a</span> explains why clause <span class="ex">example 62b</span> happens, which is unique to clauses of result, whereas <span class="ex">example 63b</span> explains why <span class="ex">example 62a</span> happens, and that is an important logical difference.<p>
+
+            Looking at this from a different angle.<p>
+
+            Let us formulate the question to which <span class="ex">example 62a</span> would be the answer:<p>
+
+            <div class="br">
+                <ul>
+            <li>&mdash; Why is it that you never feel bad after having a meal?<p>
+
+            &mdash; Because I eat a little.<br><span class="bl">(an unequivocal confirmation of a fact whose result is that I never feel bad after meals)</span><p>
+
+            <span class="bl">Now, let us formulate the question to which <span class="ex">example 63b</span> would be the answer:</span><p>
+
+            <li>&mdash; Why do you eat a little?<p>
+
+            &mdash; So that I never feel bad. <span class="bl">(a hope or an expectation)</span>
+            </ul>
+            </div><p> 
+
+            Please, take time to internalize points 1 to 7 above.<p>
+            </ol><p>
+
+
+                <center style="font-size:15pt;">LET US DIG EVEN DEEPER</center><p>
+
+
+             <center>ANATOMY OF A SENTENCE &bull; <span class="k">EN SÆTNINGS ANATOMI</span> <img valign=bottom src="dansk.png" width="25" height="25"></center><p>
+
+            <center>Main clauses will be in <span class="br">brown type</span> and subordinate clauses will be in <span class="b">blue type</span>.</center><p>
+
+                
+       
+       
+
+    There are 7 types of Adverb Clauses:<p>
+
+
+            <ol>
+                <li>clauses of purpose (clauses answer <b>why</b> questions) <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k">formål ledsætninger</span><p>
+                
+                <li>resultative clauses (clauses answer <b>why</b> questions) <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k">resultatmæssige ledsætninger</span><p>
+
+                <li>aetiological clauses (clauses answer <b>why</b> questions) <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k">ætiologiske ledsætninger</span> <p>
+
+                <li>adversity in eventuality clauses (clauses offer suggestions) <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k">modgang i en eventualitet</span><p>
+
+                <li>adversity in eventuality clauses (clauses offer suggestions) <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k">modgang i en eventualitet</span><p>
+
+                <li>against-the-norm clauses (what goes against the norm) <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k">mod normen ledsætninger</span><p>
+
+                <li>acumen* clauses <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k">skarpsindighedsledsætninger</span><p>
+
+                <li>time clauses (when) <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k">tidsledsætninger</span>
+            </ol><hr>
+            *<b>acumen</b> is the ability to make good judgments and quick decisions<br>
+            <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k"><b>acumen</b> er evnen til at træffe gode vurderinger og hurtige beslutninger.</span>
+            <hr><p>
+
+                Admittedly, with some help from Dionysius the Thrax and Apollonius Dyscolus, let us start analyzing examples to get an idea of the challenges awaiting us as well as to master the art of identifying the different types of adverb clauses...<p>
+
+                <center>&bull; &bull; &bull;</center><p>
+
+                    <!--example 42 below-->
+
+                    <center><span class="ex">example 42</span> Purpose</center><p>
+
+
+            
+<center>so / so that &bull; så <img valign=bottom src="dansk.png" width="25" height="25"></center><p>
+
+<center>
+<div class="container">
+
+  <elem type="drug">
+    <token class="br">He has bought a TV set</token>
+    <div class=" label drug">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><b>so (that)</b> we can watch the soccer games.</token>
+    <div class=" label person">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  </elem>
+
+</div>
+
+
+  <div class="container">
+
+    <elem type="drug">
+    <token class="br">Han har købt et tv,</token>
+    <div class=" label drug">
+      <span class="s1">Hovedsætning</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><b>så</b> vi kan se fodboldkampene.</token>
+    <div class=" label person">
+      <span class="s2">Ledsætning</span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><br>&nbsp;<br>
+
+
+<center>REVERSAL OF ORDER IS POSSIBLE <span class="log">Logic</span></center><p>
+
+    <center>
+
+        <div class="container">
+
+  <elem type="drug">
+    <token class="b"><b>So that</b> we can watch the soccer games,</token>
+    <div class=" label drug">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br">he has bought a TV set</token>
+    <div class=" label person">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+</div>
+
+  <div class="container">
+
+    <elem type="drug">
+    <token class="b"><b>For at</b> vi kan se fodboldkampene,</token>
+    <div class=" label drug">
+      <span class="s2">Ledsætning</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br">han har købt et tv,</token>
+    <div class=" label person">
+      <span class="s1">Hovedsætning</span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><p>
+
+
+                
+<center>
+        <div class="container">
+<span class="ex">example 43</span>
+  <elem type="drug">
+    <token class="br">The room was dark,</token>
+    <div class=" label drug">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><b>so</b> she turned on the light.</token>
+    <div class=" label person">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  <span class="bl">(result &bull; real)</span></elem>
+
+</div><p>
+
+</center>
+
+    <center>
+    <table border=1 cellpadding=15 cellspacing=0>
+    <tr><td rowspan=3 class="r"><b>Why</b> did she turn on the light?</td><td class="b">... so (that) she could see. <span class="bl">(purpose)</span></td></td></tr>
+
+    <tr><td class="b">The room was dark, so ... <span class="bl">(result*)</span></td></tr>
+
+    <tr><td class="b">... because the room was dark. <span class="bl">(aetiology)</span></td></tr>
+
+    </table>
+
+</center><p>
+
+    <center class="ast">* * * * *</center><p>
+
+    <center class="b"><b>CRITERIA for AETIOLOGY</b> <span class="ex">example 44</span> </center><p>
+
+                <ol>
+                    <li>Is reversal of <b>clauses</b> possible? <span class="r">Yes</span><p>
+
+                    <li>Is the <b>subordinate clause</b> telling us why the <b>main clause</b> happens/happened? <span class="r">Yes</span><p>
+
+                    <li>Is the <b>main clause</b> telling us why the <b>subordinate clause</b> happens/happened? <span class="r">No</span><p>
+
+                    <li>Is the <b>subordinate clause</b> real? <span class="r">Yes</span><p>
+
+                    <li>Is the <b>subordinate clause</b> unreal? <span class="r">No</span><p>
+
+                        Y Y N Y N<p>
+
+                        If <b>1</b> and <b>4</b> are positive, we're dealing with <b>aetiology</b>
+                </ol><p>
+
+
+<center>
+            <div class="container">
+<span class="ex">example 44</span>
+  <elem type="drug">
+    <token class="br">People love</token>
+    <div class=" label drug">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><b>because</b> they need to care for others.</token>
+    <div class=" label person">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  </elem>
+
+</div>
+</center><p>
+
+    <center>
+    <table border=1 cellpadding=15 cellspacing=0>
+    <tr><td rowspan=3 class="r"><b>Why</b> do people love?</td><td class="b">... so (that) they can feel good. <span class="bl">(purpose)</span></td></td></tr>
+
+    <tr><td class="b">They feel incomplete, so ... <span class="bl">(result)</span></td></tr>
+
+    <tr><td class="b">... because they need to care for others. <span class="bl">(aetiology*)</span></td></tr>
+
+    </table>
+</center><p>
+
+
+        <center>--- tangle untangled ---</center><p>
+
+        <center class="ast">* * * * * * * * * * * * * * *</center><p>
+
+
+
+<!--example 45 below-->
+
+    <center><span class="ex">example 45</span> Time Clause</center><p>
+            
+<center>while &bull; <span class="k">mens</span> <img valign=bottom src="dansk.png" width="25" height="25"></center><p>
+
+<center>
+<div class="container">
+
+  <elem type="drug">
+    <token class="br">It started to snow</token>
+    <div class=" label drug">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><b>while</b> we were swimming.</token>
+    <div class=" label person">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  </elem>
+
+</div>
+</center><p>
+
+<center>
+  <div class="container">
+
+    <elem type="drug">
+    <token class="br"><span class="k">Det begyndte at sne,</span></token>
+    <div class=" label drug">
+      <span class="s1">Hovedsætning</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><span class="k"><b>mens</b> vi svømmede.</span></token>
+    <div class=" label person">
+      <span class="s2"><span class="k">Ledsætning</span></span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><p>
+
+
+<center>REVERSAL OF ORDER OF CLAUSES IS POSSIBLE <span class="log">Logic</span></center><p>
+
+
+<center>
+        <div class="container">
+
+  <elem type="drug">
+    <token class="b"><b>While</b> we were swimming,</token>
+    <div class=" label drug">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br">it started to snow.</token>
+    <div class=" label person">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+</div>
+</center><p>
+
+<center>
+  <div class="container">
+
+    <elem type="drug">
+    <token class="b"><span class="k"><b>Mens</b> vi svømmede,</span></token>
+    <div class=" label drug">
+      <span class="s2"><span class="k">Ledsætning</span></span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br"><span class="k">begyndte det at sne.</span></token>
+    <div class=" label person">
+      <span class="s1"><span class="k">Hovedsætning</span></span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><p>
+
+    <i>Time clauses</i> are relatively easy to identify. The crucial points to see here is that the subordinate clause is telling us what was in progress <b>when</b> the main clause happened. The subordninate clause establishes a <span class="rel">relationship</span> of <b>time</b> between the 2 clauses. The sentence could be rewritten: <i>It started to rain when we were swimming.</i><p>
+
+        <span class="pt">point to remember</span> the subordinate clause is telling us <b>when</b> the main clause happened<p>
+
+
+<!--example 46 below-->
+
+    <center><span class="ex">example 46</span> Contrast Clause</center><p>
+            
+<center>while &bull; <span class="k">mens</span> <img valign=bottom src="dansk.png" width="25" height="25"></center><p>
+
+<center>
+<div class="container">
+
+  <elem type="drug">
+    <token class="br">Most of my collegues speak at least three languages</token>
+    <div class=" label drug">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><b>while</b> I speak only English.</token>
+    <div class=" label person">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  </elem>
+
+</div>
+</center><p>
+
+<center>
+  <div class="container">
+
+    <elem type="drug">
+    <token class="br"><span class="k">De fleste af mine kolleger taler mindst tre sprog,</span></token>
+    <div class=" label drug">
+      <span class="s1">Hovedsætning</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><span class="k"><b>mens</b> jeg kun taler engelsk.</span></token>
+    <div class=" label person">
+      <span class="s2"><span class="k">Ledsætning</span></span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><p>
+
+
+<center>REVERSAL OF ORDER OF CLAUSES IS POSSIBLE <span class="log">Logic</span></center><p>
+
+
+<center>
+        <div class="container">
+
+  <elem type="drug">
+    <token class="b"><b>While</b> I speak only English,</token>
+    <div class=" label drug">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br">most of my collegues speak at least three languages</token>
+    <div class=" label person">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+</div>
+</center><p>
+
+<center>
+  <div class="container">
+
+    <elem type="drug">
+    <token class="b"><span class="k"><b>Mens</b> jeg kun taler engelsk,</span></token>
+    <div class=" label drug">
+      <span class="s2"><span class="k">Ledsætning</span></span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br"><span class="k">taler de fleste af mine kolleger mindst tre sprog.</span></token>
+    <div class=" label person">
+      <span class="s1"><span class="k">Hovedsætning</span></span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><p>
+
+    The crucial point to see here is that the subordinate clause is highlighting the contrast between the two clauses. The subordninate clause establishes a <span class="rel">relationship</span> of <b>contrast</b> between the 2 clauses. The sentence could be rewritten: <i>I speak only English but they speak at least three languages.</i><p>
+
+        <span class="pt">point to remember</span> Depending on the context, <b>while</b> can be either a <b>time</b> conjunction or a conjunction of <b>contrast</b>.<p>
+
+
+<!--example 47 below-->
+
+    <center><span class="ex">example 47</span> Time Clause</center><p>
+            
+<center>since &bull; <span class="k">siden</span> <img valign=bottom src="dansk.png" width="25" height="25"></center><p>
+
+<center>
+<div class="container">
+
+  <elem type="drug">
+    <token class="br">I haven't seen them</token>
+    <div class=" label drug">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><b>since</b> school started.</token>
+    <div class=" label person">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  </elem>
+
+</div>
+</center><p>
+
+<center>
+  <div class="container">
+
+    <elem type="drug">
+    <token class="br"><span class="k">Jeg har ikke set dem</span></token>
+    <div class=" label drug">
+      <span class="s1">Hovedsætning</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><span class="k"><b>siden</b> skolen startede.</span></token>
+    <div class=" label person">
+      <span class="s2"><span class="k">Ledsætning</span></span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><p>
+
+
+<center>REVERSAL OF ORDER OF CLAUSES IS POSSIBLE <span class="log">Logic</span></center><p>
+
+
+<center>
+        <div class="container">
+
+  <elem type="drug">
+    <token class="b"><b>Since</b> school started,</token>
+    <div class=" label drug">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br">I haven't seen them.</token>
+    <div class=" label person">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+</div>
+</center><p>
+
+<center>
+  <div class="container">
+
+    <elem type="drug">
+    <token class="b"><span class="k"><b>Siden</b> skolen startede,</span></token>
+    <div class=" label drug">
+      <span class="s2"><span class="k">Ledsætning</span></span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br"><span class="k">har jeg ikke set dem.</span></token>
+    <div class=" label person">
+      <span class="s1"><span class="k">Hovedsætning</span></span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><p>
+
+    The crucial point to see here is that the subordinate clause is highlighting the point in time since the main clause has not happened. It is obvious, then, that the subordninate clause establishes a <span class="rel">relationship</span> of <b>time</b> between the 2 clauses. The sentence could be rewritten: <i>Last time I saw saw them was before school started.</i><p>
+
+        <span class="pt">point to remember</span> Understanding the context is crucial.<p>
+
+
+            <!--example 48 below-->
+
+    <center><span class="ex">example 48</span> Aetiological Clause</center><p>
+            
+<center>since &bull; <span class="k">da</span> <img valign=bottom src="dansk.png" width="25" height="25"></center><p>
+
+<center>
+<div class="container">
+
+  <elem type="drug">
+    <token class="br">He was evicted</token>
+    <div class=" label drug">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><b>since</b> ha had not paid the rent for three months.</token>
+    <div class=" label person">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  </elem>
+
+</div>
+</center><p>
+
+<center>
+  <div class="container">
+
+    <elem type="drug">
+    <token class="br"><span class="k">Han blev smidt ud,</span></token>
+    <div class=" label drug">
+      <span class="s1">Hovedsætning</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><span class="k"><b>da</b> han ikke havde betalt huslejen i tre måneder.</span></token>
+    <div class=" label person">
+      <span class="s2"><span class="k">Ledsætning</span></span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><p>
+
+
+<center>REVERSAL OF ORDER OF CLAUSES IS POSSIBLE <span class="log">Logic</span></center><p>
+
+
+<center>
+        <div class="container">
+
+  <elem type="drug">
+    <token class="b"><b>Since</b> ha had not paid the rent for three months,</token>
+    <div class=" label drug">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br">he was evicted.</token>
+    <div class=" label person">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+</div>
+</center><p>
+
+<center>
+  <div class="container">
+
+    <elem type="drug">
+    <token class="b"><span class="k"><b>Da</b> han ikke havde betalt huslejen i tre måneder,</span></token>
+    <div class=" label drug">
+      <span class="s2"><span class="k">Ledsætning</span></span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br"><span class="k">blev han smidt ud.</span></token>
+    <div class=" label person">
+      <span class="s1"><span class="k">Hovedsætning</span></span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><p>
+
+    The crucial point to see here is that the subordinate clause explains the reason why the main clause happened. It is obvious, then, that the subordninate clause establishes a <span class="rel">relationship</span> of <b>aetiology</b> or <b>causality</b> between the 2 clauses. The sentence could be rewritten: <i>I trusted you before, but now that you have lied to me, I cannot trust you any more.</i><p>
+
+        <span class="pt">point to remember</span> Depending on the context, <b>since</b> can be either a <b>time</b> conjunction or a conjunction of <b>aetiology</b>.<p>
+
+
+    <!--example 49 below-->
+
+    <center><span class="ex">example 49</span> Time Clause</center><p>
+            
+<center>as &bull; <span class="k">da</span> <img valign=bottom src="dansk.png" width="25" height="25"></center><p>
+
+<center>
+<div class="container">
+
+  <elem type="drug">
+    <token class="br">We can’t go to the movies</token>
+    <div class=" label drug">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b">&nbsp; <b>as</b> it is too late. &nbsp;</token>
+    <div class=" label person">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  </elem>
+
+</div>
+</center><p>
+
+<center>
+  <div class="container">
+
+    <elem type="drug">
+    <token class="br"><span class="k">Vi kan ikke gå i biografen,</span></token>
+    <div class=" label drug">
+      <span class="s1">Hovedsætning</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><span class="k"><b>da</b> det er for sent.</span></token>
+    <div class=" label person">
+      <span class="s2"><span class="k">Ledsætning</span></span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><p>
+
+
+<center>REVERSAL OF ORDER OF CLAUSES IS POSSIBLE <span class="log">Logic</span></center><p>
+
+
+<center>
+        <div class="container">
+
+  <elem type="drug">
+    <token class="b">&nbsp; <b>As</b> it is too late, &nbsp;</token>
+    <div class=" label drug">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br">we can't go to the movies.</token>
+    <div class=" label person">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+</div>
+</center><p>
+
+<center>
+  <div class="container">
+
+    <elem type="drug">
+    <token class="b"><span class="k"><b>Da</b> det er for sent,</span></token>
+    <div class=" label drug">
+      <span class="s2"><span class="k">Ledsætning</span></span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br"><span class="k">kan vi ikke gå i biografen.</span></token>
+    <div class=" label person">
+      <span class="s1"><span class="k">Hovedsætning</span></span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><p>
+
+    The crucial point to see here is that the subordinate clause explains the reason why the main clause happened. It is obvious, then, that the subordninate clause establishes a <span class="rel">relationship</span> of <b>aetiology</b> or <b>causality</b> between the 2 clauses. The sentence could be rewritten: <i>We can't go to the movies because it is too late.</i><p>
+
+        <span class="pt">point to remember</span> Bear in mind that, in English, <b>as</b> is one of the most versatile conjunctions. It answers questions of <b>how, when, why, extent</b> et al.<p>
+
+     <!--example 50 below-->
+
+    <center><span class="ex">example 50</span> Time Clause</center><p>
+            
+<center>as &bull; <span class="k">mens</span> <img valign=bottom src="dansk.png" width="25" height="25"></center><p>
+
+<center>
+<div class="container">
+
+  <elem type="drug">
+    <token class="br">She ran into an old friend from school</token>
+    <div class=" label drug">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><b>as</b> she was walking in the old market.</token>
+    <div class=" label person">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  </elem>
+
+</div>
+</center><p>
+
+<center>
+  <div class="container">
+
+    <elem type="drug">
+    <token class="br"><span class="k">Hun stødte på en gammel ven fra skolen,</span></token>
+    <div class=" label drug">
+      <span class="s1">Hovedsætning</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><span class="k"><b>mens</b> hun gik på det gamle marked.</span></token>
+    <div class=" label person">
+      <span class="s2"><span class="k">Ledsætning</span></span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><p>
+
+
+<center>REVERSAL OF ORDER OF CLAUSES IS POSSIBLE <span class="log">Logic</span></center><p>
+
+
+<center>
+        <div class="container">
+
+  <elem type="drug">
+    <token class="b"><b>As</b> she was walking in the old market,</token>
+    <div class=" label drug">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br">she ran into an old friend from school.</token>
+    <div class=" label person">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+</div>
+</center><p>
+
+<center>
+  <div class="container">
+
+    <elem type="drug">
+    <token class="b"><span class="k"><b>Mens</b> hun gik på det gamle marked,</span></token>
+    <div class=" label drug">
+      <span class="s2"><span class="k">Ledsætning</span></span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br"><span class="k">stødte hun på en gammel ven fra skolen.</span></token>
+    <div class=" label person">
+      <span class="s1"><span class="k">Hovedsætning</span></span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><p>
+
+    The crucial point to see here is that the subordinate clause is telling us what was in progress when the clause happened. It is obvious, then, that the subordninate clause establishes a <span class="rel">relationship</span> of <b>time</b> between the 2 clauses. The sentence could be rewritten: <i>She was walking in the old market when she ran into an old friend from school.</i><p>
+
+        <span class="pt">point to remember</span> Bear in mind that, in English, <b>as</b> is one of the most versatile conjunctions. It answers questions of <b>how, when, why, extent</b> et al.<p>
+
+
+
+
+
+
+
+<center><img src="sep.jpg"></center><p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+            <center>A WORD ON DEFINITIONS &bull; EN KOMMENTER OM DEFINITIONER</center><p>
+
+    I trust that the importance of defintions has been sufficiently demonstrated.<p>
+
+    <b>Remember</b> that definitions are not formulated just to waste paper and ink but rather to be <b>religiously</b> observed.<p>
+
+If definitions are not observed, their very purpose is defeated and chaos ensues.<p>
+
+Ridiculously, in the overwhelming majority of grammar books that I have come across, authors repeatedly <b>ignore</b> their own definitions, which betrays their mechanical or robotic attitude towards authoring.<br>
+<center><img src="page3.png" width="533" height="295"></center><br>
+This is the top part of page 3 of a Danish grammar "Skriverguiden" titled "At Skrive" authored by Fanny Slotorub. It is a guide to another book by the same title and author on "Tekstsammenhæng og argumentation," ISBN 978-87-636-0418-5, published by "Praxis."<p>
+
+These 2 books contain a plethora of errors, all because of one single but very important misunderstanding, which we are going to unravel in depth in the following paragraphs.<p> 
+
+The books in question are written in Danish and the author defines a <b>main clause</b> <span class="r">as a clause that can stand on its own</span>, <span class="def">def. 24a</span>, which is correct.<p>
+
+In the book, as you can see in the screenshot above, the following 2 clauses are cited as examples of a main clause: <img valign=bottom src="dansk.png" width="25" height="25"> <span class="b">(a)</span><span class="b"><span class="k">Vi spiser.</span></span> and <img valign=bottom src="dansk.png" width="25" height="25"> <span class="b">(b)</span> <span class="r"><span class="k">For</span> <span class="b">vi er sultne.</span></span> ( <span class="ex">example 38</span> We eat. / <span class="ex">example 39</span> <span class="r">For</span> we are hungry.), <b>for</b> here meaning <b>because</b>.<p>
+
+Here, the author ignores her own definition since <span class="ex">example 39</span> cannot stand on its own and, therefore, by definition, it does not qualify as a main clause.<p>
+
+Actually, <span class="ex">example 39</span> is a subordinate clause not just in English and Danish, but in all languages.<p>
+
+But what exactly does <i>can stand on its own /</i> <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k"><i>kan stå alene</i></span> mean in the definition of a main clause?<p>
+
+It means that no additional information is necessary for a clause to make sense.<p>
+
+Let us consider these 2 dialogs:<p>
+
+<div class="dial">
+<span class="br">dialog 2</span><p>
+
+    <span class="b">Son</span> &mdash; Good morning! For we are hungry.<p>
+    
+    <span class="b">Mother</span> &mdash; What!?<p>
+
+In dialog 1, mother is confused because her son is uttering only a <span class="r">cause</span>, but not an <span class="r">effect</span>, so it all sounds gibberish; <i>for</i> is a <span class="r">cause-and-effect</span> or <span class="r">aetiological</span> conjunction and it introduces an <span class="r">aetiological</span> clause. <span class="r">Aetiological</span> clauses are subordinate clauses and require additional information in order for them to make sense. (aetiological or etiological)<p>
+
+<center>&bull; &bull; &bull;</center><p>
+
+</div>
+
+            
+<div class="dial">
+    <span class="br">dialog 3</span><p>
+    
+
+    <span class="b">Son</span> &mdash; Good morning! We are hungry.<p>
+
+    <span class="b">Mother</span> &mdash; Well, make some breakfast.<p>
+
+    In dialog 3,  communication flows smoothly.
+</div><p>
+
+It is obvious that <span class="ex">example 39</span> cannot stand on its own and therefore it is a subordinate clause. Period!<p>
+
+So, what is going on?<p>
+
+Let me explain.<p>
+
+In Danish, in principle, the syntax of main clauses happens to be <b>S</b>ubject + <b>V</b>erb + <b>A</b>dverb or SVA.<p>
+For instance, <span class="b"><img valign=bottom src="dansk.png" width="25" height="25"> <span class="u1"><span class="k">Vi</span><sup>S</sup> <span class="u1">arbejder</span><sup>V</sup> <span class="u1">hårdt.</span></span><sup>A</sup> / 
+<span class="ex">example 40</span> <span class="u1">We</span><sup>S</sup> <span class="u1">work</span><sup>V</sup> <span class="u1">hard.</span><sup>A</sup></span><p>
+
+Now, the syntax of clauses introduced by <b>for</b> also happens to be SVA, that is the same syntax as that of main clauses.<p>
+
+For instance, <img valign=bottom src="dansk.png" width="25" height="25"> <span class="b"><span class="k">For <span class="u1">vejret</span><sup>S</sup> <span class="u1">er</span><sup>V</sup> <span class="u1">også</span><sup>A</sup> dårligt.</span> / <span class="ex">example 41</span> For <span class="u1">the weather</span><sup>S</sup> <span class="u1">is</span><sup>V</sup> <span class="u1">also</span><sup>A</sup> bad.</span><p>
+
+Voilà! The incredibly superficial logic emerges!<p>
+
+It goes like this:<p>
+
+Since the syntax of the clauses introduced by <b>for</b> is the same as the syntax of main clauses, it follows that clauses introduced by <b>for</b> are also main clauses, which of course is nonsense.<p>
+
+Never mind that clause <span class="ex">example 41</span> cannot stand on its own, which is <b>the opposite</b> of the very definition of main clauses the author herself cites on page 3 in her own book. That is all forgotten now, which betrays the mechanical or robotic mindset of most authors.<p>
+
+The author's logic would be OK if the definition of main clauses were <i><b>Main clauses</b> are clauses whose syntax is SVA</i>, which, of course, is not the definition of main clauses.<p>
+
+To correct the contradiction, <i>hovedsætningskonjuktioner / main-clause conjunctions</i> should be renamed <i>SVA conjunctions</i>.<p>
+
+<span class="log">stående regel 1</span> Hovedsætningskonjuktioner (og, men, eller, for, så) introducerer hovedsætninger.<p>
+<span class="log">standing rule 1</span> Main-clause-conjunctions (og, men, eller, for, så) introduce main clauses.<p>
+
+<span class="log">standing rule 1</span> is, of course, nonsense because it violates <span class="ax">Truth 2</span> on page 13.<p>
+
+The new rule, then, would be formulated as follows:<p>
+<span class="log">ny regle 1</span> SVA konjuktioner (og, men, eller, for, så) introducerer SVA ledsætninger.<p>
+<span class="log">new rule 1</span> SVA conjunctions (og, men, eller, for, så) introduce SVA subordinate clauses.<p>
+
+We'll be examining all this in depth, as a thorough analysis of main and subordinate clauses follows...<p>
+
+    <center>CONTRADICTIONS & INCONSISTENCIES<br>CAUSED BY PITFALLS IN THE WAY DANISH GRAMMAR IS PRESENTED</center><p>
+
+    <center class="k">MODSIGHEDER & UOVERENSSTEMMELSER<br>
+FORÅRSAGET AF FALDGRUBER PÅ DEN MÅDE, DANSK GRAMMATIK FREMSTILLES <img valign=bottom src="dansk.png" width="25" height="25"></center><p>
+
+    In standard Danish grammar books, a main clause is defined as <b>a clause which can stand on its own</b>, <span class="k">en sætning som kan stå alene</span><img valign=bottom src="dansk.png" width="25" height="25"></sub>, which is the correct defininition as stated in <span class="ax">Truth 2</span> on page ?.<p>
+
+    The problem is, however, that this definition is violated massively on practically every page of the books. Why? The answer is that, for some reason, Danish grammarians classify clauses as main or as subordinate not based on the definition that the authors themselves cite in their books but on syntax rules instead.<p>
+
+    
+
+    As a result, clauses that cannot stand on their own are nevertheless classified as main clauses just because their syntax is identical to that of main clauses. In other words, just like that, arbitrarily, the criterion of whether a clause is main or not ceases to be that the clause must stand on its own and is replaced silently by another criterion which is based on the syntax of the clause instead.<p>
+
+    
+
+    In Danish, the syntax of main clauses is <span class="r">S</span>ubject <span class="r">V</span>erb <span class="r">A</span>dverb, or <span class="r"><b>SVA</b></span>, whereas the syntax of subordinate clauses is <span class="r">S</span>ubject <span class="r">A</span>dverb <span class="r">V</span>erb, or <span class="r"><b>SAV</b></span>.<p>
+
+    
+
+    For example, <i>Because wages are also low</i> / <span class="k">For <span class="u1">lønnen</span><sup>S</sup> <span class="u1">er</span><sup>V</sup> <span class="u1">også</span><sup>A</sup> lav</span><img valign=bottom src="dansk.png" width="25" height="25"> is classified as a main clause even though it cannot stand on its own, just because its syntax is <span class="r"><b>SVA</b></span>, that is to say identical to that of main clauses.<p>
+
+    
+
+    <i>We never wake up late</i> / <span class="k">Vi</span><sup>S</sup> <span class="k">vågner</span><sup>V</sup> <span class="k">aldrig</span><sup>A</sup> sent</span><img valign=bottom src="dansk.png" width="25" height="25"> is also classified as a main clause except that, in this case, the clause is truly a main one because it can actually stand on its own.<p>
+
+    In the sentence <span class="k">Han søger nyt arbejde, <span class="r">fordi</span> <span class="k">lønnen</span><sup>S</sup> <span class="k">også</span><sup>A</sup> <span class="k">er</span><sup>V</sup> lav</span> <span class="r">(SAV)</span><img valign=bottom src="dansk.png" width="25" height="25">, the subordinate's clause syntax is <span class="r">(SAV)</span>.<p>
+
+    
+
+    Some people say that with a little <i>push</i> of the imagination clauses such as <span class="k">For lønnen er også lav</span><img valign=bottom src="dansk.png" width="25" height="25"> / <i>Because wages are also low</i><img valign=bottom src="eng.png" width="25" height="25"> could stand on their own. But that is just naive and simplistic. You cannot build any theory, let alone a grammar theory, on  <i>stretches</i> and <i>pushes</i> of the imagination.<p>
+
+    
+
+    It just so happens that clauses that are introduced by a conjunction, any conjunction, cannot stand on their own. They just don't make sense because another clause, a main clause, is needed and then, the two of them together, do make sense. That is the whole point of main and subordinate clauses in the first place.<p>
+
+    
+
+    There are 5 conjunctions that Danes call hovedsætningskonjuktioner / main-clause-conjunctions, <i>og, men, eller, for, så</i>.<p>
+
+        <ol>
+            <li><span class="k">Hun købte en is, <span class="r">og</span> han købte eb cola.</span><img valign=bottom src="dansk.png" width="25" height="25"><p>
+            The conjunction establishes a <span class="rel">cumulative</span> relationship between the clauses.
+
+            <li><span class="k">Jeg har lige spist, <span class="r">men</span> jeg er stadig sulten.</span><img valign=bottom src="dansk.png" width="25" height="25"><p>
+            The conjunction establishes an <span class="rel">against-the-norm</span> relationship between the clauses.
+
+            <li><span class="k">Vi kan holde pause nu, <span class="r">eller</span> vi kan vente.</span><img valign=bottom src="dansk.png" width="25" height="25"><p>
+            The conjunction establishes a relationship of <span class="rel">choice</span>between the clauses.
+
+            <li><span class="k">Hun aflyste mødet, <span class="r">for</span> hun var syg.</span><img valign=bottom src="dansk.png" width="25" height="25"><p>
+            The conjunction establishes an <span class="rel">aetiological</span> relationship between the clauses.
+
+            <li><span class="k">De har ferie, <span class="r">så</span> de kan sove længe.</span><img valign=bottom src="dansk.png" width="25" height="25"><p>
+            The conjunction establishes a relationship of <span class="rel">result</span> between the clauses.
+            </ol><p>
+
+            Just try and see if any of the clauses above that start with a conjunction can stand on its own. The answer is that, by any stretch of the imagination, they cannot for the simple reason that subordnate clauses make sense only in tandem with main clauses but never on their own.<p>
+
+            So, what should be done about it to restore to get rid of the contradictions and restore consistency in the theory of grammar?<p>
+
+            Well, instead of claiming the impossible, that is that the so-called main-clause-conjunctions are main clauses and can stand on their own, it should be stated in the grammar books that clauses introduced by SVA-conjunctions, <i>og, men, eller, for, så</i>, are truly subordinate clauses but conform to the syntax of main clauses.<p>
+
+            In a few words: Subordinate lauses introduced by <i>og, men, eller, for, så</i> conform to the syntax of main clauses.<p>
+
+            
+
+
+
+
+
+
+
+
+
+            <center><img src="sep.jpg"></center><p>
+            -->
+        <div style="background-color:white; color:blue; font-size:12pt; padding-bottom:3px; height:90px; border: 2px solid red;">
+            <span style="position:relative; top:10px; left:10px; font-size:20pt; color:green;"><b>æøå</b></span>
+            <center>
+            <table width=100% border=0 style="position:relative; top:-30px; left:-10px;">
+                <tr>
+            <td width=20%><div style="position:relative;top:4px; left:20px;"></td>
+            <td align=center><div style="position:relative;top:0px; left:-25px; z-index:100;"><span style="color:black; font-size:9pt;">Horistics</span><br>
+                On Adverbs, Adverb Clauses, and Conjunctions<br>Om Adverbier, Adverbialsætninger, og Konjuktioner <img valign=bottom src="dansk.png" width="25" height="25"></td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="p"><b>page 30</b> <img style="position:relative; top:-30px; left:15px; padding-bottom:3px;" src="df.png" width="46" height="31"></div><p>
+
+            Let us remind ourselves of <span class="def">def. 21</span> on page 8.<p>
+
+    <span class="def">def. 21</span> <b>Conjunctions</b> are words or groups of words that <span class="b">(a)</span>connect clauses while, at the same time, <span class="b">(b)</span>establish fundamental <span class="r">relationships</span> between them.<p>
+
+    <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k"><b>Konjunktioner</b> er ord eller grupper af ord, der <span class="b">(a)</span>forbinder hoved/led-sætninger, mens de på samme tid <span class="b">(b)</span>etablerer grundlæggende <span class="r">relationer</span> mellem dem.</span><p>
+
+        Keep in mind that those <span class="r">relationships</span> are crucial to the definition and have names.<p>
+
+    Now, let us expand <span class="def">def. 20</span>, which is the definition of adverbs:<p>
+
+        <span class="def">def. 20</span> <b>Adverbs</b> are words or groups of words which qualify (a)verbs, (b)adjectives, and (c)other adverbs and answer questions related to <span class="b">(a)</span><b>where</b> (adverbs of place), <span class="b">(b)</span><b>when</b> (adverbs of time), <span class="b">(c)</span><b>how</b> (adverbs of manner), <span class="b">(d)</span><b>how much</b> (adverbs of quantity), <span class="b">(e)</span><b>why</b> (reason).<p>
+
+        <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k"><b>Adverbier</b> er ord eller grupper af ord, der kvalificerer (a)verber, (b)adjektiver og (c)andre adverbier og besvarer spørgsmål relateret til <span class="b">(a)</span><b>hvor</b> (stedsadverbier), <span class="b">(b)</span><b>hvornår</b> (tidsadverbier), (c)<b>hvordan</b> (maneradverbier), (d)<b>hvor meget</b> (adverbier af mængde), (e)<b>hvorfor</b> (grund)</span><p>
+
+    Adverbs of quantity include adverbs of <b>assurance</b> such as <i>yes, of course, really, right</i> et al., adverbs of <b>hesitation</b> such as <i>maybe, perhaps, ostensibly, possibly</i> et al., and adverbs of <b>negation</b> such as <i>no, not, don't</i>.<p>
+
+        <center>
+            <div style="text-align:left;" class="box">
+                There are 3 broad classes of subordinate clauses: <span class="b">(a)</span><b>adverb</b> clauses, <span class="b">(b)</span><b>adjective</b> clauses, and <span class="b">(c)</span><b>noun</b> clauses. Each of those classes are comprised of several subcategories.<p>
+                Adverbs answer questions about <span class="b">(a)</span><b>where</b>, <span class="b">(b)</span><b>when</b>, <span class="b">(c)</span><b>how</b>, <span class="b">(d)</span><b>why</b>, and <span class="b">(e)</span><b>how much</b>.
+            </div></center><p>
+
+    <span class="def">def. 27</span> <b>Adverb Clauses</b> are subordinate clauses which provide additional information about the main clause, modifying verbs, adjectives, or adverbs, and often answer questions such as <i>how, when, where, why,</i> or <i>to what extent</i>. They add detail and context to the main clause, giving a deeper understanding of the action or situation described.<p>
+
+        <img valign=bottom src="dansk.png" width="25" height="25"> <span class="k"><b>Adverbialsætninger</b> er ledsætninger, der giver yderligere information om hovedsætningen, ændrede verber, adjektiver eller adverbier og ofte besvarer spørgsmål som hvordan, hvornår, hvor, hvorfor eller i hvilket omfang. De tilføjer detaljer og kontekst til hovedsætningen, hvilket giver en dybere forståelse af den beskrevne handling eller situation.</span><p>
+
+            <span class="log">THE COMMA RULE</span> In English, generally speaking, but not always, when the main clause comes first, we use no comma, but when the subordinate clause comes first, we do. In Danish, we always use comma between the main and subordinate clauses irrespective of the order. <p>
+
+            <span class="log">THE INVERSION RULE</span> In Danish, generally speaking, but not always, when the main clause comes second, it undergoes <b>inversion</b>, that is the verb comes first and the subject second.<p>
+
+                <center>&bull; &bull; &bull;</center>
+
+       
+
+
+
+<!--
+
+    <ol>
+        <li><span class="rel">Rel.</span> The <span class="r">relationship</span> that the subordinate clause introduced by the conjunction <b>so (that)</b> &bull; <b>så</b> <img valign=bottom src="dansk.png" width="25" height="25"> assigns to the main clause in <span class="ex">example 45</span> is one of <b>purpose</b>. The subordinate clause is telling us <b>why</b> the main clause happened. But this <b>why</b> is neither an <i>aetiological</i> one nor a <i>result</i> one, but rather one related to <b>purpose</b>, as it has not yet been realized but it is to be realized in the future. <b>Why</b> may refer to either <b>cause</b>, <b>result</b> or <b>purpose</b>, depending <span class="b">(a)</span>on whether the subordinate clause ir real or unreal, <span class="b">(b)</span>whether the reversal of the clauses is possible, and <span class="b">(c)</span>whether the main clause is telling us why the subordinate clause happened or <span class="b">(d)</span>the subordinate clause is telling us why the main clause happened.<p>
+
+        <li>In English, in clauses of purpose, conjunctions <span class="b">so</span> and <span class="b">so that</span> are interchangeable. <span class="rem">Remember</span><p>
+
+        <li>The main clause is real, which means it is a fact. <span class="log">Logic</span><p>
+
+        <li>The subordinate clause is unreal, which means it is not a fact. <u>This is how</u> we know this is a clause of purpose. By definition, the concept of <b>purpose</b> is about something to be realized in the future, either in the future <span class="b">(a)</span>as we perceive it at present or in the future <span class="b">(b)</span>as we perceived in the past or in the future <span class="b">(c)</span>as we will perceive in the future...if you know what I mean... <span class="log">Logic</span><p>
+
+        <li>The conjunction cannot be omitted. <span class="pt">Similarity</span><p>
+
+         <li>The order of the clauses can be reversed <span class="log">Logic</span> but, in Danish, <span class="b">(a)</span>we need to replace <token class="b">så</token> with <token class="b">for at</token> plus <span class="b">(b)</span>the main clause must undergo <b>inversion</b> (first <i>verb</i> and then <i>subject</i>).<span class="dif">Differences</span><p>
+            
+        <li>In English, generally speaking, but not always, when the main clause comes first, we use no comma, but when the subordinate clause comes first, we do. In Danish, we always use comma between the main and subordinate clauses irrespective of the order. <span class="rem">Remember</span> <span class="dif">Difference</span> THE COMMA RULE
+
+    </ol><p>-->
+
+        The crucial point to see here is that while the main clause is <b>real</b>, that is it is a fact, the subordinate clause is <b>unreal</b>, meaning that at the moment the action in the main clause took place, the subordinate clause was not yet a fact. The subordninate clause establishes a <span class="rel">relationship</span> of <b>purpose</b> between the 2 clauses. The sentence could be rewritten: <i>He bought a TV set with the purpose of us watching the soccer games.</i><p>
+
+        <span class="pt">point to remember</span> Subordinate clause is unreal.<p>
+
+        <span class="pt">point to remember</span> In English, clauses of purpose are not set off by commas, <span class="log">THE COMMA RULE</span> not observed, unless the imperative mood is involved.<p>
+
+
+
+        <center>&bull; &bull; &bull;</center><p>
+
+            <!--example 46 below-->
+
+
+            <center><span class="ex">example 43</span> Result</center><p>
+            
+<center>so &bull; så <img valign=bottom src="dansk.png" width="25" height="25"></center><p>
+
+<center>
+<div class="container">
+
+  <elem type="drug">
+    <token class="br">The room was dark,</token>
+    <div class=" label drug">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><b>so</b> I turned on the light.</token>
+    <div class=" label person">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  </elem>
+
+</div><p>
+
+
+  <div class="container">
+
+    <elem type="drug">
+    <token class="br">Værelset var mørkt,</token>
+    <div class=" label drug">
+      <span class="s1">Hovedsætning</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><b>så</b> jeg tændte lyset.</token>
+    <div class=" label person">
+      <span class="s2">Ledsætning</span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><p>
+
+    <center>REVERSAL OF ORDER IS NOT POSSIBLE <span class="log">Logic</span></center><p>
+
+    The crucial point to see here is that while the main clause describes a situation, the subordinate clause describes the action taken because of the situation in the main clause. In other words, the main clause explains the action in the subordinate clause. The subordninate clause establishes a <span class="rel">relationship</span> of <b>result or reaction</b> between the 2 clauses. The sentence could be rewritten: <i>The room was dark and I reacted to that by turning the light on.</i><p>
+
+        <span class="pt">point to remember</span> The main clause explains or justifies the subordinate clause.<p>
+
+        <span class="pt">point to remember</span> <span class="log">THE COMMA RULE</span> is observed. Compare <span class="ex">example 42</span> to <span class="ex">example 43</span> .<p>
+
+<!--
+Points to Note:<p>
+
+    <ol>
+        <li><span class="rel">Rel.</span> The <span class="r">relationship</span> that the subordinate clause introduced by the conjunction <b>beca </b> &bull; <b>så</b> <img valign=bottom src="dansk.png" width="25" height="25"> assigns to the main clause in <span class="ex">example 46</span> is one of <b>result</b>. The main clause is telling us <b>why</b> the subordinate clause happened. But this <b>why</b> is not an aetiological one but rather one related to <b>result</b>, as the order of the clauses cannot be reversed. <b>Why</b> may refer to either <b>cause</b>, <b>result</b> or <b>purpose</b>, depending <span class="b">(a)</span>on whether the subordinate clause ir real or unreal, <span class="b">(b)</span>whether the reversal of the clauses is possible, and <span class="b">(c)</span>whether the main clause is telling us why the subordinate clause happened or <span class="b">(d)</span>the subordinate clause is telling us why the main clause happened.<p>
+
+        <li>Telling between <i>purpose</i> and <i>result</i> can be a challenge. This is how to untangle the mess. When it is about purpose, the subordinate clause is not real (see <span class="ex">example 45</span> point 3), but when it is about result, the subordinate clause is real. <span class="log">Logic</span><p>
+
+        <li>The conjunction cannot be omitted. <span class="pt">Similarity</span><p>
+
+        <li>Reversal of the order of the clauses is not possible. <span class="log">Logic</span><p>
+
+        <li>In English, generally speaking, but not always, when the main clause comes first, we use no comma, but when the subordinate clause comes first, we do. In Danish, we always use comma between the main and subordinate clauses irrespective of the order. <span class="dif">Difference</span> THE COMMA RULE<p>
+
+        <span class="ast">*</span>However, when we are dealing with <b>result</b>, see <span class="ex">example 46</span>, we use comma, which goes against the general rule! <span class="rem">Remember</span><p>
+
+            Contrast<p>
+
+            <span class="ex">example 45</span> 
+
+        <div class="container">
+
+  <elem type="drug">
+    <token class="br">He bought a TV set</token>
+    <div class=" label drug">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><b>so</b> we can watch the soccer games.</token>
+    <div class=" label person">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  <span class="bl">(purpose &bull; unreal)</span></elem>
+
+</div><p>
+
+         with<p>
+            <span class="ex">example 46</span><p>
+
+<div class="container">
+
+  <elem type="drug">
+    <token class="br">The room was dark,</token>
+    <div class=" label drug">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><b>so</b> I turned on the light.</token>
+    <div class=" label person">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  <span class="bl">(result &bull; real)</span></elem>
+
+</div><p>
+
+In both sentences, the main clause comes first, but only in <span class="ex">example 46</span> do we use comma, which is an exception to the general rule, which, of course, coincides with the Danish. <span class="pt">Similarity</span>
+
+    </ol><p>-->
+
+
+        <center>&bull; &bull; &bull;</center><p>
+
+<!--example 47 below-->
+
+    <center><span class="ex">example 44</span> Aetiology</center><p>
+            
+<center>because &bull; <span class="k">fordi</span> <img valign=bottom src="dansk.png" width="25" height="25"></center><p>
+
+<center>
+<div class="container">
+
+  <elem type="drug">
+    <token class="br">People love</token>
+    <div class=" label drug">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><b>because</b> they need to care for others.</token>
+    <div class=" label person">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  </elem>
+
+</div><p>
+
+
+  <div class="container">
+
+    <elem type="drug">
+    <token class="br"><span class="k">Folk elsker,</span></token>
+    <div class=" label drug">
+      <span class="s1"><span class="k">Hovedsætning</span></span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><span class="k"><b>fordi</b> de har brug for at passe på andre.</span></token>
+    <div class=" label person">
+      <span class="s2"><span class="k">Ledsætning</span></span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><br>&nbsp;<br>
+
+
+<center>REVERSAL OF ORDER IS POSSIBLE <span class="log">Logic</span></center><p>
+
+
+<center>
+
+        <div class="container">
+
+  <elem type="drug">
+    <token class="b"><b>Because</b> they need to care for others,</token>
+    <div class=" label drug">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br">people love.</token>
+    <div class=" label person">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+</div><p>
+
+  <div class="container">
+
+    <elem type="drug">
+    <token class="b"><span class="k"><b>Fordi</b> de har brug for at passe på andre,</span></token>
+    <div class=" label drug">
+      <span class="s2"><span class="k">Ledsætning</span></span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br"><span class="k">elsker folk.</span></token>
+    <div class=" label person">
+      <span class="s1"><span class="k">Hovedsætning</span></span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><p>
+
+    The crucial points to see here is that <span class="b">(a)</span>reversal of the order of clauses is possible and <span class="b">(b)</span> the subordinate clause is real. The subordinate clause explains or justifies the main clause. The subordninate clause establishes a <span class="rel">relationship</span> of <b>aetiology</b> or <b>causality</b> between the 2 clauses. The sentence could be rewritten: <i>The reason people love is the need they feel to care for others.</i><p>
+
+        <span class="pt">point to remember</span> The reversal of the order of clauses is possible.<p>
+        <span class="pt">point to remember</span> The subordinate clause is real.<p>
+
+
+<!--
+Points to Note:<p>
+
+    <ol>
+        <li><span class="rel">Rel.</span> The <span class="r">relationship</span> that the subordinate clause introduced by the conjunction <b>because</b> &bull; <span class="k"><b>fordi</b></span> <img valign=bottom src="dansk.png" width="25" height="25"> assigns to the main clause in <span class="ex">example 47</span> is one of <b>aetiology</b>.<p>
+
+        The subordinate clause is telling us <b>why</b> the main clause happened.  But this <b>why</b> is not one of purpose or one of result, but rather an aetiological one, as the order of the clauses can be reversed. <b>Why</b> may refer to either <b>cause</b>, <b>result</b> or <b>purpose</b>, depending <span class="b">(a)</span>on whether the subordinate clause ir real or unreal, <span class="b">(b)</span>whether the reversal of the clauses is possible, and <span class="b">(c)</span>whether the main clause is telling us why the subordinate clause happened or <span class="b">(d)</span>the subordinate clause is telling us why the main clause happened.<p>
+
+        <li>In all languages, when we are dealing with aetiology, both clauses are real. <span class="log">Logic</span><p>
+
+        <li>How can we know if we are dealing with <b>result</b> or <b>aetiology</b>? When we are dealing with <i>result</i>, reversal of the order of clauses <b>is not possible</b>, but when we are dealing <i>aetiology</i>, <b>it is</b>. <span class="log">Logic</span><p> 
+
+        <li>Reversal of the order of the clauses is possible, <span class="log">Logic</span>  but the main clause in Danish undergoes <i>inversion</i>. <span class="dif">Difference</span><p>
+
+        <li>The conjunction cannot be omitted. <span class="pt">Similarity</span><p>
+        -->
+
+        <center class="ast">* * * * * * * * * * * * * * *</center><p>
+
+            The tangle of <b>why</b><p>
+
+            <b>Why</b> can refer to either <b>purpose</b>, <b>result</b>, or <b>aetiology</b>.<p>
+
+                <center class="ast">* * * * *</center><p>
+
+                <center class="b"><b>CRITERIA for PURPOSE</b> <span class="ex">example 42</span></center><p>
+
+                <ol>
+                    <li>Is reversal of <b>clauses</b> possible? <span class="r">Yes</span><p>
+
+                    <li>Is the <b>subordinate clause</b> telling us why the <b>main clause</b> happens/happened? <span class="r">Yes</span><p>
+
+                    <li>Is the <b>main clause</b> telling us why the <b>subordinate clause</b> happens/happened? <span class="r">No</span><p>
+
+                    <li>Is the <b>subordinate clause</b> real? <span class="r">No*</span><p>
+
+                    <li>Is the <b>subordinate clause</b> unreal? <span class="r">Yes</span><p>
+
+                        Y Y N N Y<p>
+
+                If <b>4</b> is negative, we're dealing with <b>purpose</b>
+                </ol><p>
+<center>
+        <div class="container">
+<span class="ex">example 42</span> 
+  <elem type="drug">
+    <token class="br">He bought a TV set</token>
+    <div class=" label drug">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><b>so</b> we can watch the soccer games.</token>
+    <div class=" label person">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  <span class="bl">(purpose &bull; unreal)</span></elem>
+
+</div><p>
+
+</center>
+
+<center>
+    <table border=1 cellpadding=15 cellspacing=0>
+    <tr><td rowspan=3 class="r"><b>Why</b> did he buy a TV set?</td><td class="b">... so (that) we can watch the soccer games. <span class="bl">(purpose*)</span></td></td></tr>
+
+    <tr><td class="b">He felt bored, so ... <span class="bl">(result)</span></td></tr>
+
+    <tr><td class="b">... because he felt bored. <span class="bl">(aetiology)</span></td></tr>
+
+    </table>
+</center><p>
+
+    <center class="ast">* * * * *</center><p>
+
+    <center class="b"><b>CRITERIA for RESULT</b> <span class="ex">example 43</span> </center><p>
+
+                <ol>
+                    <li>Is reversal of <b>clauses</b> possible? <span class="r">No*</span><p>
+
+                    <li>Is the <b>subordinate clause</b> telling us why the <b>main clause</b> happens/happened? <span class="r">No*</span><p>
+
+                    <li>Is the <b>main clause</b> telling us why the <b>subordinate clause</b> happens/happened? <span class="r">Yes</span><p>
+
+                    <li>Is the <b>subordinate clause</b> real? <span class="r">Yes</span><p>
+
+                    <li>Is the <b>subordinate clause</b> unreal? <span class="r">No</span><p>
+
+                        N N Y Y N<p>
+
+                    If <b>1</b> or <b>2</b> is negative, we're dealing with <b>result</b>
+
+                </ol><p>
+
+
+
+
+<!--
+Points to Notice:<p>
+
+    <ol>
+        <li>This sentence is about the future. In all languages, when we are dealing with the future, clauses are unreal. <span class="log">Logic</span><p>
+
+        <li>In English, <b>even if</b> cannot refer to the past but, in Danish, <b>selvom</b> can refer to the past, to the present, to the future, as well as to general statements. <span class="rem">Remember</span><p> 
+
+        <li>Reversal of the order of the clauses is possible, <span class="log">Logic</span>  but the main clause in Danish undergoes <i>inversion</i>. <span class="dif">Difference</span><p>
+
+        <li>The conjunction cannot be omitted. <span class="pt">Similarity</span><p>
+
+        <li>THE COMMA RULE applies here. <span class="rem">Remember</span><p>
+
+
+<center>&bull; &bull; &bull;</center><p>
+
+
+    example 49 below
+
+    <center><span class="ex">example 49</span> Against the Norm</center><p>
+            
+<center>even if &bull; <span class="k">selvom</span> <img valign=bottom src="dansk.png" width="25" height="25"></center><p>
+
+<center>
+<div class="container">
+
+  <elem type="drug">
+    <token class="br">People will keep swimming</token>
+    <div class=" label drug">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><b>even if</b> it starts to rain.</token>
+    <div class=" label person">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  </elem>
+
+</div><p>
+
+
+  <div class="container">
+
+    <elem type="drug">
+    <token class="br"><span class="k">Folk vil svømme,</span></token>
+    <div class=" label drug">
+      <span class="s1"><span class="k">Hovedsætning</span></span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><span class="k"><b>selvom</b> det begynder at regne.</span></token>
+    <div class=" label person">
+      <span class="s2"><span class="k">Ledsætning</span></span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><br>&nbsp;<br>
+
+
+<center>REVERSAL OF ORDER OF CLAUSES IS POSSIBLE <span class="log">Logic</span></center><p>
+
+
+<center>
+
+        <div class="container">
+
+  <elem type="drug">
+    <token class="b"><b>Even if</b> it starts to rain,</token>
+    <div class=" label drug">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br">people will keep swimming.</token>
+    <div class=" label person">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+</div><p>
+
+  <div class="container">
+
+    <elem type="drug">
+    <token class="b"><span class="k"><b>Selvom</b> det begynder at regne,</span></token>
+    <div class=" label drug">
+      <span class="s2"><span class="k">Ledsætning</span></span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="br"><span class="k">vil folk blive ved med at svømme.</span></token>
+    <div class=" label person">
+      <span class="s1"><span class="k">Hovedsætning</span></span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><p>
+
+
+Points to Note:<p>
+
+    <ol>
+        <li>This sentence is about the future. In all languages, when we are dealing with the future, clauses are unreal. <span class="log">Logic</span><p>
+
+        <li>In English, <b>even if</b> cannot refer to the past but, in Danish, <b>selvom</b> can refer to the past, to the present, to the future, as well as to general statements. <span class="rem">Remember</span><p> 
+
+        <li>Reversal of the order of the clauses is possible, <span class="log">Logic</span>  but the main clause in Danish undergoes <i>inversion</i>. <span class="dif">Difference</span><p>
+
+        <li>The conjunction cannot be omitted. <span class="pt">Similarity</span><p>
+
+        <li>THE COMMA RULE applies here. <span class="rem">Remember</span><p>
+
+
+<center>&bull; &bull; &bull;</center><p>
+
+
+
+
+
+
+<!--<center><span class="ex">example 13</span></center><p>
+
+<span class="cj">Although</span> <span class="u1">They do not speak to each other</span><sup>mc</sup> <span class="u1">although<sup>&#9651;</sup> they have known each other for years.</span><sup>sc</sup><br>(no comma)<p>
+
+<span class="cj">Although</span> <span class="u1">Although<sup>&#9651;</sup> they have known each other for years,</span><sup>sc</sup> <span class="u1">they do not speak to each other.</span><sup>mc</sup> (comma)<p>
+
+<img valign=bottom src="dansk.png" width="25" height="25"> <span class="cj">selvom</span> <span class="u1">De taler ikke sammen,</span><sup>mc</sup> <span class="u1">selvom<sup>&#9651;</sup> de har kendt hinanden i årevis.</span><sup>sc</sup> (comma)<p>
+
+<img valign=bottom src="dansk.png" width="25" height="25"> <span class="cj">selvom</span> <span class="u1">Selvom<sup>&#9651;</sup> de har kendt hinanden i årevis,</span><sup>sc</sup> <span class="u1">taler de ikke sammen.</span><sup>mc-i</sup> (comma & inversion)<p>
+
+<span class="pt">point 8 - Simil.</span> In both English and Danish, we have a sentence which consists of <span class="b">(a)</span>1 subordinate clause and <span class="b">(b)</span>1 main clause.<p>
+
+<span class="pt">point 9 - Simil.</span> Both in English and Danish, reversing the order of the clauses works.<p>
+
+<span class="pt">point 10 - Diff.</span> Danes love commas more than English people, so they use a comma irrespective of the order of the clauses; the English, on the other hand, in general, but not always, use a comma only when the subordinate clause comes first.<p>
+
+<span class="pt">point 11 - Diff.</span> When the subordinate clause comes first, the English use comma, while in Danish, the main clause undergoes <i>inversion</i> (first the <b>verb</b>, then the <b>subject</b>).<p>
+
+<span class="rel">Rel.</span> The relationship here one of contrast or of unexpectedness or against the norm. That is to say, the two clauses are bound by a relationship of <b>break from the norm</b> or contrasting realities.<p>
+
+Conclusion: In English and Danish, the conjunctions <span class="cj">although &bull; selvom</span> introduce clauses of <b>contast</b>.-->
+
+
+
+
+
+
+
+<!--
+
+This sentence consists of 1 main clause and 1 subordinate clause. They are <b>hetero-subject</b> clauses, which means that their subjects are different. The subject of the main clause is <b>he</b> and the subject of the subordinate clause is <b>we</b>. Clauses which have the same subject are called <b>tauto-subject</b>. We will be using these concepts shortly...<p>
+
+<b>so</b> can be either a conjunction of purpose or a conjunction of 
+
+In English, in clauses of purpose, we do not use commas.
+
+
+
+
+
+<center><img src="sep.jpg"></center><p>
+
+
+    <div style="background-color:white; color:blue; font-size:12pt; padding-bottom:3px; height:90px; border: 2px solid red;">
+            <span style="position:relative; top:10px; left:10px; font-size:20pt; color:green;"><b>æøå</b></span>
+            <center>
+            <table width=100% border=0 style="position:relative; top:-30px; left:-10px;">
+                <tr>
+            <td width=20%><div style="position:relative;top:4px; left:20px;"></td>
+            <td align=center><div style="position:relative;top:0px; left:-25px; z-index:100;"><span style="color:black; font-size:9pt;">Horistics</span><br>
+                On Clauses of Purpose<br>Om Formål Ledsætninger</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="p"><b>page 30</b> <img style="position:relative; top:-30px; left:15px; padding-bottom:3px;" src="df.png" width="46" height="31"></div><p>
+-->
+
+<!--example 42 below-->
+<!--
+<center><span class="ex">example 42</span></center><p>
+
+    <center>
+
+<div class="container">
+
+  <elem type="drug">
+    <token class="br">He<sub>1</sub> felt<sub>2</sub> so<sub>3</sub> happy<sub>4</sub></token>
+    <div class=" label drug">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><b>that</b><sub>5</sub> he<sub>6</sub> paid<sub>7</sub> for<sub>8</sub> everyone's<sub>9</sub> drinks.<sub>10</sub></token>
+    <div class=" label person">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  </elem>
+
+</div><p>
+
+  <div class="container">
+
+    <elem type="drug">
+    <token class="br">Han<sub>1</sub> følte<sub>2</sub> sig<sub>3</sub> så<sub>4</sub> glad,<sub>5</sub></token>
+    <div class=" label drug">
+      <span class="s1">Hovedsætning</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><b>at</b><sub>6</sub> han<sub>7</sub> betalte<sub>8</sub> for<sub>9</sub> alles<sub>10</sub> drinks.<sub>11</sub></span></token>
+    <div class=" label person">
+      <span class="s2">Ledsætning</span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><p>
+
+Just this one time, let us make a Parts-of-Speech analysis:<p>
+
+    The English sentence:<p>
+    1 subject personal pronoun &bull; 2 verb &bull; 3 adverb &bull; 4 adjective &bull; <b>5 conjunction of extent/degree/result</b> &bull; 6 subject personal pronoun &bull; 7 verb &bull; 8 preposition &bull; 9 indefinite pronoun &bull; 10 noun<p>
+
+    The Danish sentence:<p>
+    1 subject personal pronoun &bull; 2 verb &bull; 3 reflexive pronoun &bull; 4 adverb &bull; 5 adjective &bull; <b>6 conjunction of extent/degree/result</b> &bull; 7 subject personal pronoun &bull; 8 verb &bull; 9 preposition &bull; 10 indefinite pronoun &bull; 11 noun<p>
+
+    &bull; The first thing to consider is what sort of questions the two clauses answer. Do they answer <i>when, where, why, how,</i> or <i>how much</i> questions?<p>
+
+    Clearly they answer <b>why</b> questions: <span class="b">(a)</span><b>Why</b> did he feel so happy? and <span class="b">(b)</span><b>Why</b> did he pay for everyone's drinks?<p>
+
+    When we dealing with <b>why</b>, we may be dealing either with purpose or result or aetiology 
+
+
+
+
+    Let us see how <span class="def">def. 21</span> applies itself on <span class="ex">example 42</span>:<p>
+
+    The conjunction <b>that</b> connects the two clauses, so there is nothing to add there. But how does the conjunction <b>that</b> establish a relationship between the two clauses?<p>
+
+    The main clause answers the question: <i>How did he feel?</i><p>
+    The subordinate clause answers the question: <i>How happy did he feel?</i> or <i>To what extent did he feel happy?</i> or <i>To what degree did he feel happy?</i><p>
+
+    Let us construct the dialog.<p>
+
+    <div class="dial">
+        <span class="br">dialog 4</span><p>
+
+    1. <span class="b">Jill</span> &mdash; How did he feel? (question seeking to qualify "feel")<p>
+
+    2. <span class="b">Kate</span> &mdash; He felt so good! (answer is the main clause itself and is an exclamation)<p>
+
+    3. <span class="b">Jill</span> &mdash; How good? (question asking <i>how much/to what extent/to what degree</i>)<p>
+
+    4. <span class="b">Kate</span> &mdash; He paid for everyone's drinks. (answers question 3 above)<p>
+
+        <center>&bull; &bull; &bull;</center><p>
+
+            Clauses 2 and 4 are two main clauses waiting to be connected. The connection is realized by introducing the main clause with the conjunction <b>that</b>, thus converting the clause into a subordinate one. The subordinate clause <b>that he paid for everyone's drinks</b> is an adverbial subordinate clause because it functions exactly as adverbs do since it answers a question related to <i>how much</i> (see <span class="def">def. 20/d</span>).<p>
+
+    Finally, we have the sentence: <span class="br">He felt so good</span> <span class="b"><b>that</b> he paid for everyone's drinks.</span><p>
+
+        <span class="rel">Rel.</span> The conjunction <b>that</b> establishes a resultative/aetiological <span class="r">relationship</span> between the two clauses . That is to say, the two clauses are bound by a relationship of cause-and-effect or cause-and-result, the first clause being the <i>cause</i> and the second the <i>result/effect</i>.<p>
+
+        We see, then, that <b>that</b> is indeed a conjunction in <span class="ex">example 42</span> because it fits neatly into the definition of conjunctions, that is 
+<span class="def">def. 21</span>.
+    </div><p>
+
+
+<span class="ex">example 42</span><span class="pt">similarity</span> Both in English and Danish, we have a sentence which consists of <span class="b">(a)</span>1 subordinate clause and <span class="b">(b)</span>1 main clause.<p>
+
+<span class="ex">example 42</span><span class="pt">similarity</span> Reversing the order of the two clauses in this sentence does not work in either language.<p>
+
+<span class="ex">example 42</span><span class="pt">similarity</span> In both languages, the conjunction can be omitted.<p>
+
+<span class="ex">example 42</span><span class="dif">difference</span> In Danish, the subordinate clause is offset by comma.<p>
+
+He paid for everyone's drinks, he felt so happy (it does not work)<p>
+
+At han betalte for alles drinks, han følte sig så glad. (it does not work)<p>
+
+In both languages, then, the order is <span class="b">(a)</span><b>cause</b> first and  <span class="b">(b)</span><b>result</b> second.<p>
+
+Shortly, it will be spelled out exactly how we can tell if a clause is one or <b>result</b> or <b>purpose</b> or <b>aetiology</b>.<p>
+
+
+Conclusion: In English and Danish, the conjunctions <span class="cj">that &bull; at</span> introduce clauses of <b>result</b> and work in a very similar fashion in both languages. After all, both English and Danish belong to the <i>Germanic</i> family of languages...
+
+    
+
+<center>&bull; &bull; &bull;</center><p>
+
+But <b>that</b> is many things. It is <span class="b">(a)</span>an adjective (That book is mine.), <span class="b">(b)</span>a pronoun (That is mine.), <span class="b">(c)</span>an adverb (It is not that cold.), and <span class="b">(d)</span>a conjunction.<p>
+
+Furthermore, <b>that</b> can introduce a few different types of clauses. In <span class="ex">example 42</span>, we have already seen that <b>that</b> can introduce a <b>cause-and-effect</b> conjunction. However, <b>that</b> can also be an <b>elucidative</b> conjunction.<p>
+What's that?<p>
+Let us take a look.<p>
+
+    <center>&bull; &bull; &bull;</center><p>
+
+        example 43 below
+
+    <center>
+        <span class="ex">example 43</span></center><p>
+
+<center>
+        <div class="container">
+
+  <elem type="drug">
+    <token class="br">The government believe</token>
+    <div class=" label drug">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><b>that</b> infation will decrease.</token>
+    <div class=" label person">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  </elem>
+
+</div><p>
+
+  <div class="container">
+
+    <elem type="drug">
+    <token class="br">Regeringen tror,</token>
+    <div class=" label drug">
+      <span class="s1">Hovedsætning</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><b>at</b> inflationen vil falde.</token>
+    <div class=" label person">
+      <span class="s2">Ledsætning</span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><p>
+
+        <span class="rel">Rel.</span> The conjunction <b>that</b>, here, establishes a <b>elucidative</b> <span class="r">relationship</span> between the two clauses. Indeed, the subordinate clause sheds light on the main clause; it clarifies <i>what the government believe</i>.<p>
+
+<span class="ex">example 43</span> is not an adverb clause because the subordinate clause does not answer any type of questions adverbs do. As we saw above, adverbs answer questions related to <span class="b">(a)</span>where, <span class="b">(b)</span>when, <span class="b">(c)</span>how, and <span class="b">(d)</span>how much, none of which is the case here.<p>
+
+<span class="ex">example 43</span> is a <b>noun clause</b>, another type of subordinate clause, which is beyond the scope of this book.<p>
+
+The point I am trying to make here is that you should not automatically assume that a clause introduced by <b>that</b> is an adverb clause, since the ultimate criterion which determines the type of clause is the context, that is it is dictated by common sense.<p>
+
+Here we observe the same similarities and differences as in <span class="ex">example 42</span>.
+
+<center>&bull; &bull; &bull;</center><p>
+
+    example 44 below
+
+    <center><span class="ex">example 44</span></center><p>
+
+<center>
+<div class="container">
+
+  <elem type="drug">
+    <token class="br">The movie</token>
+    <div class=" label drug">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><b>that</b> we saw last night</token>
+    <div class=" label person">
+      <span class="s2">Subordinate Clause</span>
+    </div>
+  </elem>
+
+  <elem type="drug">
+    <token class="br">wasn't very good.</token>
+    <div class=" label drug">
+      <span class="s1">Main Clause</span>
+    </div>
+  </elem>
+
+</div>
+
+
+
+  <div class="container">
+
+    <elem type="drug">
+    <token class="br">&nbsp; Den film, &nbsp;</token>
+    <div class=" label drug">
+      <span class="s1">Hovedsætning</span>
+    </div>
+  </elem>
+
+  
+  <elem type="person">
+    <token class="b"><b>som</b> vi så i går aftes,</token>
+    <div class=" label person">
+      <span class="s2">Ledsætning</span>
+    </div>
+  </elem>
+
+  <elem type="drug">
+    <token class="br">var ikke særlig god.</token>
+    <div class=" label drug">
+      <span class="s1">Hovedsætning</span>
+    </div>
+  </elem>
+
+</div><img valign=bottom src="dansk.png" width="25" height="25">
+</center><p>
+    
+
+    In <span class="def">def. 15</span> adjectives are defined as words that qualify or modify nouns. It so happens that the subordinate clause in <span class="ex">example 44</span> modifies the noun <b>movie</b>.<p>
+
+    What movie? <span class="b">(a)</span>the <b>American</b> movie, <span class="b">(b)</span>the <b>best</b> movie, <span class="b">(c)</span>the <b>worst</b> movie, <span class="b">(d)</span>the <b>longest</b> movie, <span class="b">(e)</span>the movie <b>that we saw last night</b>.<p>
+
+    In case you didn't know, in English, the verb <b>to relate</b> has several meanings, one of which is <b>to tell</b>. It follows, then, that because the subordinate clause in <span class="ex">example 44</span> <i>tells us</i> or <i>relates us</i> about the noun <b>movie</b>, <b>that</b> introduces a <i>relative</i> clause, just another name for an <i>adjective</i> clause.<p>
+
+    <b>Remember</b>, then, that a <b>relative clause</b> is an alternative way to refer to <b>an adjective clause</b>.<p>
+
+        <span class="rel">Rel.</span> The conjunction <b>that</b>, here, establishes a <b>relative/adjectival</b> <span class="r">relationship</span> between the two clauses. Indeed, the subordinate clause <b>relates/tells</b> us <i>which movie wasn't very good</i>.<p>
+
+<span class="ex">example 44</span> is neither an adverb subordinate clause nor a noun subordiante clause but, instead, an adjective/a relative subordinate clause, which is also beyond the scope of this book<p>
+
+The point here is that the conjunction <b>that</b> introduces all 3 broad classes of subordinate clauses, that is <span class="b">(a)</span><i>adverb</i>, <span class="b">(b)</span><i>noun</i> and <span class="b">(c)</span><i>adjective/relative</i> clauses.<p>
+
+Here we observe the same similarities and differences as in <span class="ex">examples 42 & 43</span>, except that the subordinate clause in <span class="ex">example 44</span><span class="dif">difference</span> is between commas.<p>
+
+    <center>&bull; &bull; &bull;</center><p>-->
+
+
+    </div>
+<!--https://stackoverflow.com/questions/42647040/label-text-with-a-horizontal-curly-bracket
+https://users.sch.gr/ipap/Ellinikos%20Politismos/Yliko/Theoria%20Nea/Deutereuouses-epirrimatikes-protaseis-Nea-Ellinika.htm-->
+</body>
+</html>
