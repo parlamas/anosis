@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opgøret</title>
+
+<style>
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    .l {color:lime;}
+    .c {color:gold;}
+    .b {color:blue;}
+    .r {color:red;}
+    .g {color:lime; background-color:black; padding:1px; padding-left:4px; padding-right:4px;}
+    .w {color:white; font-size:1pt;}
+    .syn {background-color:beige; color:brown; padding:5px; font-size:12pt;}
+    .bl {color:black;}
+    .dv {width:80%;}
+
+    .nb {color:#808000;}
+
+    table tr td {text-align:justify;}
+
+    sub {color:blue; font-weight:bold;}
+
+    
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  background-color:black;
+  color:white;
+  padding:10px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  left:10px;
+  top:30px;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  width:500px;
+  height:200px;
+  background-color:brown;
+  color:gold;
+  padding:20px;
+  text-align:justify;
+  font-size:15pt;
+}
+
+a .hover-img { 
+  position:relative;
+ }
+a .hover-img span {
+  position:absolute; left:-9999px; top:-9999px; z-index:9999;
+ }
+a:hover .hover-img span { 
+  top: 20px; 
+  left:0;
+ }
+    
+</style>
+
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="tooltip"><span style="font-size:11pt; color:beige;">Isidoros Parlamas</span> &rarr; How-to-use instructions...
+  <span class="tooltiptext">
+  <center>Search for: <span class="l">any word or paragraph...</span>
+</div><p>
+
+<table id="example" class="display" style="width:100%">
+        <thead>
+
+            <tr>
+                <th width=6%>number<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=47%>English<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=47%>dansk<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        <tr valign=top>
+            <td>01<span class="w">--</span></td>
+            <td class="nb">Opgøret med den positive psykologi</td><td>The showdown with positive psychology</td>
+        </tr>
+
+<tr valign=top>
+<td>02<span class="w">--</span></td>
+<td class="nb">Lad være med at se indad i dig selv, der er kun organer. Det skriver Svend Brinkmann, professor i psykologi, i en lille bog, der blev en af de mest omtalte bøger i lang tid. Bogen hed Stå fast - <span class="r">et opgør med tidens udviklingstvang</span><sub>1</sub> og ramte åbenbart ned i et behov i tiden, for den blev <span class="r">uhyre</span><sub>2</sub> populær. Brinkmann omtaler selv bogen som "et <span class="r">kuriosum</span>,<sub>3</sub> en sjov lille ting at sidde og skrive, en <span class="r">behagelig</span><sub>4</sub> afveksling fra de akademiske analyser." Og bogen blev da også kendt langt uden for akademiske kredse.</td>
+
+<td>Don't look inside yourself, there are only organs. This is what Svend Brinkmann, professor of psychology, writes in a small book that became one of the most talked about books for a long time. The book was called Stå fast - <span class="r">a showdown with the development compulsion of the time</span><sub>1</sub> and obviously hit upon a need of the time, because it became <span class="r">enormously</span><sub>2</sub> popular. Brinkmann himself refers to the book as "a <span class="r">curiosity</span>,<sub>3</sub> a fun little thing to sit and write, a <span class="r">pleasant</span><sub>4</sub> diversion from the academic analyses." And the book then also became known far outside academic circles.</td>
+</tr>
+
+
+<tr valign=top>
+<td>03<span class="w">--</span></td>
+<td class="nb">Alle aviser bragte interviews og anmeldelser og debat af synspunkterne i bogen, og han bliver konstant bedt om at holde <span class="r">foredrag</span>.<sub>5</sub> Bogen blev kaldt genial, humoristisk og <span class="r">befriende</span>,<sub>6</sub> og Information <span class="r">ryddede</span><sub>7</sub> forsiden for at skrive Brinkmanns syv <span class="r">bud</span>,<sub>8</sub> der er ment som en provokation og er skrevet med "et glimt i øjet" som en parodi på selvhjælpbøgerne.</td>
+
+<td>All the newspapers carried interviews and reviews and debates of the views in the book, and he is constantly being asked to <span class="r">lecture</span>.<sub>5</sub> The book was called brilliant, humorous and <span class="r">liberating</span>,<sub>6</sub> and Information <span class="r">cleared</span><sub>7</sub> the cover to write Brinkmann's seven <span class="r">commandments</span>,<sub>8</sub> which are meant as a provocation and are written with "a twinkle in the eye" as a parody of the self-help books.</td>
+</tr>
+
+<tr valign=top>
+<td>04<span class="w">--</span></td>
+<td class="nb">
+Hans satiriske "antiselvhjælpsguide" lyder:<p>
+<ul>
+<li>Hold op med at mærke efter i dig selv<p>
+<li>Fokusér på det negative i dit liv<p>
+<li>Tag nej-hatten på<p>
+<li>Undertryk dine følelser<p>
+<li>Fyr din coach<p>
+<li>Læs en roman - ikke en selvhjælpsbog<p>
+<li>Dvæl ved fortiden
+</td>
+
+<td>
+    His satirical "anti-self-help guide" reads:<p>
+
+<ul>
+<li>Stop feeling after yourself<p>
+<li>Focus on the negative in your life<p>
+<li>Put on the nay hat<p>
+<li>Suppress your emotions<p>
+<li>Fire your coach<p>
+<li>Read a novel - not a self-help book<p>
+<li>Dwell on the past<p>
+</td>
+</tr>
+
+
+<tr valign=top>
+<td>05<span class="w">--</span></td>
+<td class="nb">Bogen er et modsvar til hele industrien af selvhjælpsbøger. Brinkmann mener, at det er alt for stort fokus på os selv og vores følelser, og at det ikke løser nogen af vores problemer. Han er i det hele taget kritisk over for den moderne, positive psykologi, hvor man skal mærke efter, hvad man fæler, men også helst skal være anerkendende, positiv og glad - "<span class="r">tage ja - hatten på</span>,"<sub>9</sub> se et halvfyldt, ikke et halvtomt glas og så videre.</td>
+
+<td>The book is a counter to the entire industry of self-help books. Brinkmann believes that there is far too much focus on ourselves and our feelings, and that it does not solve any of our problems. On the whole, he is critical of modern, positive psychology, where you have to feel what you feel, but also ideally have to be appreciative, positive and happy - "<span class="r">accept - hat on</span>,"<sub>9</sub> see a half-full, not a glass half empty and so on.</td>
+</tr>
+
+
+<tr valign=top>
+<td>06<span class="w">--</span></td>
+<td class="nb">Hvis metoden hjalp til at skabe mere menneskelig trivsel, ville det selvfølgelig være godt, men idealet om at være glad og positiv blev ifølge Brinkmann hurtigt til et krav. Humør er nu noget, man skal præstere på sin uddannelse eller arbejdsplads. Det skal bruges til at forbedre sin præstation, udvikle sig og lære nyt hele livet. Hvis man har for meget arbejde, må man ikke klage over det, men skal se det som en udfordring. Det betyder ifølge Brinkmann, at alle samfundsmæssige problemer gøres individuelle og undertrykkes.</td>
+
+<td>If the method helped to create more human well-being, that would of course be good, but the ideal of being happy and positive quickly became a requirement, according to Brinkmann. Mood is now something you have to perform in your education or workplace. It must be used to improve one's performance, develop and learn new things throughout life. If you have too much work, don't complain about it, but see it as a challenge. According to Brinkmann, this means that all social problems are individualized and suppressed.</td>
+</tr>
+
+
+<tr valign=top>
+<td>07<span class="w">--</span></td>
+<td class="nb">Brinkmann er kritisk over for nutidens ideal om at v;re omstillingsparat og bevægelig. Man skal være i konstant udvikling og må ikke stå rødder. I dag ses det som noget negativt at have det samme arbejde i mange år, som tegn på, at man sidder fast og ikke udvikler sig.</td>
+
+<td>Brinkmann is critical of today's ideal of being adaptable and mobile. You must be in constant development and must not be rooted. Today, having the same job for many years is seen as something negative, as a sign that you are stuck and not developing.</td>
+</tr>
+
+
+<tr valign=top>
+<td>08<span class="w">--</span></td>
+<td class="nb">Efter bogen udkom, blev Brinkmann ringet op af mange forskellige faggrupper, der bad ham komme ud og holde foredrag, og han så, at at hans syv "bud" var hængt op på lærerværelser og i andre personalerum. Han tror, det skyldes, at mange i dag er pressede af et tempo, som de ikke kan følge med i. De er pressede af forventinger om, at de skal udvikle sig og være omstillingsparate. Og de er vant til at få at vide, at det er deres egen skyld, hvis de ikke kan følge med. Det kan være svært at gå op imod det, fordi de ansatte har fået at vide, at en negativ attitude netop er en del af problemet, at nu skal de tage ja - hatten på og kommen ind i kampen.</td>
+
+<td>After the book was published, Brinkmann received calls from many different professional groups asking him to come out and give lectures, and he saw that his seven "commandments" were posted in teachers' rooms and in other staff rooms. He believes this is because many people today are pressured by a pace that they cannot keep up with. They are pressured by expectations that they must develop and be ready for change. And they are used to being told that it is their own fault if they cannot keep up. It can be difficult to go up against it, because the employees have been told that a negative attitude is precisely part of the problem, that now they have to put on their hats and join the fight.</td>
+</tr>
+
+<tr valign=top>
+<td>09<span class="w">--</span></td>
+<td class="nb">Hvis man søger hjælp til at løse sine psykiske problemer, får man at vide, at man skal mærke efter i sig selv, finde ud af, hvem man er, og hvad man i virkeligheden vil. "Man skal elske sig selv, før man kan elsker andre." Det hjælper bare ikke på problemerne, siger Brinkmann, men gør os selvopragede og egoistiske. Han mener nærmest, psykologien har erstattet religionen. I det kristne tankesæt handlede alt i livet om at nærme sig Gud, nu er det ikke Gud, men os selv, der er i centrum. Vi går ikke til præsten, men til coachen, terapeuten eller psykologen, og vi læser ikke Biblen, men selvhjælpsbøger. Vores optagethed af vores egne behov fører ifølge Brinkmann til en narcissisme, og han tror, vi ville få det bedre, hvis vi tænkte mere på andre mennesker og deres behov end på vores egne. For menningen med tilværelsen er ikke inde i os, men ude i samfundet og i forholdet mellem os og andre mennesker.</td>
+
+<td>If you seek help to solve your mental problems, you are told that you must look within yourself, find out who you are and what you really want. "You have to love yourself before you can love others." It just doesn't help the problems, says Brinkmann, but makes us proud and selfish. He almost believes that psychology has replaced religion. In the Christian mindset, everything in life was about getting closer to God, now it is not God, but ourselves, who is at the center. We don't go to the pastor, but to the coach, the therapist or the psychologist, and we don't read the Bible, but self-help books. According to Brinkmann, our preoccupation with our own needs leads to narcissism, and he believes that we would be better off if we thought more about other people and their needs than about our own. Because the meaning of life is not inside us, but out in society and in the relationship between us and other people.</td>
+</tr>
+
+
+<tr valign=top>
+<td>10<span class="w">--</span></td>
+<td class="nb">Brinkmann mener, vi skal lade os inspirere af den 2000 år gamle stoiske filosofi og dens ideal om sindsro. I stedet for at fokusere på nutiden og fremtiden skal man hellere dvæle ved fortiden og søge en sammenhæng i sit liv. Han mener, vi vil få mere ro og mening i vores liv, hvis vi fokuserer på pligt, moral og fornuft. Han anbefaler at rehabilitere stoikernes gamle dyder: integritet, selvbeherskelse, pligtfølelse, sindsro og værdighed.</td>
+
+<td>Brinkmann believes we should be inspired by the 2,000-year-old Stoic philosophy and its ideal of serenity. Instead of focusing on the present and the future, one should rather dwell on the past and look for a connection in one's life. He believes that we will get more peace and meaning in our lives if we focus on duty, morality and reason. He recommends rehabilitating the old virtues of the Stoics: integrity, self-control, sense of duty, serenity and dignity.</td>
+</tr>
+
+
+<tr valign=top>
+<td>11<span class="w">--</span></td>
+<td class="nb">Vi skal glemme os selv lidt mere og interessere os for de væsentlige ting, der findes: andre mennesker, kulturen og naturen. Hvis der er noget, der er værd at gå efter i sit liv, er det pligter og moral. Det er herligt, hvis man samtidig har det sjovt med at gøre sin pligt og gøre det ordenligt. Men hvis man ikke har det herligt, er det alligevel værd at gøre det. Det er dét, der er pointen.</td>
+
+<td>We must forget ourselves a little more and take an interest in the essential things that exist: other people, culture and nature. If there is anything worth pursuing in one's life, it is duty and morality. It's wonderful if you have fun doing your duty and doing it properly at the same time. But if you're not having a great time, it's still worth doing. That is the point.</td>
+</tr>
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Number</th>
+                <th>English</th>
+                <th>dansk</th>
+            </tr>
+        </tfoot>
+    </table>
+
+        
+<script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable({
+        initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+    });
+ 
+} );
+</script>
+
+</body>
+</html>
