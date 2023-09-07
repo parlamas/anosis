@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moods</title>
+
+<style>
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    .l {color:lime;}
+    .c {color:gold;}
+    .b {color:blue;}
+    .r {color:red;}
+    .g {color:lime; background-color:black; padding:1px; padding-left:4px; padding-right:4px;}
+    .w {color:white; font-size:1pt;}
+    .syn {background-color:beige; color:brown; padding:5px; font-size:12pt;}
+    .bl {color:black;}
+    .dv {width:80%;}
+
+    .nb {color:#808000;}
+
+    table tr td {text-align:justify;}
+
+    sub {color:blue; font-weight:bold;}
+
+    
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  background-color:black;
+  color:white;
+  padding:10px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  left:10px;
+  top:30px;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  width:500px;
+  height:200px;
+  background-color:brown;
+  color:gold;
+  padding:20px;
+  text-align:justify;
+  font-size:15pt;
+}
+
+a .hover-img { 
+  position:relative;
+ }
+a .hover-img span {
+  position:absolute; left:-9999px; top:-9999px; z-index:9999;
+ }
+a:hover .hover-img span { 
+  top: 20px; 
+  left:0;
+ }
+    
+</style>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+
+<div class="tooltip"><span style="font-size:11pt; color:beige;">Isidoros Parlamas</span> &rarr; How-to-use instructions...
+  <span class="tooltiptext">
+  <center>Search for: <span class="l">any word or paragraph...</span>
+</div><p>
+
+<table id="example" class="display" style="width:100%">
+        <thead>
+
+            <tr>
+            	<th width=4%>number<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=40%>English<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=40%>dansk<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=14%>type<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+
+<tr><td>0001<span class="w">-'-</span></td>
+	<td class="nb">Because Rosa's computer skills were poor, she was not considered for the job.</td>
+	<td>Da Rosas computerfærdigheder var dårlige, kom hun ikke i betragtning til jobbet.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0002<span class="w">-'-</span></td>
+	<td class="nb">Rosa's computer skills were poor, therefore she was not considered for the job.</td>
+	<td>Rosas computerfærdigheder var dårlige, derfor kom hun ikke i betragtning til jobbet.</td>
+	<td class="b">aetiology</td>
+</tr>
+		
+<tr><td>0003<span class="w">-'-</span></td>
+	<td class="nb">Because Rosa's computer skills were poor, she was not considered for the job.</td>
+	<td>Fordi Rosas computerfærdigheder var dårlige, kom hun derfor ikke i betragtning til jobbet.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0004<span class="w">-'-</span></td>
+	<td class="nb">Due to her poor computer skills, Rosa was not considered for the job.</td>
+	<td>På grund af hendes dårlige computerfærdigheder kom Rosa ikke i betragtning til jobbet.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">-'-</span></td>
+	<td class="nb">Rosa's computer skills were poor, consequently she was not considered for the job.</td>
+	<td>Rosas computerfærdigheder var dårlige, og hun kom derfor ikke i betragtning til jobbet.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0006<span class="w">-'-</span></td>
+	<td class="nb">Because the weather was cold, we stayed home.</td>
+	<td>Fordi vejret var koldt, blev vi hjemme.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0007<span class="w">--</span></td>
+	<td class="nb">Because of the cold weather, we stayed home.</td>
+	<td>På grund af det kolde vejr blev vi hjemme.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0008<span class="w">-'-</span></td>
+	<td class="nb">Due to the cold weather, we stayed home.</td>
+	<td>På grund af det kolde vejr blev vi hjemme.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0009<span class="w">-'-</span></td>
+	<td class="nb">Due to the fact that the weather was cold, we stayed home.</td>
+	<td>På grund af at vejret var koldt, blev vi hjemme.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0010<span class="w">-'-</span></td>
+	<td class="nb">We stayed home because of the cold weather.</td>
+	<td>Vi blev hjemme på grund af det kolde vejr.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0011<span class="w">-'-</span></td>
+	<td class="nb">We stayed home due to the cold weather.</td>
+	<td>Vi blev hjemme på grund af det kolde vejr.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0012<span class="w">-'-</span></td>
+	<td class="nb">We stayed home due to the fact that the weather was cold.</td>
+	<td>Vi blev hjemme på grund af, at vejret var koldt.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0013<span class="w">--</span></td>
+	<td class="nb">We postponed our trip because of the bad driving conditions.</td>
+	<td>Vi udsatte vores tur på grund af de dårlige køreforhold.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0014<span class="w">-'-</span></td>
+	<td class="nb">Sue's eyes were red because she had been swimming in a chlorinated pool.</td>
+	<td>Sues øjne var røde, fordi hun havde svømmet i et klorbassin.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0015<span class="w">-'-</span></td>
+	<td class="nb">We can't visit the museum tomorrow because it isn't open.</td>
+	<td>Vi kan ikke besøge museet i morgen, fordi det ikke er åbent.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0016<span class="w">-'-</span></td>
+	<td class="nb">Jim had to give up jogging because of his sprained ankle.</td>
+	<td>Jim måtte opgive at jogge på grund af sin forstuvede ankel.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0017<span class="w">-'-</span></td>
+	<td class="nb">Because of heavy fog at the airport, we had to stay in London an extra day.</td>
+	<td>På grund af tung tåge i lufthavnen måtte vi blive i London en ekstra dag.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0018<span class="w">-'-</span></td>
+	<td class="nb">Because the elevator was broken, we had to walk up six flights of stairs.</td>
+	<td>Fordi elevatoren var i stykker, måtte vi gå op ad seks trapper.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0019<span class="w">-'-</span></td>
+	<td class="nb">Thousands of Irish people emigrated to the United States because of the potato famine in Ireland in the mid-19th century.</td>
+	<td>Tusindvis af irere emigrerede til USA på grund af kartoffel hungersnøden i Irland i midten af det 19. århundrede.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0020<span class="w">-'-</span></td>
+	<td class="nb">The young couple decided not to buy the house because of its dilapidated condition.</td>
+	<td>Det unge par besluttede ikke at købe huset på grund af dens forfaldne tilstand.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0021<span class="w">-'-</span></td>
+	<td class="nb">Because of our parents' generosity , all of the children in our family have received the best of everything.</td>
+	<td>På grund af vores forældres generøsitet, alle de børn i vores familie har fået det bedste af alt.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0022<span class="w">-'-</span></td>
+	<td class="nb">We were late to the meeting due to heavy traffic.</td>
+	<td>Vi kom for sent til mødet på grund af tæt trafik.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0023<span class="w">-'-</span></td>
+	<td class="nb">Bill has to do all of the cooking and cleaning because of his wife's illness.</td>
+	<td>Bill er nødt til at lave alt madlavning og gøre rent på grund af sin kones sygdom.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0024<span class="w">-'-</span></td>
+	<td class="nb">Due to Dr. Robinson's excellent work on wolves, we know much more today about that endangered species than we did even five years ago.</td>
+	<td>På grund af Dr. Robinsons fremragende arbejde med ulve ved vi meget mere i dag om den truede art, end vi gjorde selv for fem år siden.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0025<span class="w">-*-</span></td>
+	<td class="nb">I couldn't get to sleep last night because of the noise in the apartment next to us.</td>
+	<td>Jeg kunne ikke få sovet i nat på grund af støjen i lejligheden ved siden af os.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0026<span class="w">-*-</span></td>
+	<td class="nb">Due to circumstances beyond our control , we regret to say that we  cannot be present at their daughter's wedding.</td>
+	<td>På grund af omstændigheder uden for vores kontrol, må vi desværre sige, at vi ikke kan være til stede ved deres datters bryllup.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0027<span class="w">-*-</span></td>
+	<td class="nb">Jill failed the test because she didn't study.</td>
+	<td>Jill bestod ikke testen, fordi hun ikke studerede.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0028<span class="w">-*-</span></td>
+	<td class="nb">Helen didn't study, so she failed the test.</td>
+	<td>Helen studerede ikke, så hun bestod ikke testen.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0029<span class="w">-*-</span></td>
+	<td class="nb">It was raining very hard, so the children had to stay at home.</td>
+	<td>Det regnede meget, så børnene måtte blive hjemme.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0030<span class="w">-*-</span></td>
+	<td class="nb">Steve didn't have an umbrella, so he got wet.</td>
+	<td>Steve havde ikke en paraply, så han blev våd.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0031<span class="w">-*-</span></td>
+	<td class="nb">Because it is cold, she is wearing a coat.</td>
+	<td>Fordi det er koldt, har hun en frakke på.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0032<span class="w">-*-</span></td>
+	<td class="nb">She put on a coat because it was cold.</td>
+	<td>Hun tog en frakke på, fordi det var koldt.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0033<span class="w">-*-</span></td>
+	<td class="nb">He was wearing a coat because of the cold weather.></td>
+	<td>Han var iført frakke på grund af det kolde vejr.</td>
+	<td class="b">aetiology<br>prepositional phrase</td>
+</tr>
+
+<tr><td>0034<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0035<span class="w">-*-</span></td>
+	<td class="nb">The weather was cold and therefore he wore a coat.</td>
+	<td>Vejret var koldt, og derfor havde han en frakke på.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0036<span class="w">-*-</span></td>
+	<td class="nb">The weather was cold, so they were all wearing a coat.</td>
+	<td>Vejret var koldt, så de var alle iført frakke.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0037<span class="w">-*-</span></td>
+	<td class="nb">Her son always enjoyed studying sciences in high school and therefore he decided to major in biology in college.</td>
+	<td>Hendes søn har altid nydt at studere naturvidenskab i gymnasiet, og derfor besluttede han at tage hovedfag i biologi på college.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0038<span class="w">-*-</span></td>
+	<td class="nb">Due to recent improvements in the economy, few  people are unemployed.</td>
+	<td>På grund af de seneste forbedringer i økonomien er få mennesker arbejdsløse.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0039<span class="w">-*-</span></td>
+	<td class="nb">Last night's storm damaged the power lines; consequently, a number of towns were without electricity for several hours.</td>
+	<td>I nats storm beskadigede elledningerne; følgelig var en række byer uden elektricitet i flere timer.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0040<span class="w">-*-</span></td>
+	<td class="nb">Because of the snowstorm, only five students came to class. The teacher, therefore, canceled the class.</td>
+	<td>På grund af snestormen kom kun fem elever til undervisningen. Læreren aflyste derfor timen.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0041<span class="w">-*-</span></td>
+	<td class="nb">Students often make numerous spelling mistakes in their  compositions because they do not use a dictionary when they write.</td>
+	<td>Elever laver ofte talrige stavefejl i deres kompositioner, fordi de ikke bruger en ordbog, når de skriver.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0042<span class="w">-*-</span></td>
+	<td class="nb">It was very hot, so we went swimming.</td>
+	<td>Det var meget varmt, så vi badede.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0043<span class="w">-*-</span></td>
+	<td class="nb">Because it was very hot, we went swimming.</td>
+	<td>Fordi det var meget varmt, bad vi.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0044<span class="w">-*-</span></td>
+	<td class="nb">We went swimming because it was very hot.</td>
+	<td>Vi badede, fordi det var meget varmt.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0045<span class="w">-'-</span></td>
+	<td class="nb">Because of the hot weather, we went swimming.</td>
+	<td>På grund af det varme vejr gik vi og badede.</td>
+	<td class="b">aetiology<br>prepositional phrase</td>
+</tr>
+
+<tr><td>0046<span class="w">-'-</span></td>
+	<td class="nb">We went swimming because of the hot weather.</td>
+	<td>Vi badede på grund af det varme vejr.</td>
+	<td class="b">aetiology<br>prepositional phrase</td>
+</tr>
+
+<tr><td>0047<span class="w">-m-</span></td>
+	<td class="nb">The food was delicious and therefore we ate a lot.</td>
+	<td>Maden var lækker og derfor spiste vi meget.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0048<span class="w">-m-</span></td>
+	<td class="nb">The food was delicious. Therefore, we ate a lot.</td>
+	<td>Maden var lækker. Derfor spiste vi meget.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0049<span class="w">-m-</span></td>
+	<td class="nb">The food was delicious. We, therefore, ate a lot.</td>
+	<td>Maden var lækker. Derfor spiste vi meget.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0050<span class="w">-m-</span></td>
+	<td class="nb">The food was delicious. We ate a lot, therefore.</td>
+	<td>Maden var lækker. Vi spiste derfor meget.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0051<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0052<span class="w">-'-</span></td>
+	<td class="nb">Peanuts are not nuts; they are beans.</td>
+	<td>Jordnødder er ikke nødder; de er bønner.</td>
+	<td class="b">2 main clauses</td>
+</tr>
+
+<tr><td>0053<span class="w">-*-</span></td>
+	<td class="nb">We postponed our trip because the weather turned  bad.</td>
+	<td>Vi udsatte vores tur, fordi vejret blev dårligt.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0054<span class="w">-m-</span></td>
+	<td class="nb">Since the food was delicious, we ate a lot.</td>
+	<td>Da maden var lækker, spiste vi meget.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0055<span class="w">-m-</span></td>
+	<td class="nb">Because of the food being delicious, we ate a lot.</td>
+	<td>Da maden var lækker, spiste vi meget.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0056<span class="w">-m-</span></td>
+	<td class="nb">The food was delicious, so we ate a lot.</td>
+	<td>Maden var lækker, så vi spiste meget.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0057<span class="w">-m-</span></td>
+	<td class="nb">My mother cooks delicious meals so we eat a lot.</td>
+	<td>Min mor laver lækre måltider, så vi spiser meget.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0058<span class="w">-m-</span></td>
+	<td class="nb">My mother cooks delicious meals, so we eat a lot.</td>
+	<td>Min mor laver lækre måltider, så vi spiser meget.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0059<span class="w">-m-</span></td>
+	<td class="nb">Jane cooks horrible meals, so we do not eat a lot.</td>
+	<td>Jane laver forfærdelige måltider, så vi spiser ikke meget.</td>
+	<td class="b">result SVA (SAV => purpose)</td>
+</tr>
+
+<tr><td>0060<span class="w">-m-</span></td>
+	<td class="nb">Jane cooks horrible meals so (that) we do not eat a lot.</td>
+	<td>Jane laver forfærdelige måltider, så vi ikke spiser meget.</td>
+	<td class="b">purpose SAV (result => SVA)</td>
+</tr>
+
+<tr><td>0061<span class="w">-m-</span></td>
+	<td class="nb">Jane cooks horrible meals. Consequently, we never  eat a lot.</td>
+	<td>Jane laver forfærdelige måltider. Derfor spiser vi aldrig meget.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0062<span class="w">-m-</span></td>
+	<td class="nb">Due to the fact that Jane cooks horrible meals, we never eat a lot.</td>
+	<td>På grund af det faktum, at Jane laver forfærdelige måltider, spiser vi aldrig meget.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0063<span class="w">-m-</span></td>
+	<td class="nb">Due to Jane's horrible cooking, we never eat a lot.</td>
+	<td>På grund af Janes forfærdelige madlavning spiser vi aldrig meget.</td>
+	<td class="b">aetiology<br>prepositional phrase</td>
+</tr>
+
+<tr><td>0064<span class="w">-m-</span></td>
+	<td class="nb">We never eat a lot because Jane cooks horrible meals.</td>
+	<td>Vi spiser aldrig meget, fordi Jane laver forfærdelige måltider.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0065<span class="w">-m-</span></td>
+	<td class="nb">Because the winters are so severe in Patagonia, he decided to buy a house in Florida.</td>
+	<td>Fordi vintrene er så strenge i Patagonien, besluttede han at købe et hus i Florida.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0066<span class="w">-*-</span></td>
+	<td class="nb">Since we lose a lot of heat through the head, it is important to wear a hat when it is cold.</td>
+	<td>Da vi mister meget varme gennem hovedet, er det vigtigt at have en hat på, når det er koldt.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0067<span class="w">-'-</span></td>
+	<td class="nb">When I was in my teens and twenties, it was easy for me to get into an argument with my father, for both of us can be stubborn and opinionated.</td>
+	<td>Da jeg var i mine teenagere og tyverne, var det nemt for mig at komme i skænderi med min far, for vi kan begge være stædige og egensindige.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0068<span class="w">-*-</span></td>
+	<td class="nb">Due to the fact that a camel can go completely without water for eight to ten days, it is the ideal animal if you travel through the desert.<p>
+	A camel is the ideal animal if you travel through the desert, due to the fact that it can go completely without water for eight to ten days.</td>
+	<td>En kamel er det ideelle dyr, hvis du rejser gennem ørkenen, da den kan gå helt uden vand i otte til ti dage.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0069<span class="w">-*-</span></td>
+	<td class="nb">Jill's car wouldn't start. Therefore, he wasn't able to pick them up after the concert.</td>
+	<td>Jills bil ville ikke starte. Derfor var han ikke i stand til at hente dem efter koncerten.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0070<span class="w">-*-</span></td>
+	<td class="nb">Diana did not pay close attention to what the travel agent said when she went to see him at his office last month, so she had to ask many of the same questions 
+again the next time he talked to him.</td>
+	<td>Diana var ikke meget opmærksom på, hvad rejsebureauet sagde, da hun besøgte ham på hans kontor i sidste måned, så hun var nødt til at stille mange af de samme spørgsmål 
+igen næste gang han talte med ham.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0071<span class="w">-*-</span></td>
+	<td class="nb">A tomato is classified as a fruit, but people consider it a vegetable since it is often eaten in salads along with lettuce, onions, cucumbers, arugula, garlic etc.</td>
+	<td>En tomat er klassificeret som en frugt, men folk betragter den som en grøntsag, da den ofte spises i salater sammen med salat, løg, agurker, rucola, hvidløg osv.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0072<span class="w">-*-</span></td>
+	<td class="nb">Due to strong consumer demand for ivory, African elephants have been slaughtered systematically. Consequently, many people who care about saving these animals from extinction refuse to buy items made from ivory.</td>
+	<td>På grund af stærk forbrugerefterspørgsel efter elfenben er afrikanske elefanter blevet slagtet systematisk. Derfor nægter mange mennesker, der bekymrer sig om at redde disse dyr fra udryddelse, at købe varer lavet af elfenben.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0073<span class="w">-*-</span></td>
+	<td class="nb">In the 14th century, many sailors refused to venture forth with explorers into unknown waters because most Europeans of the time believed the world was flat and that a ship could conceivably fall off the end of the earth.</td>
+	<td>I det 14. århundrede nægtede mange sømænd at vove sig ud med opdagelsesrejsende ud i ukendt farvand, fordi de fleste europæere på den tid troede, at verden var flad, og at et skib kunne tænkes at falde ned fra jordens ende.</td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0074<span class="w">--</span></td>
+	<td class="nb">It was such an expensive ring that she couldn't afford to buy it.</td>
+	<td>Det var så dyr en ring, at hun ikke havde råd til at købe den.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0075<span class="w">--</span></td>
+	<td class="nb">The ring was so expensive that she couldn't afford to buy it.</td>
+	<td>Ringen var så dyr, at hun ikke havde råd til at købe den.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0076<span class="w">--</span></td>
+	<td class="nb">The weather was so hot that you could bake pitta bread on a car's hood.</td>
+	<td>Vejret var så varmt, at man kunne bage pitabrød på en bils motorhjelm.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0077<span class="w">-*-</span></td>
+	<td class="nb">During the winter, we had such cold and humid weather that it was uncomfortable just sitting in a chair covered with blankets.</td>
+	<td>I løbet af vinteren havde vi så koldt og fugtigt vejr, at det var ubehageligt bare at sidde i en stol dækket med tæpper.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0078<span class="w">--</span></td>
+	<td class="nb">We're having such beautiful weather that I feel like spending the day in the garden.</td>
+	<td>Vi har så smukt vejr, at jeg har lyst til at tilbringe dagen i haven.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0079<span class="w">--</span></td>
+	<td class="nb">Steve takes everything in life so seriously that he is unable to experience the joy of it.</td>
+	<td>Steve tager alt i livet så alvorligt, at han ikke er i stand til at opleve glæden ved det.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0080<span class="w">--</span></td>
+	<td class="nb">I met so many people at university that I can't possibly remember them all.</td>
+	<td>Jeg mødte så mange mennesker på universitetet, at jeg umuligt kan huske dem alle.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0081<span class="w">--</span></td>
+	<td class="nb">We  had so much milk that we got a stomachache.</td>
+	<td>Vi fik så meget mælk, at vi fik ondt i maven.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0082<span class="w">--</span></td>
+	<td class="nb">There was so much traffic that it took us 2 hours to cover 2 km.</td>
+	<td>Der var så meget trafik, at det tog os 2 timer at tilbagelægge 2 km.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0083<span class="w">--</span></td>
+	<td class="nb">In South Korea, so few students are accepted by the top universities that admission virtually guarantees a well paying job.</td>
+	<td>I Sydkorea er så få studerende accepteret af de bedste universiteter, at optagelse praktisk talt garanterer et velbetalt job.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0084<span class="w">--</span></td>
+	<td class="nb">Jill is such a good guitarist that I'm surprised she's not famous already.</td>
+	<td>Jill er så god en guitarist, at jeg er overrasket over, at hun ikke allerede er berømt.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0085<span class="w">--</span></td>
+	<td class="nb">There were those people talking so loud that I couldn't have a conversation with my friends.</td>
+	<td>Der var de mennesker, der talte så højt, at jeg ikke kunne føre en samtale med mine venner.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0086<span class="w">--</span></td>
+	<td class="nb">Flies take off so quickly that it is so difficult to swat them.</td>
+	<td>Fluer letter så hurtigt, at det er så svært at slå dem.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0087<span class="w">--</span></td>
+	<td class="nb">Rita did performed so well at work that she was promoted to floor manager within 3 months.</td>
+	<td>Rita klarede sig så godt på arbejdet, at hun blev forfremmet til floor manager inden for 3 måneder.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0088<span class="w">--</span></td>
+	<td class="nb">Jalapeños are so hot that they burn my tongue.</td>
+	<td>Jalapeños er så varme, at de brænder min tunge.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0089<span class="w">--</span></td>
+	<td class="nb">There are so many grains of sand in a table spoon that it is impossible to count them.</td>
+	<td>Der er så mange sandkorn i en spiseske, at det er umuligt at tælle dem.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0090<span class="w">--</span></td>
+	<td class="nb">The hurricane affected such a great area that several small towns were almost leveled.</td>
+	<td>Orkanen ramte så stort et område, at flere små byer næsten blev jævnet med jorden.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0091<span class="w">--</span></td>
+	<td class="nb">My parens love me so much that sometimes I feel it affects my growth as a person negatively.</td>
+	<td>Mine forældre elsker mig så højt, at jeg nogle gange føler, at det påvirker min vækst som person negativt.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0092<span class="w">--</span></td>
+	<td class="nb">So few students failed the test that the teacher was commended by the school principal.</td>
+	<td>Så få elever dumpede prøven, at læreren blev rost af skolelederen.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0093<span class="w">--</span></td>
+	<td class="nb">They put so much salt in the soup that they could not eat it.</td>
+	<td>De kom så meget salt i suppen, at de ikke kunne spise den.</td>
+	<td class="b">result</td>
+</tr>
+
+<tr><td>0094<span class="w">--</span></td>
+	<td class="nb">Please stop talking so (that) I can hear what Peter is saying.</td>
+	<td>Lad være med at tale, så jeg kan høre, hvad Peter siger.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0095<span class="w">--</span></td>
+	<td class="nb">I asked them to stop talking so (that) I could hear what Peter was saying.</td>
+	<td>Jeg bad dem holde op med at tale, så jeg kunne høre, hvad Peter sagde.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0096<span class="w">--</span></td>
+	<td class="nb">She's going to withdraw some money so (that) she  has enough to go to the market.</td>
+	<td>Hun vil hæve nogle penge, så hun har nok til at gå på markedet.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0097<span class="w">--</span></td>
+	<td class="nb">She withdrew some money yesterday so (that) she would have enough to go to the market.</td>
+	<td>Hun hævede nogle penge i går, så hun ville have nok til at gå på markedet.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0098<span class="w">--</span></td>
+	<td class="nb">This weekend they're staying home so (that) they can paint the kitchen.</td>
+	<td>I weekenden bliver de hjemme, så de kan male køkkenet.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0099<span class="w">--</span></td>
+	<td class="nb">Last weekend they stayed home so (that) they could paint the kitchen.</td>
+	<td>Sidste weekend blev de hjemme, så de kunne male køkkenet.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0100<span class="w">--</span></td>
+	<td class="nb">Make sure you put out the fire before you leave so (that) the house is still standing when you get back.</td>
+	<td>Sørg for at slukke ilden, før du går, så huset stadig står, når du kommer tilbage.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0101<span class="w">--</span></td>
+	<td class="nb">Yesterday I made sure I put out the fire before I left  so (that) the house would be still standing when I came back.</td>
+	<td>I går sørgede jeg for at slukke ilden, inden jeg gik, så huset stod stadig, når jeg kom tilbage.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0102<span class="w">--</span></td>
+	<td class="nb">I'm going to leave work early today so (that) I will be able to get to the post office before closes down.</td>
+	<td>Jeg går tidligt fra arbejde i dag, så jeg vil være i stand til at komme til posthuset, inden jeg lukker ned.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0103<span class="w">--</span></td>
+	<td class="nb">When it started to snow, Harry opened his umbrella so (that) he wouldn't get wet.</td>
+	<td></td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0104<span class="w">--</span></td>
+	<td class="nb">When it started to snow, his wife lit the fireplace so (that) they wouldn't be cold.</td>
+	<td>Da det begyndte at sne, tændte hans kone pejsen, så de ikke skulle være kold.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0105<span class="w">--</span></td>
+	<td class="nb">They didn't go to work so (that) they would be fired.</td>
+	<td>De gik ikke på arbejde, så de ville blive fyret.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0106<span class="w">--</span></td>
+	<td class="nb">Being short in a crowd, Joe stood on tiptoes so (that) he could watch the couple tango.</td>
+	<td>Da han var kort i en menneskemængde, stod Joe på tæer, så han kunne se parrets tango.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0107<span class="w">--</span></td>
+	<td class="nb">I made myself comfortable in the big armchair so that I could watch my favorite serial.</td>
+	<td>Jeg satte mig godt til rette i den store lænestol, så jeg kunne se min yndlingsserie.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0108<span class="w">--</span></td>
+	<td class="nb">You need to buy a disinfectant so that you can get get rid of bedbugs.</td>
+	<td>Du skal købe et desinfektionsmiddel, så du kan komme af med væggelus.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0109<span class="w">--</span></td>
+	<td class="nb">The little boy cut off the fuse so that the bomb  wouldn't go off.</td>
+	<td>Den lille dreng afbrød lunten, så bomben ikke kunne gå af.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0110<span class="w">--</span></td>
+	<td class="nb">The plumber could not fix the the problem with the sink so that it wouldn't leak.</td>
+	<td>Blikkenslageren kunne ikke løse problemet med vasken, så den ikke ville lække.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0111<span class="w">--</span></td>
+	<td class="nb">Mrs. Perez is studying the history and government of Denmark so she can become a Danish citizen.</td>
+	<td>Fru Perez studerer Danmarks historie og regering, så hun kan blive dansk statsborger.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb">I put on my driving glasses so that I could read the signs at a distance.</td>
+	<td>Jeg tog mine kørebriller på, så jeg kunne læse skiltene på afstand.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb">Jill hired a specialist in car upholstery so that she can have her own car furred.</td>
+	<td>Jill hyrede en specialist i bilpolstring, så hun kan få sit eget bil pelset.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb">Helen is doing her best at work so that she will not be fired.</td>
+	<td>Helen gør sit bedste på arbejdet, så hun ikke bliver det fyret.</td>
+	<td class="b">purpose (SAV)</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb">People are saving their money so that they won't have to stay at home during summer vacation.</td>
+	<td>Folk sparer deres penge op, så de slipper for at blive hjemme i sommerferien.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb">During the procession, people carried a float of Virgin Mary's so that tehy could attract the crowds.</td>
+	<td>Under optoget bar folk en flyder af Jomfru Maria, så de kunne tiltrække folkemængderne.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb">People prefer extra virgin olive oil so they can minimize the amount of toxins consumed.</td>
+	<td>Folk foretrækker ekstra jomfru olivenolie, så de kan minimere mængden af forbrugte toksiner.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb">We need to consume vegetables so that we replenish the body's vitamin supplies.</td>
+	<td>Vi skal indtage grøntsager, så vi fylder kroppens vitaminforsyninger op.</td>
+	<td class="b">purpose</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb">We need to consume vegetables so that the body's vitamin supplies are not depleted.</td>
+	<td>Vi skal indtage grøntsager, så kroppens vitaminforsyninger ikke bliver opbrugt.</td>
+	<td class="b">purpose (SAV)</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb">They have been studying hard so they do not fail their physics exam.</td>
+	<td>De har studeret hårdt, så de ikke dumper deres fysikeksamen.</td>
+	<td class="b">purpose (SAV)</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb">He turned off his computer so that he would not hear the fan.</td>
+	<td>Han slukkede sin computer, så han ikke kunne høre blæseren.</td>
+	<td class="b">purpose (SAV)</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb">He plunged onto the sidewalk instinctively so that the moto cycle would not hit him.</td>
+	<td>Han styrtede instinktivt ud på fortovet, så motorcyklen ikke ville ramme ham.</td>
+	<td class="b">purpose (SAV)</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+<tr><td>0005<span class="w">--</span></td>
+	<td class="nb"></td>
+	<td></td>
+	<td class="b">aetiology</td>
+</tr>
+
+-->
+
+</tbody>
+        <tfoot>
+            <tr>
+            	<th>Number</th>
+                <th>English</th>
+                <th>dansk</th>
+                <th>type</th>
+            </tr>
+        </tfoot>
+    </table>
+
+        
+<script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable({
+        initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+    });
+ 
+} );
+</script>
+
+</body>
+</html>
