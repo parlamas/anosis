@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adjectives</title>
+
+<style>
+table tr td {font-size:15pt; text-align:justify;}
+
+a {text-decoration:none;}
+
+.s {font-size:10pt;}
+
+. {color:blue;}
+
+sup {color:red;}
+
+
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    .y {background-color:blue; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .z {background-color:black; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .l {color:lime;}
+    .c {color:gold;}
+    .b {color:blue;}
+    .r {color:red;}
+    .g {color:lime; background-color:black; padding:1px; padding-left:4px; padding-right:4px;}
+    .w {color:white; font-size:1pt;}
+    .syn {background-color:beige; color:brown; padding:5px; font-size:12pt;}
+
+    
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  background-color:black;
+  color:white;
+  padding:10px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  left:10px;
+  top:30px;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  width:500px;
+  height:470px;
+  background-color:brown;
+  color:gold;
+  padding:20px;
+  text-align:justify;
+  font-size:15pt;
+}
+
+a .hover-img { 
+  position:relative;
+ }
+a .hover-img span {
+  position:absolute; left:-9999px; top:-9999px; z-index:9999;
+ }
+a:hover .hover-img span { 
+  top: 20px; 
+  left:0;
+ }
+    
+</style>
+
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+
+    <div class="tooltip"><span style="font-size:11pt; color:beige;">Isidoros Parlamas</span> &rarr; How to search...
+  
+  <center><img src="adjectives.png">
+                            
+</div><p>
+
+    
+<table id="example" class="display" style="width:100%">
+        <thead>
+
+            <tr>
+                <th width=3%>#<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=8%>plain (sing)<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=8%>plain (plur)<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=9%>a(n)<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=9%>the (sing)<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=9%>the (plur)<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=9%>some (uncount)<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=9%>some (count)<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=9%>the...is<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=9%>the...are<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=9%>poss (s)<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=9%>poss (p)<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+            </tr>
+        </thead>
+
+        <tbody>        
+
+            <!--327a beginning-->
+
+        <tr valign=top>
+            <td>001</td>
+
+            <td>nice house<p><span class="b">pænt hus</span></td>
+
+            <td>nice houses<p><span class="b">pæne huse</span></td>
+
+            <td>a nice house<p><span class="b">et pænt hus</span></td>
+
+            <td>the nice house<p><span class="b">det pæne hus</span></td>
+
+            <td>the nice houses<p><span class="b">de pæne huse</span></td>
+
+            <td>---</td>
+
+            <td>some nice houses<p><span class="b">nogle pæne huse</span></td>
+
+            <td>the house is nice<p><span class="b">huset er pænt</span></td>
+
+            <td>the houses are nice<p><span class="b">husene er pæne</span></td>
+
+            <td>his house is nice<p><span class="b">hans hus er pæn</span></td>
+
+            <td>Tom's houses are nice<p><span class="b">hans hus er pæn</span></td>
+
+       </tr>
+
+       <tr valign=top>
+            <td>002</td>
+
+            <td>white sugar<p><span class="b">hvidt sukker</span></td>
+
+            <td>---<p><span class="b">---</span></td>
+
+            <td>---<p><span class="b">---</span></td>
+
+            <td>the white sugar<p><span class="b">det hvide sukker</span></td>
+
+            <td>---<p><span class="b">---</span></td>
+
+            <td>some white sugar<p><span class="b">noget hvidt sukker</span></td>
+
+            <td>---<p><span class="b">---</span></td>
+
+            <td>the sugar is white<p><span class="b">sukkeret er hvidt</span></td>
+
+            <td>---<p><span class="b">---</span></td>
+
+            <td>his sugar is white<p><span class="b">hans sukker er hvidt</span></td>
+
+            <td>---<p><span class="b">---</span></td>
+
+       </tr>
+
+       <tr valign=top>
+            <td>003</td>
+
+            <td>red ball<p><span class="b">rød kugle</span></td>
+
+            <td>red balls<p><span class="b">røde kugler</span></td>
+
+            <td>a red ball<p><span class="b">en rød kugle</span></td>
+
+            <td>the red ball<p><span class="b">den røde kugle</span></td>
+
+            <td>the red balls<p><span class="b">de pæne huse</span></td>
+
+            <td>---</td>
+
+            <td>some red balls<p><span class="b">nogle røde kugler</span></td>
+
+            <td>the ball is red<p><span class="b">kuglen er rød</span></td>
+
+            <td>the balls are red<p><span class="b">kuglerne er røde</span></td>
+
+            <td>his ball is red<p><span class="b">hans kugle er rød</span></td>
+
+            <td>her balls are red<p><span class="b">hendes kuglerne er røde</span></td>
+
+       </tr>
+
+ 
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>#</th>
+                <th>plain (sing)</th>
+                <th>plain (plur)</th>
+                <th>a(n)</th>
+                <th>the (sing)</th>
+                <th>the (plur)</th>
+                <th>some (uncount)</th>
+                <th>some (count)</th>
+                <th>the...is</th>
+                <th>the...are</th>
+                <th>poss (s)</th>
+                <th>poss (p)</th>
+            </tr>
+        </tfoot>
+    </table>
+
+        
+<script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable({
+        initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+    });
+ 
+} );
+</script>
+
+</body>
+</html>
