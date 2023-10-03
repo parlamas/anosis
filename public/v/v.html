@@ -1,0 +1,6742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v</title>
+
+<style>
+
+img {float: right; margin: 5px;}
+
+a {text-decoration:none;}
+
+.s {font-size:10pt;}
+
+. {color:blue;}
+
+sup {color:red;}
+
+
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    .y {background-color:blue; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .z {background-color:black; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .l {color:lime;}
+    .c {color:gold;}
+    .b {color:blue;}
+    .br {color:brown;}
+    .r {color:red;}
+    .g {color:lime; background-color:black; padding:1px; padding-left:4px; padding-right:4px;}
+    .w {color:white; font-size:1pt;}
+    .syn {background-color:beige; color:brown; padding:5px; font-size:12pt;}
+
+    
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  background-color:black;
+  color:white;
+  padding:10px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  left:10px;
+  top:30px;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  width:500px;
+  height:470px;
+  background-color:brown;
+  color:gold;
+  padding:20px;
+  text-align:justify;
+  font-size:15pt;
+}
+
+a .hover-img { 
+  position:relative;
+ }
+a .hover-img span {
+  position:absolute; left:-9999px; top:-9999px; z-index:9999;
+ }
+a:hover .hover-img span { 
+  top: 20px; 
+  left:0;
+ }
+
+ table tr td {text-align:justify;}
+    
+</style>
+
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+
+    
+<table id="example" class="display" style="width:100%;">
+        <thead>
+
+            <tr>
+                <th width=5%>#<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=95%>terms<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+            </tr>
+        </thead>
+
+        <tbody>        
+
+            
+                
+
+        
+        <tr valign=top>
+
+            <td align=center>001 <span class="w"></span></td>
+
+            <td>
+                <span class="br">hedde</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <span class="br">komme</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">lytte</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>004 <span class="w"></span></td>
+
+            <td>
+                <span class="br">gentage</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>005 <span class="w"></span></td>
+
+            <td>
+                <span class="br">tale</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>006 <span class="w"></span></td>
+
+            <td>
+                <span class="br">træne</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>007 <span class="w"></span></td>
+
+            <td>
+                <span class="br">stave</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>008 <span class="w"></span></td>
+
+            <td>
+                <span class="br">lave</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>009 <span class="w"></span></td>
+
+            <td>
+                <span class="br">skrive</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>010 <span class="w"></span></td>
+
+            <td>
+                <span class="br">præsentere</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>011 <span class="w"></span></td>
+
+            <td>
+                <span class="br">være</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>012 <span class="w"></span></td>
+
+            <td>
+                <span class="br">lære</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>013 <span class="w"></span></td>
+
+            <td>
+                <span class="br">lære noget/nogen at kende</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>014 <span class="w"></span></td>
+
+            <td>
+                <span class="br">spørge</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>015 <span class="w"></span></td>
+
+            <td>
+                <span class="br">svare</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>016 <span class="w"></span></td>
+
+            <td>
+                <span class="br">indsætte</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>017 <span class="w"></span></td>
+
+            <td>
+                <span class="br">bemærke</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>018 <span class="w"></span></td>
+
+            <td>
+                <span class="br">sige</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>019 <span class="w"></span></td>
+
+            <td>
+                <span class="br">bo</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>020 <span class="w"></span></td>
+
+            <td>
+                <span class="br">have</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>021 <span class="w"></span></td>
+
+            <td>
+                <span class="br">sætte</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>022 <span class="w"></span></td>
+
+            <td>
+                <span class="br">gehøre</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>023 <span class="w"></span></td>
+
+            <td>
+                <span class="br">øve</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>024 <span class="w"></span></td>
+
+            <td>
+                <span class="br">se</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>025 <span class="w"></span></td>
+
+            <td>
+                <span class="br">finde</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>026 <span class="w"></span></td>
+
+            <td>
+                <span class="br">note</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>027 <span class="w"></span></td>
+
+            <td>
+                <span class="br">læse</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>028 <span class="w"></span></td>
+
+            <td>
+                <span class="br">fortæle</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>029 <span class="w"></span></td>
+
+            <td>
+                <span class="br">udfylde</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>030 <span class="w"></span></td>
+
+            <td>
+                <span class="br">blive</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>031 <span class="w"></span></td>
+
+            <td>
+                <span class="br">pege på</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>032 <span class="w"></span></td>
+
+            <td>
+                <span class="br">tro</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>033 <span class="w"></span></td>
+
+            <td>
+                <span class="br">vide</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>034 <span class="w"></span></td>
+
+            <td>
+                <span class="br">samle</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>035 <span class="w"></span></td>
+
+            <td>
+                <span class="br">lægge</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>036 <span class="w"></span></td>
+
+            <td>
+                <span class="br">huske</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>037 <span class="w"></span></td>
+
+            <td>
+                <span class="br">placere</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>038 <span class="w"></span></td>
+
+            <td>
+                <span class="br">kigge</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>039 <span class="w"></span></td>
+
+            <td>
+                <span class="br">forstå</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>040 <span class="w"></span></td>
+
+            <td>
+                <span class="br">bruge</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>041 <span class="w"></span></td>
+
+            <td>
+                <span class="br">gøre</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>042 <span class="w"></span></td>
+
+            <td>
+                <span class="br">interview</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>043 <span class="w"></span></td>
+
+            <td>
+                <span class="br">skifte</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>044 <span class="w"></span></td>
+
+            <td>
+                <span class="br">besvare</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>045 <span class="w"></span></td>
+
+            <td>
+                <span class="br">gå</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>046 <span class="w"></span></td>
+
+            <td>
+                <span class="br">arbejde</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>047 <span class="w"></span></td>
+
+            <td>
+                <span class="br">elske</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>048 <span class="w"></span></td>
+
+            <td>
+                <span class="br">møde</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>049 <span class="w"></span></td>
+
+            <td>
+                <span class="br">cykle</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>050 <span class="w"></span></td>
+
+            <td>
+                <span class="br">tage</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>051 <span class="w"></span></td>
+
+            <td>
+                <span class="br">kunne</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>052 <span class="w"></span></td>
+
+            <td>
+                <span class="br">kunne godt lide</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>053 <span class="w"></span></td>
+
+            <td>
+                <span class="br">lide</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>054 <span class="w"></span></td>
+
+            <td>
+                <span class="br">hade</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>055 <span class="w"></span></td>
+
+            <td>
+                <span class="br">passe på</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>056 <span class="w"></span></td>
+
+            <td>
+                <span class="br">få</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>057 <span class="w"></span></td>
+
+            <td>
+                <span class="br">synes</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>058 <span class="w"></span></td>
+
+            <td>
+                <span class="br">ligge</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>059 <span class="w"></span></td>
+
+            <td>
+                <span class="br">køre</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>060 <span class="w"></span></td>
+
+            <td>
+                <span class="br">aspirere</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>061 <span class="w"></span></td>
+
+            <td>
+                <span class="br">efterfølge</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>062 <span class="w"></span></td>
+
+            <td>
+                <span class="br">udtale</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>063 <span class="w"></span></td>
+
+            <td>
+                <span class="br">at puste på noget </span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>064 <span class="w"></span></td>
+
+            <td>
+                <span class="br">repetere</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>065 <span class="w"></span></td>
+
+            <td>
+                <span class="br">prøve</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>066 <span class="w"></span></td>
+
+            <td>
+                <span class="br">måtte</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>067 <span class="w"></span></td>
+
+            <td>
+                <span class="br">skulle</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>068 <span class="w"></span></td>
+
+            <td>
+                <span class="br">holde</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>069 <span class="w"></span></td>
+
+            <td>
+                <span class="br">angive</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>070 <span class="w"></span></td>
+
+            <td>
+                <span class="br">betyde</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>071 <span class="w"></span></td>
+
+            <td>
+                <span class="br">supplére</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>072 <span class="w"></span></td>
+
+            <td>
+                <span class="br">ringe</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>073 <span class="w"></span></td>
+
+            <td>
+                <span class="br">vågne</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>074 <span class="w"></span></td>
+
+            <td>
+                <span class="br">stå op</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>075 <span class="w"></span></td>
+
+            <td>
+                <span class="br">tage brusebad</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>076 <span class="w"></span></td>
+
+            <td>
+                <span class="br">barbere sig</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>077 <span class="w"></span></td>
+
+            <td>
+                <span class="br">tage tøj på</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>078 <span class="w"></span></td>
+
+            <td>
+                <span class="br">vække nogen</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>079 <span class="w"></span></td>
+
+            <td>
+                <span class="br">lave morgenmad</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>080 <span class="w"></span></td>
+
+            <td>
+                <span class="br">spise</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>081 <span class="w"></span></td>
+
+            <td>
+                <span class="br">drikke</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>082 <span class="w"></span></td>
+
+            <td>
+                <span class="br">aflevere (take/deliver)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>083 <span class="w"></span></td>
+
+            <td>
+                <span class="br">tage af sted hjemmefra</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>084 <span class="w"></span></td>
+
+            <td>
+                <span class="br">tage på arbejde</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+        <tr valign=top>
+
+            <td align=center>085 <span class="w"></span></td>
+
+            <td>
+                <span class="br">dæke</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>086 <span class="w"></span></td>
+
+            <td>
+                <span class="br">passe</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>087 <span class="w"></span></td>
+
+            <td>
+                <span class="br">høre</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>088 <span class="w"></span></td>
+
+            <td>
+                <span class="br">begynde</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>089 <span class="w"></span></td>
+
+            <td>
+                <span class="br">købe</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>090 <span class="w"></span></td>
+
+            <td>
+                <span class="br">tage hjem</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>091 <span class="w"></span></td>
+
+            <td>
+                <span class="br">slapper af</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>092 <span class="w"></span></td>
+
+            <td>
+                <span class="br">spille</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>093 <span class="w"></span></td>
+
+            <td>
+                <span class="br">hente</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>094 <span class="w"></span></td>
+
+            <td>
+                <span class="br">rydde op</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>095 <span class="w"></span></td>
+
+            <td>
+                <span class="br">gøre rent</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>096 <span class="w"></span></td>
+
+            <td>
+                <span class="br">vaske</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>097 <span class="w"></span></td>
+
+            <td>
+                <span class="br">vaske op</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>098 <span class="w"></span></td>
+
+            <td>
+                <span class="br">gå en tur</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>099 <span class="w"></span></td>
+
+            <td>
+                <span class="br">besøge</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>100 <span class="w"></span></td>
+
+            <td>
+                <span class="br">få gæster</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>101 <span class="w"></span></td>
+
+            <td>
+                <span class="br">ringe til nogen</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>102 <span class="w"></span></td>
+
+            <td>
+                <span class="br">sende</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>103 <span class="w"></span></td>
+
+            <td>
+                <span class="br">gå i seng</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>104 <span class="w"></span></td>
+
+            <td>
+                <span class="br">sove</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>105 <span class="w"></span></td>
+
+            <td>
+                <span class="br">bytte</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>106 <span class="w"></span></td>
+
+            <td>
+                <span class="br">fortsætte</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>107 <span class="w"></span></td>
+
+            <td>
+                <span class="br">dele</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>108 <span class="w"></span></td>
+
+            <td>
+                <span class="br">hjælpe</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>109 <span class="w"></span></td>
+
+            <td>
+                <span class="br">sidde</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>110 <span class="w"></span></td>
+
+            <td>
+                <span class="br">støvsuge</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>111 <span class="w"></span></td>
+
+            <td>
+                <span class="br">vaske gulv</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>112 <span class="w"></span></td>
+
+            <td>
+                <span class="br">have gæster</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>113 <span class="w"></span></td>
+
+            <td>
+                <span class="br">går i biografen </span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>114 <span class="w"></span></td>
+
+            <td>
+                <span class="br">gå ud</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>115 <span class="w"></span></td>
+
+            <td>
+                <span class="br">blive sur</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>116 <span class="w"></span></td>
+
+            <td>
+                <span class="br">skænde (quarrel)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>117 <span class="w"></span></td>
+
+            <td>
+                <span class="br">skændes (argue)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>118 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Men de bliver altid gode venner igen. (become)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>119 <span class="w"></span></td>
+
+            <td>
+                <span class="br">der være</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>120 <span class="w"></span></td>
+
+            <td>
+                <span class="br">sætte tryk (tonizo)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>121 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Hvornår tager hun på arbejde?</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>122 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Indsæt CA i sætningerne.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>123 <span class="w"></span></td>
+
+            <td>
+                <span class="br">snakke</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>124 <span class="w"></span></td>
+
+            <td>
+                <span class="br">børste tænder</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>125 <span class="w"></span></td>
+
+            <td>
+                <span class="br">rede sig</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>126 <span class="w"></span></td>
+
+            <td>
+                <span class="br">købe ind</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>127 <span class="w"></span></td>
+
+            <td>
+                <span class="br">danne</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>128 <span class="w"></span></td>
+
+            <td>
+                <span class="br">ville</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>129 <span class="w"></span></td>
+
+            <td>
+                <span class="br">forklare</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>130 <span class="w"></span></td>
+
+            <td>
+                <span class="br">låne</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>131 <span class="w"></span></td>
+
+            <td>
+                <span class="br">forsvinde</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>132 <span class="w"></span></td>
+
+            <td>
+                <span class="br">planere</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>133 <span class="w"></span></td>
+
+            <td>
+                <span class="br">ønske</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>134 <span class="w"></span></td>
+
+            <td>
+                <span class="br">invitere</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>135 <span class="w"></span></td>
+
+            <td>
+                <span class="br">glæde sig</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>136 <span class="w"></span></td>
+
+            <td>
+                <span class="br">løbe</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>137 <span class="w"></span></td>
+
+            <td>
+                <span class="br">løbe en tur </span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>138 <span class="w"></span></td>
+
+            <td>
+                <span class="br">starte</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>139 <span class="w"></span></td>
+
+            <td>
+                <span class="br">vil gerne</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>140 <span class="w"></span></td>
+
+            <td>
+                <span class="br">klippe</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>141 <span class="w"></span></td>
+
+            <td>
+                <span class="br">lukke</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>142 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Dørene lukker, og bussen kører igen. </span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>143 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>144 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Så går han ind og sætter sig.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>145 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Et kvarter efter kommer de til Østergade.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>146 <span class="w">-i-</span></td>
+
+            <td>
+                <span class="br">
+                    <img src="gar.png"><img src="sf.png"><img src="lf.png">
+                    Mikkel tager bussen til skole<p>
+
+Det er onsdag, og Mikkel skal i skole. Det
+regner, og han vil tage bussen.<p>
+
+Mikkel går ned ad trappen og hen til stoppestedet. Han venter længe.<p>
+
+Til sidst kommer bussen, og Mikkel står på.
+Han tager sit klippekort og klipper en gang.
+Så går han ind og sætter sig. Dørene lukker,
+og bussen kører igen.<p>
+
+Et kvarter efter kommer de til Østergade.
+Her skal Mikkel af. Han rejser sig og trykker
+stop. Bussen standser, men der er mange
+mennesker, og Mikkel kan ikke komme ud.<p>
+
+&mdash; 'Undskyld, må jeg komme forbi? Jeg skal
+af her', siger han til en mand.<p>
+
+&mdash; 'Ja selvfølgelig', siger manden.<p>
+
+Mikkel står af. Han kigger på uret. Klokken
+er mange. Den er ti minutter i otte. Han
+kommer for sent.<p>
+
+Mikkel skynder sig hen til skolen. Han går
+op ad trappen og hen til klasselokalet. Så
+åbner han døren og går ind.<p>
+
+Kammeraterne sidder inde i klassen, og
+læreren står oppe ved tavlen.<p>
+
+&mdash; 'Undskyld, jeg kommer for sent', siger
+Mikkel og går ind og sætter sig.<p>
+
+&mdash; 'Det er i orden', siger læreren. 
+                </span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>147 <span class="w">-i-</span></td>
+
+            <td>
+                <span class="br"> <img src="gar.png"><img src="sf.png"><img src="lf.png"> gå ned</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>148 <span class="w">-i-</span></td>
+
+            <td>
+                <span class="br"><img src="gar.png"><img src="sf.png"><img src="lf.png"> gå op</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>149 <span class="w">-i-</span></td>
+
+            <td>
+                <span class="br"><img src="gar.png"><img src="sf.png"><img src="lf.png"> gå hen</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>150 <span class="w">-i-</span></td>
+
+            <td>
+                <span class="br"><img src="gar.png"><img src="sf.png"><img src="lf.png"> gå ud</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>151 <span class="w">-i-</span></td>
+
+            <td>
+                <span class="br"><img src="gar.png"><img src="sf.png"><img src="lf.png"> gå ind</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>152 <span class="w">-i-</span></td>
+
+            <td>
+                <span class="br"><img src="gar.png"><img src="sf.png"><img src="lf.png"> rejse sig (op)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>153 <span class="w">-i-</span></td>
+
+            <td>
+                <span class="br"><img src="gar.png"><img src="sf.png"><img src="lf.png"> sætte sig (ned)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>154 <span class="w">-i-</span></td>
+
+            <td>
+                <span class="br"><img src="gar.png"><img src="sf.png"><img src="lf.png"> gå (hen) til (towards)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>155 <span class="w">-i-</span></td>
+
+            <td>
+                <span class="br"><img src="gar.png"><img src="sf.png"><img src="lf.png"> gå (væk) fra</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>156 <span class="w">-i-</span></td>
+
+            <td>
+                <span class="br"><img src="gar.png"><img src="sf.png"><img src="lf.png"> gå igennem</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>157 <span class="w">-i-</span></td>
+
+            <td>
+                <span class="br"><img src="gar.png"> gå forbi</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>158 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Hvad slags motion får hun? (What kind of exercise does she get?)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>159 <span class="w"></span></td>
+
+            <td>
+                <span class="br">understrege</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>160 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Står på = går ind i bussen 
+</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>161 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Står af = går ud af bussen 
+</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>162 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Lone skal i skole. Hun cykler hen til stationen. Hun går ind i toget. Hun sætter sig ned og kører tre stationer. Så står hun af og går 500 meter hen til skolen. Hun tager elevatoren op  til tredje sal. Så går hun hen ad gangen og ind i klasselokalet. Klokken fire får hun fri. Nu skal hun hjem. Hun rejser sig og går ud og tager elevatoren ned til stueetagen. Så går hun ud på gaden. Hun kommer hjem klokken halv fem. </span><p>
+                &bull;<p>
+                        <span class="b">Lone has to go to school. She cycles to the station. She enters the train. She sits down and runs three stations. Then she gets off and walks 500 meters to the school. She takes the elevator up to the third floor. Then she walks down the hall and into the classroom. She finishes at four o'clock. Now she's going home. She gets up and walks out, taking the elevator down to the ground floor. Then she goes out into the street. She arrives home at half past five.</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>163 <span class="w"></span></td>
+
+            <td>
+                <span class="br">beskrive</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>164 <span class="w"></span></td>
+
+            <td>
+                <span class="br">vælge</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>165 <span class="w"></span></td>
+
+            <td>
+                <span class="br">
+<ol>
+<li>Han cykler hen/henne til bageren.<p>
+<li>Bageren ligger hen/henne i Nørregade.<p>
+<li>Han går ind/inde i bagerforretningen.<p>
+<li>Hans cykel står ud/ude foran forretningen.<p>
+<li>Der er mange mennesker ind/inde hos bageren.<p>
+<li>Ud/ude på gaden møder han en ven.<p>
+<li>De går hen/henne på en cafe.<p>
+<li>Hen/henne på cafeen drikker de en kop kaffe.<p>
+<li>Bagefter tager de hjem/hjemme til vennen.<p>
+<li>Vennen bor op/oppe på fjerde sal.<p>
+<li>De går op/oppe ad trappen.<p>
+<li>Ind/inde i lejligheden er der varmt.<p>
+<li>To timer efter går han ned/nede til sin cykel.<p>
+<li>Han er hjem/hjemme igen klokken seks.
+</ol>
+</span><p>
+                &bull;<p>
+                        <span class="b">
+<ol class="b">
+<li>He cycles to the bakery.<p>
+<li>The bakery is located in Nørregade.<p>
+<li>He goes into the bakery.<p>
+<li>His bike is out in front of the shop.<p>
+<li>There are many people in/inside the bakery.<p>
+<li>Out on the street he meets a friend.<p>
+<li>They go to a café.<p>
+<li>At the café they have a cup of coffee.<p>
+<li>Afterwards they go to the friend's house.<p>
+<li>The friend lives up on the fourth floor.<p>
+<li>They go up the stairs.<p>
+<li>It is warm in the apartment.<p>
+<li>Two hours later he goes down to his bike.<p>
+<li>He is home again at six o'clock.
+</ol>
+                        </span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>166 <span class="w"></span></td>
+
+            <td>
+                <span class="br">smage</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>167 <span class="w"></span></td>
+
+            <td>
+                <span class="br">være tørstig</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>168 <span class="w"></span></td>
+
+            <td>
+                <span class="br">være sulten</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>169 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Nogle gange tager han en øl.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>170 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Bagefter drikker han kaffe, og han tager tit en kage til kaffen.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>171 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Han vejer 120 kilo, og han er lidt ked af det. Han synes, han er for tyk.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>172 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Han vil gerne tabe sig, for han vil gerne være slank. Men det er svært, fordi han er så glad for mad. </span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>173 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Han er så glad for mad./Han er glad for det nye hus. (be fond of sth=like/be happy about sth)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>174 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Hvordan har han det med sin vægt?/How does he feel about his weight?</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>175 <span class="w"></span></td>
+
+            <td>
+                <span class="br">have det med noget/sb feels a certain way about sth or sb</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>176 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Det kan jeg heller ikke./I cannot do that either.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>177 <span class="w"></span></td>
+
+            <td>
+                <span class="br"> Hvad kan du lide?/What do you like?</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>178 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Svar som vist i dialog 4-5./Answer as shown...</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>179 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Lyt og sæt tryk./Listen and stress accordingly.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>180 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Sæt streger. (draw lines to match between coulmns)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>181 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Ying kommer fra Kina. Hun kom til Danmark for to
+år siden, og hun er gift med en dansk mand. Hendes madvaner nu i Danmark er meget anderledes
+end før i Kina.<p>
+
+l Kina spiste hun aldrig morgenmad. Hun boede
+langt fra sit arbejde, og hun mødte tidligt om morgenen. Hun havde ikke tid til at spise morgenmad,
+og hun var heller ikke sulten. Normalt drak hun kun
+en kop kaffe. Men hun spiste varm mad to gange
+om dagen -til frokost og til aftensmad. Nogle gange
+lavede hun selv mad, og nogle gange gik hun ud og
+spiste. Hun spiste som regel ris og kød og grøntsager, og hun spiste altid kun hvidt brød. Normalt drak
+hun te til maden.<p>
+
+Den første tid i Danmark kunne hun ikke lide dansk mad. Hun kunne ikke lide rugbrød. Hun
+syntes, det var kedeligt. Hun kunne heller ikke lide sild og leverpostej. Hun syntes, det smagte
+forfærdeligt.<p>
+
+Nu spiser hun morgenmad sammen med sin mand hver dag, for nu møder hun ikke så tidligt, og
+nu har hun tid nok. Og i dag kan hun godt lide rugbrød. Hun spiser smørrebrød til frokost hver
+dag. Men hun kan stadig ikke lide leverpostej. </span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>182 <span class="w">-i-</span></td>
+
+            <td>
+                <span class="br"><img src="packaging.png"></span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>183 <span class="w"></span></td>
+
+            <td>
+                <span class="br">koste</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>184 <span class="w"></span></td>
+
+            <td>
+                <span class="br">sælge</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>185 <span class="w"></span></td>
+
+            <td>
+                <span class="br">udsælge</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>186 <span class="w"></span></td>
+
+            <td>
+                <span class="br">pakke</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>187 <span class="w"></span></td>
+
+            <td>
+                <span class="br">motionere</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>188 <span class="w"></span></td>
+
+            <td>
+                <span class="br">svømme</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>189 <span class="w"></span></td>
+
+            <td>
+                <span class="br">interessere sig for (be interested in)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>190 <span class="w"></span></td>
+
+            <td>
+                <span class="br">være interesseret i (be interested in)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>191 <span class="w"></span></td>
+
+            <td>
+                <span class="br">gide - gad - gilet/gidt<p>
+                (feel like/care to/bother/take the trouble to)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>192 <span class="w"></span></td>
+
+            <td>
+                <span class="br">være bekymret for (be worried about)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>193 <span class="w"></span></td>
+
+            <td>
+                <span class="br">holde op (stop)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>194 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Hvad bruger han sine penge på?</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>195 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Jeg går til fitness. (I go to the gym.)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>196 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Hvem er glad for musik?/Han er mere end glad for sin nye cykel.<p>
+                [være glad for (1) to like sth, (2) to be happy about sth]</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>197 <span class="w"></span></td>
+
+            <td>
+                <span class="br">nogen må hellere/Du må hellere gøre det. (sb had better)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>198 <span class="w"></span></td>
+
+            <td>
+                <span class="br">bestemme</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>199 <span class="w"></span></td>
+
+            <td>
+                <span class="br">hænge-hængte/hang-hængt</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>200 <span class="w">-i-</span></td>
+
+            <td>
+                <span class="br">De bor over for os. (They live across us.)</span><p>
+                &bull;<p>
+                        <span class="b"><img src="p.png"></span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>201 <span class="w"></span></td>
+
+            <td>
+                <span class="br">De står over for en stor udfordring. (They face a great challenge.)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>202 <span class="w"></span></td>
+
+            <td>
+                <span class="br">vende (Soveværelset er lidt mørkt, for det vender mod nord.)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>203 <span class="w"></span></td>
+
+            <td>
+                <span class="br">
+                    
+                    Per og Randi bor i Nørregade. De har en toværelses lejlighed på tredje sal. Det er en ny og
+pæn lejlighed, men den er ikke så stor. Den er
+på 58m2 (kvadratmeter).<p>
+
+Der er en entre, en gang, et badeværelse, et
+køkken, et soveværelse og en stue. Der er
+også en altan. Her har de blomster.<p>
+
+Køkkenet er lille, men det er hyggeligt. l køkkenet står der et lille, rundt bord og to små, røde
+stole. Her spiser Per og Randi morgenmad.<p>
+
+Soveværelset er lidt mørkt, for det vender mod
+nord. Her står der en dobbeltseng, og der står
+også et skrivebord med en computer. Randi
+sidder tit ved computeren og surfer på nettet.<p>
+
+Stuen er ikke så stor, men den er lys, og den
+vender mod syd. l stuen står der to sorte sofaer og et hvidt sofabord. l hjørnet står der en stor,
+brun lænestol. Det er Pers stol. Randi er ikke så glad for den. Hun synes, den er gammel og
+grim. Men Per elsker sin stol. Han synes, den er dejlig. Han sidder i den hver aften og læser
+eller hører musik.<p>
+
+På væggen over sofaen hænger der et stort maleri. Det er en gave fra Randis mormor. Randi
+er meget glad for det. Hun synes, det er flot. Per kan ikke lide maleriet. Han synes, det er for
+moderne. Men han kan godt lide Randi, og han siger ikke noget. 
+                </span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>204 <span class="w">-i-</span></td>
+
+            <td>
+                <span class="br"><img src="a.png"></span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>205 <span class="w"></span></td>
+
+            <td>
+                <span class="br">betale</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>206 <span class="w"></span></td>
+
+            <td>
+                <span class="br">nyde-nød-nydt</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>207 <span class="w"></span></td>
+
+            <td>
+                <span class="br">lege</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>208 <span class="w"></span></td>
+
+            <td>
+                <span class="br">leje</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>209 <span class="w"></span></td>
+
+            <td>
+                <span class="br">kende-kendte-kendt</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>210 <span class="w"></span></td>
+
+            <td>
+                <span class="br">larme</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>211 <span class="w">-i-</span></td>
+
+            <td>
+                <span class="br"><img src="nabo.png">Eva og Kim og deres to børn bor i en lejlighed
+i Valby. Det er en 3-værelses lejlighed på 78
+m2 , og den ligger på 4. sal. Det er en gammel
+lejlighed, men den er lys og pæn, og der er en
+god udsigt. Og så er huslejen ikke så høj.<p>
+
+Der er to altaner til lejligheden. Den ene vender mod øst, og den anden vender mod vest.
+Uden for huset e~ der en legeplads og en
+græsplæne med træer og blomsterbuske. Der
+er også borde og bænke. Her sidder Eva og
+Kim tit og nyder solen om sommeren, og børnene leger på legepladsen.<p>
+
+Eva og Kim har nogle flinke naboer. Til højre
+bor der en sød, enlig mor. Naboerne til venstre
+er også flinke, og de er stille og rolige. Men
+Eva og Kim kender ikke underboen. Hun larmer tit, og Eva og Kim synes, hun er lidt irriterende.<p>
+
+Lejligheden ligger i et rart kvarter, og den ligger også centralt. Der er kun fem minutter til stationen. Det er heller ikke så langt fra Evas arbejdsplads. Hun kan gå til arbejde. Det tager kun ti minutter.<p>
+
+Der er mange gode forretninger i nærheden, og der er nogle små, hyggelige cafeer. Der er også et bibliotek og et stort motionscenter. Eva læser meget, og hun kommer tit på biblioteket. Kim er glad for motionscenteret. Han træner tre gange om ugen.<p>
+
+Eva og Kim er glade for lejligheden. Alligevel vil de gerne flytte. Eva er gravid i fjerde måned, og de synes, lejligheden er for lille nu. De vil gerne have et hus og en lille have.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+        <tr valign=top>
+
+            <td align=center>212 <span class="w"></span></td>
+
+            <td>
+                <span class="br">dyrke (Dyrker du sport?)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>213 <span class="w"></span></td>
+
+            <td>
+                <span class="br">søge-søgte-søgt (look for/search)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>214 <span class="w"></span></td>
+
+            <td>
+                <span class="br">hilse-hilste-hilst</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>215 <span class="w"></span></td>
+
+            <td>
+                <span class="br">smile-smilede/smilte-smilet</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>216 <span class="w">-i-</span></td>
+
+            <td>
+                <span class="br"><img src="l.png"></span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>217 <span class="w"></span></td>
+
+            <td>
+                <span class="br">være god til (be good at sth)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>218 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Hun bliver lidt ked af det. (She gets a little upset.)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>219 <span class="w"></span></td>
+
+            <td>
+                <span class="br">have lyst til (be in the mood for)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>220 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Han synes, programmet er lidt fjollet, men det gør ikke noget.<p>(He thinks the program is a bit silly, but it does not matter.)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>221 <span class="w">-i-</span></td>
+
+            <td>
+                <span class="br">
+                    <img src="o.png">
+                    Jamal har været i Danmark i fire måneder.
+Han begyndte på sprogskole for to måneder siden, og han har allerede lært meget
+dansk. Han vil gerne have en uddannelse
+i Danmark, og han vil gerne lære dansk
+hurtigt.<p>
+
+På sprogskolen laver de mange forskellige ting. De læser og skriver, og de snakker og lytter til dansk. De lærer også
+grammatik, og de træner udtale. De arbejder tit sammen to og to eller i små grupper. Så får de praktisk træning.<p>
+
+Jamal læser meget, og han lærer mange
+nye ord. Han er god til grammatik, og han
+er god til at skrive. Men han synes, det er svært at tale dansk. Han er ikke så god til udtale. Der
+er mange mærkelige, nye lyde, synes han. Jamal har bl.a. problemer med r og blødt d, og han
+har også problemer med vokalerne, især med y og ø.<p>
+
+Jamal taler kun dansk i skolen. Uden for skolen taler han engelsk. 'l skal også tale dansk uden
+for skolen', siger læreren. 'Det er vigtigt.' Og Jamal prøver. Han vil gerne tale dansk. Men han
+synes, det er svært at forstå danskerne. Han synes, de taler for hurtigt. Og så 'spiser' de mange
+bogstaver. Danskerne kan heller ikke forstå ham. 'Hvad siger du?' spørger de hele tiden. Og så
+begynder de at tale engelsk. Jamal bliver lidt ked af det. Han har ikke lyst til at tale engelsk. Han
+har brug for at træne sit dansk.<p>
+
+De andre i klassen har samme problem. 'Skal vi ikke prøve at tale dansk i pauserne?', spørger
+Jamal. Det prøver de, og det hjælper lidt. 'Det er også godt at se dansk fjernsyn', siger læreren.
+'l kan f.eks. se børnefjernsyn sammen med jeres børn. Det er ikke så svært'. Jamal har ikke
+nogen børn, men han prøver alligevel. Han synes, programmet er lidt fjollet, men det gør ikke
+noget. Der er ikke så mange svære ord, og han forstår meget. Jamallærer dansk talesprog, og
+han er tilfreds. 
+                </span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>222 <span class="w"></span></td>
+
+            <td>
+                <span class="br">lyde-lød-lydt</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>223 <span class="w"></span></td>
+
+            <td>
+                <span class="br">bestå-bestod-bestået</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>224 <span class="w"></span></td>
+
+            <td>
+                <span class="br">bestå af (consist of)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>225 <span class="w"></span></td>
+
+            <td>
+                <span class="br">surfe på</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>226 <span class="w"></span></td>
+
+            <td>
+                <span class="br">studere</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>227 <span class="w"></span></td>
+
+            <td>
+                <span class="br">have problemer med at...</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>228 <span class="w"></span></td>
+
+            <td>
+                <span class="br">opholde sig-opholdt sig-opholdt sig (reside/live)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>229 <span class="w"></span></td>
+
+            <td>
+                <span class="br">være uddannet... (be a trained...)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>230 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Jeg er selvstændigt.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>231 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Jeg har mit eget firma.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>232 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Jeg har min egen forretning.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>233 <span class="w"></span></td>
+
+            <td>
+                <span class="br">stoppe</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>234 <span class="w"></span></td>
+
+            <td>
+                <span class="br">sige op-sagde op-sagt op</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>235 <span class="w">-i-</span></td>
+
+            <td>
+                <span class="br"><img src="f.png">
+                    Det er onsdag eftermiddag, og Reza sidder
+sammen med nogle af de andre kursister fra
+klassen. De har fri nu. De sidder og snakker
+om deres liv i Danmark og om deres familie og
+om arbejde.<p>
+
+Reza<p>
+Reza er ikke tilfreds med sin arbejdssituation.
+Han er uddannet ingeniør fra Iran. Han har
+været i Danmark i to år, og han har haft flere
+forskellige job.<p>
+
+Først arbejdede han som rengøringsassistent.
+Arbejdet var hårdt, og lønnen var ikke så høj.
+Han lærte heller ikke noget dansk, for han
+arbejdede alene, og han snakkede ikke med
+nogen. Han kunne ikke lide jobbet, men han
+havde brug for pengene. Her var han i fem
+måneder. Så stoppede han.<p>
+
+Kort efter fik han arbejde på et lager. Her fik
+han nogle gode kolleger, og det var han glad
+for. Lønnen var også o.k., men arbejdet var
+kedeligt, og chefen var sur. Efter et halvt år
+sagde han op, og så var han arbejdsløs i et
+par måneder.<p>
+
+Nu har Reza fået job som taxachauffør. Han
+synes, det er et godt job, og lønnen er god.
+Alligevel er han ikke helt tilfreds. Han vi l gerne
+arbejde som ingeniør igen. Han har søgt
+mange forskellige job, men det er svært at få
+job som ingeniør i Danmark. 
+                </span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>236 <span class="w"></span></td>
+
+            <td>
+                <span class="br">ansætte-ansatte-ansat-er ansat (hire)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>237 <span class="w"></span></td>
+
+            <td>
+                <span class="br">drømme-drømte-drømt</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>238 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Manu er glad for sit
+job, men han er lidt
+stresset. Han er uddannet programmør,
+og han er ansat i et
+lille computerfirma.<p>
+
+Han har gode kolleger, og han får en
+god løn. Han synes,
+arbejdet er interessant, men det er også lidt
+hårdt. Manu har meget overarbejde, og han
+har lange arbejdsdage. Han har ikke så meget tid til sin familie.<p>
+
+Han har heller ikke tid til at lære dansk. Han
+er stoppet på sprogskolen, og han taler kun
+engelsk på arbejde.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>239 <span class="w"></span></td>
+
+            <td>
+                <span class="br">
+                    Thao er glad og ti lfreds. Hun har fået
+arbejde i en butik i
+lufthavnen. Hun har
+arbejdet der i fire
+måneder nu, og hun
+er glad for jobbet.
+Der kommer mennesker fra hele verden,
+og det er spændende, synes hun. Thao kan
+godt lide at møde nye mennesker, og hun er
+god til at snakke med folk.<p>
+
+l Vietnam var hun selvstændig og havde en
+lille butik. Hun solgte tøj og smykker. Thao vil
+gerne være selvstændig igen. Hun drømmer
+om at åbne en lille gavebutik. </span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>240 <span class="w"></span></td>
+
+            <td>
+                <span class="br">regne (rain/calculate)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>241 <span class="w"></span></td>
+
+            <td>
+                <span class="br">blæse-blæste-blæst (be windy/blow)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>242 <span class="w"></span></td>
+
+            <td>
+                <span class="br">skinne</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>243 <span class="w"></span></td>
+
+            <td>
+                <span class="br">sne-sneede-sneet</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>244 <span class="w"></span></td>
+
+            <td>
+                <span class="br">storme</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>245 <span class="w"></span></td>
+
+            <td>
+                <span class="br">måle-målte-målt (measure)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>246 <span class="w"></span></td>
+
+            <td>
+                <span class="br">fryse-frøs-frosset (freeze)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>247 <span class="w"></span></td>
+
+            <td>
+                <span class="br">svede-svedte-svedt (sweat)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>248 <span class="w"></span></td>
+
+            <td>
+                <span class="br">bade (bathe)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>249 <span class="w"></span></td>
+
+            <td>
+                <span class="br">danse</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>250 <span class="w"></span></td>
+
+            <td>
+                <span class="br">brænde-brændte-brændt (burn)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>251 <span class="w"></span></td>
+
+            <td>
+                <span class="br">optage (record/occupy)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>252 <span class="w"></span></td>
+
+            <td>
+                <span class="br">kalde-kaldte-kaldt (call)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>253 <span class="w"></span></td>
+
+            <td>
+                <span class="br">forberede-forberedte-forberedt (prepare)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>254 <span class="w">-i-</span></td>
+
+            <td>
+                <span class="br"><img src="ta.png"></span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>255 <span class="w"></span></td>
+
+            <td>
+                <span class="br">ønske sig (desire)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>256 <span class="w"></span></td>
+
+            <td>
+                <span class="br">have ondt (hurt)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>257 <span class="w"></span></td>
+
+            <td>
+                <span class="br">Hvad er der i vejen? (What is wrong?)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>258 <span class="w"></span></td>
+
+            <td>
+                <span class="br">have på (wear) (Hvad har han på i dag? = What is he wearing today?)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>259 <span class="w"></span></td>
+
+            <td>
+                <span class="br">ryge-røg-røget (smoke)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>260 <span class="w">-i-</span></td>
+
+            <td>
+                <span class="br"><img src="te.png"><br><img src="te2.png"></span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>261 <span class="w"></span></td>
+
+            <td>
+                <span class="br">bevæge (move)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>262 <span class="w"></span></td>
+
+            <td>
+                <span class="br">hæve (raise)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>263 <span class="w"></span></td>
+
+            <td>
+                <span class="br">notere (Længde noteres [:] efter den lange vokal.) </span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>264 <span class="w"></span></td>
+
+            <td>
+                <span class="br">mule  (pummel)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>265 <span class="w"></span></td>
+
+            <td>
+                <span class="br">sile (pour) (Regnen silede gennem det åbne vidue.)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>266 <span class="w"></span></td>
+
+            <td>
+                <span class="br">falde-faldt-faldet (fall)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>267 <span class="w"></span></td>
+
+            <td>
+                <span class="br">binde-bandt-bundet (bind)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>268 <span class="w">-i-</span></td>
+
+            <td>
+                <span class="br"><img src="n.png"><br><img src="ad.png"><br><img src="pr.png"></span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>269 <span class="w"></span></td>
+
+            <td>
+                <span class="br">relatere (når objektet relaterer til en anden person)</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>270 <span class="w">-i-</span></td>
+
+            <td>
+                <span class="br"><img src="mv.png"></span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top align=left>
+
+            <td align=center>271 <span class="w">-i-</span><p><img src="v1.png"><br>
+                    <img src="v2.png"><br>
+                    <img src="v3.png"><br>
+                    <img src="v4.png"><br>
+                    <img src="v5.png"><br>
+                    <img src="v6.png"></td>
+
+            <td>
+                <span class="br">
+                    
+                </span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+<!--1-271 1st book-->
+
+<!--
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+
+
+        <tr valign=top>
+
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <span class="br">.</span><p>
+                &bull;<p>
+                        <span class="b">?</span>
+            </td>
+
+        </tr>
+    -->
+
+                   
+
+
+       
+
+
+        </tbody>
+
+
+        <tfoot>
+            <tr>
+                <th>#</th>
+                <th>terms</th>
+            </tr>
+        </tfoot>
+    </table>
+
+        
+<script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable({
+        initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+    });
+ 
+} );
+</script>
+
+</body>
+</html>
