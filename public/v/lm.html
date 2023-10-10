@@ -1,0 +1,3248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LM</title>
+
+<style>
+
+b {color:red;}
+
+a {text-decoration:none;}
+
+.s {font-size:10pt;}
+
+. {color:blue;}
+
+sup {color:red;}
+
+
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    .y {background-color:blue; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .z {background-color:black; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .l {color:lime;}
+    .c {color:gold;}
+    .b {color:blue;}
+    .br {color:brown;}
+    .r {color:red;}
+    .g {color:lime; background-color:black; padding:1px; padding-left:4px; padding-right:4px;}
+    .w {color:white; font-size:1pt;}
+    .syn {background-color:beige; color:brown; padding:5px; font-size:12pt;}
+
+    
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  background-color:black;
+  color:white;
+  padding:10px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  left:10px;
+  top:30px;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  width:500px;
+  height:470px;
+  background-color:brown;
+  color:gold;
+  padding:20px;
+  text-align:justify;
+  font-size:15pt;
+}
+
+a .hover-img { 
+  position:relative;
+ }
+a .hover-img span {
+  position:absolute; left:-9999px; top:-9999px; z-index:9999;
+ }
+a:hover .hover-img span { 
+  top: 20px; 
+  left:0;
+ }
+
+ table tr td {text-align:justify;}
+    
+</style>
+
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+
+    
+<table id="example" class="display" style="width:100%;">
+        <thead>
+
+            <tr>
+                <th width=5%>#<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=95%>terms<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+            </tr>
+        </thead>
+
+        <tbody>        
+
+        
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at opleve</span><p>
+                
+                <span class="b">to experience</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at lægge mærke til, at...</span><p>
+                
+                <span class="b">to notice</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>003 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at få love at</span><p>
+                
+                <span class="b">to be allowed to</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>004 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">Hovedparten af den danske befolkning kan med fordel leve efter rådene.</span><p>
+                
+                <span class="b">The majority of the Danish population can benefit from the advice.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>005 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at være med til, at...</span><p>
+                
+                <span class="b">to be a part of</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>006 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at lægge stor vægt på</span><p>
+                
+                <span class="b">to place great importance on</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>007 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at genere</span><p>
+                
+                <span class="b">to annoy</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>008 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at blande sig i andres saager</span><p>
+                
+                <span class="b">to interfere in other people's affairs</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>009 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at undre sig over</span><p>
+                
+                <span class="b">to wonder about</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>010 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">beundre</span><p>
+                
+                <span class="b">to admire</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>011 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">have tillid til</span><p>
+                
+                <span class="b">to trust</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>012 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">Lever du efter kostrådene, vil kroppen få dækket behovet for vitaminer, mineraler og andre vigtige næringsstoffer.</span><p>
+                
+                <span class="b">If you follow the dietary guidelines, the body will meet/cover its need for vitamins, minerals and other important nutrients. </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>013 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">vænne sig til</span><p>
+                
+                <span class="b">to get used to </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>014 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">få øjenkontakt me</span><p>
+                
+                <span class="b">to make ey contact with</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>015 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">skynde sig at</span><p>
+                
+                <span class="b">to hurry to</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>016 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at omgås</span><p>
+                
+                <span class="b">to get along/interact</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>017 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at opføre</span><p>
+                
+                <span class="b">to perform</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>018 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at være bevidst om</span><p>
+                
+                <span class="b">to be aware of</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>019 <span class="w">-b2- -n-</span></td>
+
+            <td>
+                <span class="br">opvækst</span><p>
+                
+                <span class="b">growing up</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>020 <span class="w">-b2- -n-</span></td>
+
+            <td>
+                <span class="br">opdragelse</span><p>
+                
+                <span class="b">upbringing</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>021 <span class="w">-b2- -conj-</span></td>
+
+            <td>
+                <span class="br">sådan</span><p>
+                
+                <span class="b">that's how</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>022 <span class="w">-b2- -n-</span></td>
+
+            <td>
+                <span class="br">adfærd</span><p>
+                
+                <span class="b">behavior</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>023 <span class="w">-b2- -conj-</span></td>
+
+            <td>
+                <span class="br">ud fra</span><p>
+                
+                <span class="b">based on</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>024 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">det er i høj grad bestemt af</span><p>
+                
+                <span class="b">it's determined to a great extent by</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>025 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">man skal passe på med at generalisere</span><p>
+                
+                <span class="b">to be careful not to generalize</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>026 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at forklare</span><p>
+                
+                <span class="b">to explain</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>027 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at være sig selv</span><p>
+                
+                <span class="b">to be one's self</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>028 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at ødelægge</span><p>
+                
+                <span class="b">to destroy</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>029 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at bevare</span><p>
+                
+                <span class="b">to preserve</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>030 <span class="w">-b2- -n-</span></td>
+
+            <td>
+                <span class="br">stemning</span><p>
+                
+                <span class="b">atmosphere</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>031 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at glatte ud</span><p>
+                
+                <span class="b">to smooth out</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>032 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at gå meget op i</span><p>
+                
+                <span class="b">to care a lot</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>033 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at skille sig ud</span><p>
+                
+                <span class="b">to stand out</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>034 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at gå stille med det</span><p>
+                
+                <span class="b">to keep a low profile</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>035 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at betragte sig</span><p>
+                
+                <span class="b">to regard oneself/to consider oneself</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>036 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">det er ærgerligt</span><p>
+                
+                <span class="b">it's a pity</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>037 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">det holder folk nede</span><p>
+                
+                <span class="b">it keeps people down</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>038 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">på en måde</span><p>
+                
+                <span class="b">in a way</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>039 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at virke</span><p>
+                
+                <span class="b">to work/to function-to appear/to seem</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>040 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at se op til nogen</span><p>
+                
+                <span class="b">to look up to someone</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>041 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at klare sig godt</span><p>
+                
+                <span class="b">to do well</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>042 <span class="w">-b2- -n-</span></td>
+
+            <td>
+                <span class="br">individet</span><p>
+                
+                <span class="b">the individual</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>043 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">hvad de selv vil</span><p>
+                
+                <span class="b">whatever they want</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>044 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">de klarer sig selv</span><p>
+                
+                <span class="b">they take care of them selves</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>045 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">kommunen sørger for dem</span><p>
+                
+                <span class="b">the local authority takes care of them</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>046 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">familiesammenholdet</span><p>
+                
+                <span class="b">family unity</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>047 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">sådan er det ikke</span><p>
+                
+                <span class="b">that's not how it is</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>048 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at holde samme</span><p>
+                
+                <span class="b">to stick together</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>049 <span class="w">-b2- -n-</span></td>
+
+            <td>
+                <span class="br">begrebet</span><p>
+                
+                <span class="b">the concept</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>050 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at undertrykke</span><p>
+                
+                <span class="b">to suppress</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>051 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">der er undtagelser</span><p>
+                
+                <span class="b">there are exceptions</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>052 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">Det er kun en mulighed, det gælder ikke for alle.</span><p>
+                
+                <span class="b">It's just a possibility, it does not apply to everyone.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>053 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">det angiver uvished</span><p>
+                
+                <span class="b">it indicates uncertainty</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>054 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">det gælder kun til en vis grad, ikke 100%</span><p>
+                
+                <span class="b">it applies only to a certain degrre, not 100%</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>055 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at lære at kende</span><p>
+                
+                <span class="b">to get to know</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>056 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at tage telefon</span><p>
+                
+                <span class="b">to pick up the phone</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>057 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">at holde afstand til andre</span><p>
+                
+                <span class="b">to keep one's distance from others</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>058 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at give hånd</span><p>
+                
+                <span class="b">to shake hands</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>059 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">
+                    Det er vigtigt at være præcis, for så når man altid bussen.<p>
+                    Det er godt at være præcis, for ellers når man ikke bussen.
+                </span><p>
+                
+                <span class="b">
+                    It's important to be on time because in that way you never miss the bus.<p>
+                    It's a good thing to be on time because otherwise you may miss the bus.
+                </span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>060 <span class="w">-b2- -n-</span></td>
+
+            <td>
+                <span class="br">forholdet til tid</span><p>
+                
+                <span class="b">the relationship to time</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>061 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">Det er godt at holde sine aftaler.</span><p>
+                
+                <span class="b">It's good to keep your appointments.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>062 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">Det er vigtig at leve i nu'et.</span><p>
+                
+                <span class="b">It is important to live in the present/the moment.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>063 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">Det er vigtig at komme til tiden.</span><p>
+                
+                <span class="b">It is important to be on time.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>064 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">Det er vigtig at huske at melde afbud.</span><p>
+                
+                <span class="b">It is important to remember to cancel.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>065 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at plalægge</span><p>
+                
+                <span class="b">to plan</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>066 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">Det er godt at tage på uanmeldt besøg.</span><p>
+                
+                <span class="b">It is good to pay an unannounced visit.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>067 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">Det afhænger af kulturen./Det kommer an på kulturen.</span><p>
+                
+                <span class="b">It depends on the culture.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>068 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">folk man møder på sin vej</span><p>
+                
+                <span class="b">people we run into</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>069 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">det handler om</span><p>
+                
+                <span class="b">it is about/it has to do with</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>070 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>071 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">at have relation til noget</span><p>
+                
+                <span class="b">to be related to sth</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>072 <span class="w">-b2- -n-</span></td>
+
+            <td>
+                <span class="br">begivenheder</span><p>
+                
+                <span class="b">events</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>073 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">andre almindelige emner er...</span><p>
+                
+                <span class="b">other common topics are…</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>074 <span class="w">-b2- -n-</span></td>
+
+            <td>
+                <span class="br">omgivelserne</span><p>
+                
+                <span class="b">the surroundings</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>075 <span class="w">-b2- -adj-</span></td>
+
+            <td>
+                <span class="br">overfladisk</span><p>
+                
+                <span class="b">superficial</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>076 <span class="w">-b2- -n-</span></td>
+
+            <td>
+                <span class="br">inholdet</span><p>
+                
+                <span class="b">the contents</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>077 <span class="w">-b2- -n-</span></td>
+
+            <td>
+                <span class="br">samfundet</span><p>
+                
+                <span class="b">the society</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>078 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at vedligeholde/at fastholde</span><p>
+                
+                <span class="b">to maintain</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>079 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at bekræfte</span><p>
+                
+                <span class="b">to confirm</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>080 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">at bryde isen (brød, brudt)</span><p>
+                
+                <span class="b">to break the ice</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>081 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at anerkende</span><p>
+                
+                <span class="b">to acknowledge</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>082 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">vi gerne vil være en del af det sociale fælleskab</span><p>
+                
+                <span class="b">we would like to be part of the social community</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>083 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">Det er derfor en god ide at lytte godt efter, hvad den anden siger og spørge nærmere ind til det.</span><p>
+                
+                <span class="b">It is therefore a good idea to listen carefully to what the other person has to say and ask more about it.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>084 <span class="w">-b2- -prep- -conj-</span></td>
+
+            <td>
+                <span class="br">inden</span><p>
+                
+                <span class="b">before</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>085 <span class="w">-b2- -ex-</span></td>
+
+            <td>
+                <span class="br">Han gik inden han gjorde sig selv til grin.</span><p>
+                
+                <span class="b">He left before he made a fool of himself.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>086 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at have travlt</span><p>
+                
+                <span class="b">to be busy</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>087 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at have ret</span><p>
+                
+                <span class="b">to be right</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>088 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">at tage fejl</span><p>
+                
+                <span class="b">to be wrong</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>089 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">Samtidig forebygger rådene at du tager på i vægt.</span><p>
+                
+                <span class="b">At the same time, the advice prevents you from gaining weight.</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>090 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">Hvordan spiser danskerne i forhold til kostrådene?</span><p>
+                
+                <span class="b">How do the Danes eat in relation to the dietary guidelines?</span>
+            </td>
+        </tr>
+
+<!--
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>001 <span class="w">-b2-</span></td>
+
+            <td>
+                <span class="br">_</span><p>
+                
+                <span class="b">?</span>
+            </td>
+        </tr>
+
+
+        
+    -->
+
+
+        </tbody>
+
+
+        <tfoot>
+            <tr>
+                <th>#</th>
+                <th>terms</th>
+            </tr>
+        </tfoot>
+    </table>
+
+        
+<script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable({
+        initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+    });
+ 
+} );
+</script>
+
+</body>
+</html>
