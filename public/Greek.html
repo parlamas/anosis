@@ -1,0 +1,1239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greek</title>
+
+<style>
+
+b {color:red;}
+
+a {text-decoration:none;}
+
+.s {font-size:10pt;}
+
+. {color:blue;}
+
+sup {color:red;}
+
+
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+    .y {background-color:blue; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .z {background-color:black; color:yellow; padding:5px; font-size:12pt; font-weight:bold;}
+    .l {color:lime;}
+    .c {color:gold;}
+    .b {color:blue;}
+    .br {color:brown;}
+    .r {color:red;}
+    .g {color:lime; background-color:black; padding:1px; padding-left:4px; padding-right:4px;}
+    .w {color:white; font-size:1pt;}
+    .syn {background-color:beige; color:brown; padding:5px; font-size:12pt;}
+
+    
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+  background-color:black;
+  color:white;
+  padding:10px;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: absolute;
+  left:10px;
+  top:30px;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  width:500px;
+  height:470px;
+  background-color:brown;
+  color:gold;
+  padding:20px;
+  text-align:justify;
+  font-size:15pt;
+}
+
+a .hover-img { 
+  position:relative;
+ }
+a .hover-img span {
+  position:absolute; left:-9999px; top:-9999px; z-index:9999;
+ }
+a:hover .hover-img span { 
+  top: 20px; 
+  left:0;
+ }
+
+ table tr td {text-align:justify;}
+    
+</style>
+
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+
+    
+<table id="example" class="display" style="width:100%;">
+        <thead>
+
+            <tr>
+                <th width=5%>#<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=95%>terms<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+            </tr>
+        </thead>
+
+        <tbody>        
+
+    <!--
+        
+        <tr valign=top>
+            <td align=center>001 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                There are many things that we humans have in common, no matter where we come from. But there can be a big difference in how we live and associate with each other. It is <b>largely</b>1 determined by our culture.<p>
+
+                Culture gives us some norms or rules about how we should behave in different situations. Many of these rules are "unwritten rules" &mdash; i.e. rules that we don't talk about and that we often <b>aren't conscious of</b>2. We <b>just</b>3 know them. It can, for example, be rules about how to greet others.<p>
+
+                We learn these rules <b>through our upbringing</b>4, and we follow them almost automatically. It feels right and natural &mdash; <b>that's just the way the world is</b>5.<p>
+
+                And <b>that's how</b>6 we all feel, no matter where in the world we come from.<p>
+
+                But the unwritten rules can be very different from culture to culture. <b>What</b>7 is normal in one culture may seem impolite in another. <b>Therefore</b>8, if we try to understand other people's behavior based on our own norms, we can easily misunderstand each other.<p>
+
+                But even though culture means a lot to our behavior, it does not determine <b>everything</b>9. There will also always be individual variations. One must therefore <b>be careful with generalising</b>10 &mdash; you can't explain everything a person does <b>based on</b>11 their culture.
+                </div><p>
+                
+                <div class="b">Der er mange ting, der er fælles for os mennesker, lige meget hvor vi kommer fra. Men der kan være stor forskel på, hvordan vi lever og omgås hinanden. Det er <b>i høj grad</b>1 bestemt af vores kultur.<p>
+
+                Kulturen giver os nogle normer eller regler for, hvordan vi skal opføre os i forskel lige situationer. Mange af disse regler er "uskrevne regler" &mdash; dvs. regler, som vi ikke taler om, og som vi tit <b>ikke er bevidst om</b>2. Vi kender dem <b>bare</b>3. Det kan f.eks. være regler for, hvordan man hilser.<p>
+
+                Vi lærer disse regler <b>gennem vores opvækst</b>4, og vi følger dem næsten automatisk. Det føles rigtigt og naturligt &mdash; <b>det er bare sådan verden er</b>5.<p>
+
+                Og <b>sådan</b>6 føler vi alle, lige meget hvor i verden vi kommer fra.<p>
+
+                Men de uskrevne regler kan være meget forskellige fra kultur til kultur. <b>Det</b>7, der er normalt i en kultur, virker måske uhøfligt i en anden . Hvis vi prøver at forstå andres adfærd ud fra vores egne normer, kan vi <b>derfor</b>8 nemt misforstå hinanden.<p>
+
+                Men selv om kulturen altså betyder meget for vores adfærd, bestemmer den ikke <b>det hele</b>9. Der vil også altid være individuelle variationer. Man skal derfor <b>passe på med at generalisere</b>10 &mdash; man kan ikke forklare alt, hvad en person gør <b>ud fra</b>11 hans/hendes kultur. 
+
+                </div><p>
+
+                i.e. (id est &mdash; that is to say, ...) &mdash; dvs. (det vil sige) &mdash; viz. (videlicet = namely) to introduce a list
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                Mike and Isabel have both lived in different places in the world. Right now they live in Denmark. They think it is exciting to experience other cultures and there are many things that are different here.<p>
+
+                Mike: First of all, I've noticed that there isn't a really big difference <b>between</b>1 people here. You don't see that many really rich people or so many really poor people <b>either</b>2. And even if people have money and high status, they don't always show it. I have e.g. heard that the crown prince himself <b>takes</b>3 his children to school in a cargo bike. I think that's strange &mdash; but also <b>pretty cool</b>4.<p>
+
+                Men and women are also equal. Here men clean and cook and look after children. Several of my <b>male</b>5 colleagues often <b>have to leave early</b> because they have to pick up children from the kindergarten and <b>they are also entitled to paternity leave</b>8. Men don't do that in my home country. Children and adults are also <b>equal</b>9 here. Even small children are allowed to help decide. Down in the supermarket you see, for example, often parents standing and discussing with their children what to have for dinner.
+                </div><p>
+                
+                <div class="b">
+                Mike og Isabel har begge boet forskellige steder i verden. Lige nu bor de i Danmark. De synes, det er spændende at opleve andre kulturer, og der er mange ting , der er anderledes her.<p>
+
+                Mike: Jeg har først og fremmest lagt mærke til, at der ikke er særlig stor forskel <b>på</b>1 folk her. Man ser ikke så mange rigtig rige mennesker og <b>heller ikke</b>2 så mange rigtig fattige. Og selv om folk har penge og høj status, viser de det ikke altid. Jeg har f.eks. hørt, at kronprinsen selv <b>kører</b>3 sine børn til skole i en ladcykel. Det synes jeg, er mærkeligt &mdash; men også <b>ret sejt</b>4.<p>
+
+                Mænd og kvinder er også lige. Her gør mænd rent og laver mad og passer børn. Flere af mine <b>mandlige</b>5 kolleger <b>må tit gå tidligt</b>6, fordi de skal hente børn i børnehaven, og <b>de holder også barselsorlov</b>8. Det gør mænd ikke i mit hjemland. Og børn og voksne er også <b>ligeværdige</b>9 her. Selv små børn får lov at være med til at bestemme. Nede i supermarkedet ser man f.eks. tit forældre, der står og diskuterer med deres børn, hvad de skal have til middag. 
+                </div>
+            </td>
+        </tr>
+
+-->
+        <tr valign=top>
+            <td align=center>003 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    <center>My future dreams in Denmark<p><span class="b">Mine fremtidsdrømme i Danmark</span></center><p>
+<ol>
+
+<li>My wife and I decided to move to Denmark with our three children to escape political corruption in Greece.<p>
+    <span class="b">Min kone og jeg besluttede at flytte til Danmark med vores tre børn for at undslippe politisk korruption i Grækenland.</span><p>
+
+<li>My wife, who is a sociologist, has been working as a cook in Denmark for the last two years.<p>
+    <span class="b">Min kone, der er sociolog, har arbejdet som kok i Danmark de sidste to år.</span><p>
+
+<li>My daughter studied computer science at the University of Souther Denmark, in Odense, and has been coding for the same firm for the last four years in Copenhagen.<p>
+    <span class="b">Min datter har læst datalogi på Syddansk Universitet i Odense og har kodet for samme firma de sidste fire år i København.</span><p>
+
+<li>My elder son is both in his fifth semester studying business and economics at the University of Aarhus, in Aarhus, and working at a warehouse in Herning.<p>
+    <span class="b">Min ældste søn er både i gang med sit femte semester og læser business og økonomi på Aarhus Universitet i Aarhus og arbejder på et lager i Herning.</span><p>
+
+<li>My younger son is in his third semester studying European studies at the University of Southern Denamark, in Sønderborg.<p>
+    <span class="b">Min yngste søn er på tredje semester og læser Europastudier på Syddansk Universitet i Sønderborg.</span><p>
+
+<li>So, one of my future dreams in Denmark is to see my children flourish and prosper both in their professional and personal lives.<p>
+    <span class="b">Så en af mine fremtidsdrømme i Danmark er at se mine børn blomstre og trives både i deres professionelle og personlige liv.</span><p>
+
+<li>Regarding my other dream, I have started a publishing business myself here in Denmark and I intend to both publish and sell the books I write.<p>
+    <span class="b">Angående min anden drøm, så har jeg selv startet en forlagsvirksomhed her i Danmark, og jeg har tænkt mig at både udgive og sælge de bøger, jeg skriver.</span><p>
+
+<li>I write books on practical political philosophy as well as books on comparative English and Danish grammar.<p>
+    <span class="b">Jeg skriver bøger om praktisk politisk filosofi samt bøger om sammenlignende engelsk og dansk grammatik.</span>
+</ol>
+                </div>
+            </td>
+        </tr>
+
+
+
+        <tr valign=top>
+            <td align=center>004 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    <center>Working in Denmark: advantages and disadvantages<p><span class="b">At arbejde i Danmark: fordele og ulemper</span></center><p>
+<ol start=9>
+<li>I honestly cannot think of any disadvantages with regard to working in Denmark, so I will talk only about the advantages.<p>
+    <span class="b">Jeg kan ærlig talt ikke komme i tanke om nogen ulemper i forhold til at arbejde i Danmark, så jeg vil kun tale om fordelene.</span><p>
+
+<li>I come from Greece, which is a thoroughly corrupt country, so it is not very difficult for me to see the advantages of working in Denmark.<p>
+    <span class="b">Jeg kommer fra Grækenland, som er et gennemkorrupt land, så det er ikke særlig svært for mig at se fordelene ved at arbejde i Danmark.</span><p>
+
+<li>The most important advantage is that employment is based on merit rather than on partisan connections.<p>
+    <span class="b">Den vigtigste fordel er, at ansættelsen er baseret på fortjeneste snarere end på partipolitiske forbindelser.</span><p>
+
+<li>The second advantage that comes to mind is that people in Denmark get a lot back for the taxes they pay, whereas in Greece you get absolutely nothing, and that is not an exaggeration.<p>
+    <span class="b">Den anden fordel, man tænker på, er, at folk i Danmark får meget tilbage for de skatter, de betaler, hvorimod man i Grækenland absolut intet får, og det er ikke en overdrivelse.</span><p>
+
+<li>To add hubris to irony, actual taxes in Greece are much higher than in Denmark.<p>
+    <span class="b">For at tilføje hybris til ironien er de faktiske skatter i Grækenland meget højere end i Danmark.</span><p>
+
+<li>An additional advantage that comes to mind is that people is that people in Denmark get a lot back for the taxes they pay, whereas in Greece, you get absolutely nothing, and that is not an exaggeration.<p>
+    <span class="b">En yderligere fordel, der kommer til at tænke på, er, at folk i Danmark får meget tilbage for den skat, de betaler, hvorimod man i Grækenland absolut intet får, og det er ikke en overdrivelse.</span><p>
+
+<li>Every year, the government invents new taxes unrelated to actual income, such as increase in gasoline taxes, increases in property taxes, paying highway tolls for highways which are supposed to be built in the future, as well as many other malicious tricks that government official can think of.<p>
+    <span class="b">Hvert år opfinder regeringen nye skatter, der ikke er relateret til den faktiske indkomst, såsom stigninger i benzinskatter, stigninger i ejendomsskatter, betaling af motorvejsafgifter for motorveje, der formodes at blive bygget i fremtiden, samt mange andre ondsindede tricks, som embedsmænd kan tænke på.</span><p>
+
+<li>The third advantage is that employers in Denmark are keen to squeeze life out of their employees. Managers are narcissistic and authoritarian, which results a lot of times in outright humiliation.<p>
+    <span class="b">Den tredje fordel er, at arbejdsgivere i Danmark er opsat på at presse livet ud af deres medarbejdere. Ledere er narcissistiske og autoritære, hvilket mange gange resulterer i direkte ydmygelse.</span><p>
+
+<li>A fourth advantage is that in Denmark the wages and salary are not enough for those employed to make ends meet.<p>
+    <span class="b">En fjerde fordel er, at lønnen i Danmark ikke rækker til, at de ansatte kan klare sig.</span><p>
+
+<li>As a rule, in Greece, even though you have a full-time job, you will need to get a secong job to be able to pay for the most basic needs of a household.<p>
+    <span class="b">Som regel skal du i Grækenland, selvom du har et fuldtidsjob, få et andet job for at kunne betale for en husstands mest basale behov.</span><p>
+
+<li>Another advantage for those who work in Denmark is that when the time comes, they get a decent pension, whereas in Greece, the pension definitely forces households to live in poverty.<p>
+    <span class="b">En anden fordel for dem, der arbejder i Danmark, er, at når tiden kommer, får de en ordentlig pension, hvorimod pensionen i Grækenland absolut tvinger husstandene til at leve i fattigdom.</span><p>
+
+<li>I could write a book about the advantages of working in Denmark versus of working in Greece, but to conlude, in Greece one has to pay from twenty to forty percent of their wages to health insurance, which in effect additional taxation. If you don't, you have to find money to pay for hospital bills or you lose your health permanently.<p>
+    <span class="b">Jeg kunne skrive en bog om fordelene ved at arbejde i Danmark versus at arbejde i Grækenland, men for at konkludere, så skal man i Grækenland betale fra tyve til fyrre procent af deres løn til sygesikring, hvilket i realiteten er ekstrabeskatning. Hvis du ikke gør det, skal du finde penge til at betale hospitalsregninger, ellers mister du dit helbred permanent.</span><p>
+
+<li>It is simple. The root of all evil lies in ignorance, which, in turn, leads to political corruption.<p>
+    <span class="b">Det er enkelt. Roden til alt ondt ligger i uvidenhed, hvilket igen fører til politisk korruption.</span>
+</ol>
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>005 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    <center>My life in Denmark: advantages and disadvantages<p><span class="b">Mit liv i Danmark: fordele og ulemper</span></center><p>
+
+        <ol start=22>
+            <li>I've been living in Denmark for a little over two years and I find every day life truly positive and rewarding.<p>
+                <span class="b">Jeg har boet i Danmark i lidt over to år, og jeg synes, at hverdagen er virkelig positiv og givende.</span><p>
+
+<li>I am going to start from the disadvantages only because, as far as I am concerned, there is just one: food.<p>
+    <span class="b">Jeg vil kun tage udgangspunkt i ulemperne, fordi der efter min opfattelse kun er én: mad.</span><p>
+
+<li>I know from personal experience that the quality of life in Denmark compared to Greece, which is where I come from, is beyond comparison on the side of Denmark.<p>
+    <span class="b">Jeg ved af egen erfaring, at livskvaliteten i Danmark sammenlignet med Grækenland, hvor jeg kommer fra, er uden sammenligning på Danmarks side.</span><p>
+
+<li>So, I was surprised when I realized that that is not true when it comes to food, both tastewise and qulatitywise.<p>
+    <span class="b">Så jeg blev overrasket, da jeg indså, at det ikke er sandt, når det kommer til mad, både smagsmæssigt og kvalitetsmæssigt.</span><p>
+
+<li>In case you didn't know, Greece is a thoroughly corrupt country, wheras in Denmark, political corruption is minimal.<p>
+    <span class="b">Hvis du ikke vidste det, er Grækenland et gennemkorrupt land, mens den politiske korruption i Danmark er minimal.</span><p>
+
+<li>However, it seems to me that the food authorities in Denmark have not been doing a good job.<p>
+    <span class="b">Dog forekommer det mig, at fødevaremyndighederne i Danmark ikke har gjort et godt stykke arbejde.</span><p>
+
+<li>Fruit and vegetables resemble are "plastic" and the only resemblance that they have to  fruit and vegetables is only visual.<p>
+    <span class="b">Frugt og grøntsager ligner er "plastik", og den eneste lighed de har med frugt og grønt er kun visuel.</span><p>
+
+<li>The sad thing is that Danes do not have a clue because they have no means to compare, so they consume really unhealthy pesticide-laden fruit and vegetables.<p>
+    <span class="b">Det triste er, at danskerne ikke har en anelse, fordi de ikke har nogen midler til at sammenligne, så de indtager virkelig usund pesticidfyldt frugt og grønt.</span><p>
+
+<li>Meats, especially ground meat, taste like medicine to me and fish is practically nonexistent and when you find it comes from fish farms.<p>
+    <span class="b">Kød, især hakket kød, smager som medicin for mig, og fisk er praktisk talt ikke-eksisterende, og når du opdager det, kommer det fra dambrug.</span><p>
+
+<li>Thank God we have an excellent cuisine and cooking tradition in Greece. Food tastes much beeter than it does in Denmark, but nowhere near what it used to taste like thirty years ago., plus the prices are much more reasonable, even when one compares them on the basis of buying power and not income per se.<p>
+    <span class="b">Gudskelov har vi en fremragende køkken- og madlavningstradition i Grækenland. Mad smager meget bedre end i Danmark, men ikke i nærheden af, hvad den smagte som for 30 år siden, plus at priserne er meget mere fornuftige, selv når man sammenligner dem ud fra købekraft og ikke indkomst i sig selv.</span><p>
+
+<li>Now, let us turn to the advantages, which are numerous.<p>
+    <span class="b">Lad os nu vende os til fordelene, som er talrige.</span><p>
+
+
+<li>Personally, I enjoy the weather in Denmark because I've grown tired of sunshine and hot weather.<p>
+    <span class="b">Personligt nyder jeg vejret i Danmark, fordi jeg er blevet træt af solskin og varmt vejr.</span><p>
+
+<li>Next, Danes are much more polite and discreet than Greeks. They respect one another and do not constantly judge and gossip about people behind their backs.<p>
+    <span class="b">Dernæst er danskerne meget mere høflige og diskrete end grækerne. De respekterer hinanden og dømmer og sladrer ikke konstant om folk bag deres ryg.</span><p>
+
+<li>It is evident that in general the authorities and the people are on the same page and not in enemy camps as is the case in Greece.<p>
+    <span class="b">Det er tydeligt, at myndighederne og befolkningen generelt er på samme side og ikke i fjendens lejre, som det er tilfældet i Grækenland.</span><p>
+
+<li>Another important advantage is that employment is based on merit rather than on partisan connections.<p>
+    <span class="b">En anden vigtig fordel er, at ansættelsen er baseret på fortjeneste snarere end på partipolitiske forbindelser.</span><p>
+
+<li>To add hubris to irony, actual taxes in Greece are much higher than in Denmark.<p>
+    <span class="b">For at tilføje hybris til ironien er de faktiske skatter i Grækenland meget højere end i Danmark.</span><p>
+
+<li>An additional advantage that comes to mind is that people is that people in Denmark get a lot back for the taxes they pay, whereas in Greece, you get absolutely nothing, and that is not an exaggeration.<p>
+    <span class="b">En yderligere fordel, der kommer til at tænke på, er, at folk i Danmark får meget tilbage for den skat, de betaler, hvorimod man i Grækenland absolut intet får, og det er ikke en overdrivelse.</span><p>
+
+<li>Every year, the government invents new taxes unrelated to actual income, such as increase in gasoline taxes, increases in property taxes, paying highway tolls for highways which are supposed to be built in the future, as well as many other malicious tricks that government official can think of.<p>
+    <span class="b">Hvert år opfinder regeringen nye skatter, der ikke er relateret til den faktiske indkomst, såsom stigninger i benzinskatter, stigninger i ejendomsskatter, betaling af motorvejsafgifter for motorveje, der formodes at blive bygget i fremtiden, samt mange andre ondsindede tricks, som embedsmænd kan tænke på.</span><p>
+
+<li>The third advantage is that employers in Denmark are keen to squeeze life out of their employees. Managers are narcissistic and authoritarian, which results a lot of times in outright humiliation.<p>
+    <span class="b">Den tredje fordel er, at arbejdsgivere i Danmark er opsat på at presse livet ud af deres medarbejdere. Ledere er narcissistiske og autoritære, hvilket mange gange resulterer i direkte ydmygelse.</span><p>
+
+<li>A fourth advantage is that in Denmark the wages and salary are not enough for those employed to make ends meet.<p>
+    <span class="b">En fjerde fordel er, at lønnen i Danmark ikke rækker til, at de ansatte kan klare sig.</span><p>
+
+<li>As a rule, in Greece, even though you have a full-time job, you will need to get a secong job to be able to pay for the most basic needs of a household.<p>
+    <span class="b">Som regel skal du i Grækenland, selvom du har et fuldtidsjob, få et andet job for at kunne betale for en husstands mest basale behov.</span><p>
+
+<li>Another advantage for those who work in Denmark is that when the time comes, they get a decent pension, whereas in Greece, the pension definitely forces households to live in poverty.<p>
+    <span class="b">En anden fordel for dem, der arbejder i Danmark, er, at når tiden kommer, får de en ordentlig pension, hvorimod pensionen i Grækenland absolut tvinger husstandene til at leve i fattigdom.</span><p>
+
+<li>I could write a book about the advantages of working in Denmark versus of working in Greece, but to conlude, in Greece one has to pay from twenty to forty percent of their wages to health insurance, which in effect additional taxation. If you don't, you have to find money to pay for hospital bills or you lose your health permanently.<p>
+    <span class="b">Jeg kunne skrive en bog om fordelene ved at arbejde i Danmark versus at arbejde i Grækenland, men for at konkludere, så skal man i Grækenland betale fra tyve til fyrre procent af deres løn til sygesikring, hvilket i realiteten er ekstrabeskatning. Hvis du ikke gør det, skal du finde penge til at betale hospitalsregninger, ellers mister du dit helbred permanent.</span><p>
+
+<li>It is simple. The root of all evil lies in ignorance, which, in turn, leads to political corruption.<p>
+    <span class="b">Det er enkelt. Roden til alt ondt ligger i uvidenhed, hvilket igen fører til politisk korruption.</span>
+        </ol>
+                </div><p>
+                
+            </td>
+        </tr>
+
+<!--
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+
+        <tr valign=top>
+            <td align=center>002 <span class="w"></span></td>
+
+            <td>
+                <div class="br">
+                    
+                </div><p>
+                
+                <div class="b">
+                    
+                </div>
+            </td>
+        </tr>
+
+        
+    -->
+
+
+        </tbody>
+
+
+        <tfoot>
+            <tr>
+                <th>#</th>
+                <th>terms</th>
+            </tr>
+        </tfoot>
+    </table>
+
+        
+<script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable({
+        initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+    });
+ 
+} );
+</script>
+
+</body>
+</html>
