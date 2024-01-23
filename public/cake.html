@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE REPUBLIC</title>
+
+<style>
+
+    body {font-size:16pt;}
+
+.r {color:red; font-weight:bold;}
+
+.b {color:blue;}
+
+table tr td {text-align:justify;}
+}
+    
+tfoot input {
+        width: 100%;
+        padding: 3px;
+        box-sizing: border-box;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script type="text/javascript" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
+</head>
+
+<body>
+<table id="example" class="display" style="width:100%">
+        <thead>
+
+
+            <tr>
+                <th width=4%>section<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=32%>Original Classical Greek<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=32%>Modern Greek<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+                <th width=32%>English<br><span style="color:blue; font-size:9pt;">tap to sort</span></th>
+            </tr>
+        </thead>
+        <tbody>
+
+        <tr valign=top>
+            <td>1.327a</td>
+            <td><b>Σωκράτης</b><br>
+κατέβην χθὲς εἰς Πειραιᾶ μετὰ Γλαύκωνος τοῦ Ἀρίστωνος προσευξόμενός τε τῇ θεῷ καὶ ἅμα τὴν ἑορτὴν βουλόμενος θεάσασθαι τίνα τρόπον ποιήσουσιν ἅτε νῦν πρῶτον ἄγοντες. καλὴ μὲν οὖν μοι καὶ ἡ τῶν ἐπιχωρίων πομπὴ ἔδοξεν εἶναι, οὐ μέντοι ἧττον ἐφαίνετο πρέπειν ἣν οἱ Θρᾷκες ἔπεμπον.</td>
+
+            <td class="b"><b>Σωκράτης</b><br>
+            Κατεβηκα χθες στον Πειραια με τον Γλαύκωνα, τον γιο του Αρίστωνα, και για να προσευχηθω στην θεα και επειδη ηθελα να δω πώς θα ηταν η γιορτη μια και ηταν η πρωτη φορά που ελαβε χωρα.</td>
+
+            <td><b>Socrates</b><br>
+            I went down to the Peiraeus yesterday with Glaucon, the son of Ariston, to pray to the Goddess and also because I wanted to see how they would celebrate the festival since this was the very first time. I thought the procession of the locals was great, but that of the Thracians was equally beautiful.</td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>1.327b</td>
+            <td>προσευξάμενοι δὲ καὶ θεωρήσαντες ἀπῇμεν πρὸς τὸ ἄστυ. κατιδὼν οὖν πόρρωθεν ἡμᾶς οἴκαδε ὡρμημένους Πολέμαρχος ὁ Κεφάλου ἐκέλευσε δραμόντα τὸν παῖδα περιμεῖναί ἑκελεῦσαι. καί μου ὄπισθεν ὁ παῖς λαβόμενος τοῦ ἱματίου, <span class="r">&#8220;</span>κελεύει ὑμᾶς,<span class="r">&#8221;</span> ἔφη, <span class="r">&#8220;</span>Πολέμαρχος περιμεῖναι.<span class="r">&#8221;</span> καὶ ἐγὼ μετεστράφην τε καὶ ἠρόμην ὅπου αὐτὸς εἴη. οὗτος, ἔφη, <span class="r">&#8220;</span>ὄπισθεν προσέρχεται: ἀλλὰ περιμένετε.<span class="r">&#8221;</span> <span class="r">&#8220;</span>ἀλλὰ περιμενοῦμεν,<span class="r">&#8221;</span> ἦ δ᾽ ὃς ὁ Γλαύκων.</td>
+
+            <td class="b">Αφου προσευχηθηκαμε και ειδαμε το θεαμα, ξεκινησαμε για την πολη. Εκεινη την στιγμη ο Πολέμαρχος, ο γιος του Κέφαλου, ετυχε νας δει απο μακρυα καθως προχωρουσαμε προς την ποληκαι ειπε στον υπηρετη του να τρεξει και να μας ζητησει να τον περιμενουμε. Ο υπηρετης με τραβηξε απο το ιμάτιο απο πισω και ειπε: <span class="r">&#8220;</span>Ο Πολέμαρχος είπε να τον περιμενετε.<span class="r">&#8221;</span> Γυρισα και τον ρωτησα πού ηταν ο κυριος του. <span class="r">&#8220;</span>Να, εκει ειναι,<span class="r">&#8221;</span> ειπε ο νεος, <span class="r">&#8220;</span>ερχεται να σας προφθασει, εαν περιμενετε.<span class="r">&#8221;</span> <span class="r">&#8220;</span>Μα και βεβαια θα περιμενουμε,<span class="r">&#8221;</span> ειπε ο Γλαύκων.</td>
+
+            <td>When we had finished our prayers and viewed the spectacle, we turned in the direction of the city; and at that instant Polemarchus, the son of Cephalus, happened 
+to see us from a distance as we were starting on our way home and told his servant to run and ask us wait for him. The servant took hold of me by the cloak behind,
+and said: <span class="r">&#8220;</span>Polemarchus desires you to wait.<span class="r">&#8221;</span> I turned round and asked him where his master was. <span class="r">&#8220;</span>There he is,<span class="r">&#8221;</span> said the youth, <span class="r">&#8220;</span>coming after you, if you will only wait.<span class="r">&#8221;</span> <span class="r">&#8220;</span>Of course we will wait,<span class="r">&#8221;</span> said Glaucon.</td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>1.327c</td>
+            <td>καὶ ὀλίγῳ ὕστερον ὅ τε Πολέμαρχος ἧκε καὶ Ἀδείμαντος ὁ τοῦ Γλαύκωνος ἀδελφὸς καὶ Νικήρατος ὁ Νικίου καὶ ἄλλοι τινὲς ὡς ἀπὸ τῆς πομπῆς.<p>
+
+ὁ οὖν Πολέμαρχος ἔφη: <span class="r">&#8220;</span>ὦ Σώκρατες, δοκεῖτέ μοι πρὸς ἄστυ ὡρμῆσθαι ὡς ἀπιόντες.<span class="r">&#8221;</span><p>
+
+<span class="r">&#8220;</span>οὐ γὰρ κακῶς δοξάζεις,<span class="r">&#8221;</span> ἦν δ᾽ ἐγώ.<p>
+
+<span class="r">&#8220;</span>ὁρᾷς οὖν ἡμᾶς,<span class="r">&#8221;</span> ἔφη, <span class="r">&#8220;</span>ὅσοι ἐσμέν;<span class="r">&#8221;</span><p>
+
+<span class="r">&#8220;</span>πῶς γὰρ οὔ;<span class="r">&#8221;</span><p>
+
+<span class="r">&#8220;</span>ἢ τοίνυν τούτων,<span class="r">&#8221;</span> ἔφη, <span class="r">&#8220;</span>κρείττους γένεσθε ἢ μένετ᾽ αὐτοῦ.<span class="r">&#8221;</span><p>
+
+<span class="r">&#8220;</span>οὐκοῦν,<span class="r">&#8221;</span> ἦν δ᾽ ἐγώ, <span class="r">&#8220;</span>ἔτι ἓν λείπεται, τὸ ἢν πείσωμεν ὑμᾶς ὡς χρὴ ἡμᾶς ἀφεῖναι;<span class="r">&#8221;</span><p>
+
+<span class="r">&#8220;</span>ἦ καὶ δύναισθ᾽ ἄν, ἦ δ᾽ ὅς, πεῖσαι μὴ ἀκούοντας;<span class="r">&#8221;</span><p>
+
+<span class="r">&#8220;</span>οὐδαμῶς,<span class="r">&#8221;</span> ἔφη ὁ Γλαύκων.<p>
+
+<span class="r">&#8220;</span>ὡς τοίνυν μὴ ἀκουσομένων, οὕτω διανοεῖσθε.<span class="r">&#8221;</span></td>
+
+            <td class="b">Και σε λιγο φανηκε ο Πολέμαρχος με τον Αδείμαντο, τον αδελφο του Γλαύκωνα, τον Νικήρατο, τον γιο του Νικία, και μερικους αλλους που ηταν στην πομπη.<p>
+            Ο Πολέμαρχος μου ειπε: <span class="r">&#8220;</span>Υποθετω, Σωκράτη, οτι εσυ κι ο φιλος σου το βαλατε για την πολη.<span class="r">&#8221;</span><p>
+            <span class="r">&#8220;</span>Σωστα υποθετεις,<span class="r">&#8221;</span> ειπα εγω.<p>
+            <span class="r">&#8220;</span>Αλλά βλεπεις,<span class="r">&#8221;</span> συνεχισε, <span class="r">&#8220;</span>πόσοι ειματε;<span class="r">&#8221;</span><p>
+            <span class="r">&#8220;</span>Βεβαιως.<span class="r">&#8221;</span><p>
+            <span class="r">&#8220;</span>Και εισαστε δυνατοτεροι απο εμας; Διοτι εαν δεν εισθε, θα πρεπει να μεινετε εδω.<span class="r">&#8221;</span><p>
+            <span class="r">&#8220;</span>Μα δεν υπαρχει και η εναλλακτικη λυση,<span class="r">&#8221;</span> ειπα, <span class="r">&#8220;</span>να σας πεισουμε να μας αφησετε να φυγουμε;<span class="r">&#8221;</span><p>
+            <span class="r">&#8220;</span>Μπορειτε ομως να μας πεισετε εαν αρνηθουμε να σας ακουσουμε;<span class="r">&#8221;</span> είπε ο Πολέμαρχος.<p>
+            <span class="r">&#8220;</span>Οχι βεβαια,<span class="r">&#8221;</span> απαντησε ο Γλαύκων.<p>
+            <span class="r">&#8220;</span>Τοτε δεν προκειται να σας ακουσουμε&#903; μπορειτε να εισθε σιγουροι γι αυτο.<span class="r">&#8221;</span></td>
+            </td>
+
+            <td>And in a couple of minutes Polemarchus appeared with Adeimantus, Glaucon's brother, Niceratus, the son of Nicias, and several others who had been at the procession.<p>
+
+Polemarchus said to me: <span class="r">&#8220;</span>I suppose, Socrates, that you and your companion are already on your way to the city.<span class="r">&#8221;</span><p>
+
+<span class="r">&#8220;</span>You are not far wrong,<span class="r">&#8221;</span> I said.<p>
+
+<span class="r">&#8220;</span>But do you see,<span class="r">&#8221;</span> he continued, <span class="r">&#8220;</span>how many we are?<span class="r">&#8221;</span><p>
+
+<span class="r">&#8220;</span>Of course.<span class="r">&#8221;</span><p>
+
+<span class="r">&#8220;</span>And are you stronger than all of us? For if not, you will have to remain where you are.<span class="r">&#8221;</span><p>
+
+<span class="r">&#8220;</span>Is there not the alternative,<span class="r">&#8221;</span> I said, <span class="r">&#8220;</span>of persuading you to let us go?<span class="r">&#8221;</span><p>
+
+<span class="r">&#8220;</span>But can you persuade us, if we refuse to listen to you?<span class="r">&#8221;</span> he said.<p>
+
+<span class="r">&#8220;</span>Certainly not,<span class="r">&#8221;</span> replied Glaucon.<p>
+
+<span class="r">&#8220;</span>Then we are not going to listen; of that you may be assured.<span class="r">&#8221;</span></td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td>καὶ ὁ Ἀδείμαντος, <span class="r">&#8220;</span>ἆρά γε,<span class="r">&#8221;</span> ἦ δ᾽ ὅς, <span class="r">&#8220;</span>οὐδ᾽ ἴστε ὅτι λαμπὰς ἔσται πρὸς ἑσπέραν ἀφ᾽ ἵππων τῇ θεῷ;<span class="r">&#8221;</span><p>
+
+<span class="r">&#8220;</span>ἀφ᾽ ἵππων;<span class="r">&#8220;</span> ἦν δ᾽ ἐγώ: <span class="r">&#8220;</span>καινόν γε τοῦτο. λαμπάδια ἔχοντες διαδώσουσιν ἀλλήλοις ἁμιλλώμενοι τοῖς ἵπποις; ἢ πῶς λέγεις;<span class="r">&#8221;</span><p>
+
+<span class="r">&#8220;</span>οὕτως,<span class="r">&#8221;</span> ἔφη ὁ Πολέμαρχος. <span class="r">&#8220;</span>καὶ πρός γε παννυχίδα ποιήσουσιν, ἣν ἄξιον θεάσασθαι: ἐξαναστησόμεθα γὰρ μετὰ τὸ δεῖπνον καὶ τὴν παννυχίδα θεασόμεθα. καὶ συνεσόμεθά τε πολλοῖς τῶν νέων αὐτόθι καὶ διαλεξόμεθα. ἀλλὰ μένετε καὶ μὴ ἄλλως ποιεῖτε.<span class="r">&#8221;</span></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr>
+
+        
+        <tr valign=top>
+            <td>1.328b</td>
+            <td>καὶ ὁ Γλαύκων, <span class="r">&#8220;</span>ἔοικεν,<span class="r">&#8221;</span> ἔφη, <span class="r">&#8220;</span>μενετέον εἶναι.<span class="r">&#8221;</span><p>
+
+<span class="r">&#8220;</span>ἀλλ᾽ εἰ δοκεῖ,<span class="r">&#8221;</span> ἦν δ᾽ ἐγώ, <span class="r">&#8220;</span>οὕτω χρὴ ποιεῖν.<span class="r">&#8221;</span><p>
+
+ἦιμεν οὖν οἴκαδε εἰς τοῦ Πολεμάρχου, καὶ Λυσίαν τε αὐτόθι κατελάβομεν καὶ Εὐθύδημον, τοὺς τοῦ Πολεμάρχου ἀδελφούς, καὶ δὴ καὶ Θρασύμαχον τὸν Καλχηδόνιον καὶ Χαρμαντίδην τὸν Παιανιᾶ καὶ Κλειτοφῶντα τὸν Ἀριστωνύμου: ἦν δ᾽ ἔνδον καὶ ὁ πατὴρ ὁ τοῦ Πολεμάρχου Κέφαλος. καὶ μάλα πρεσβύτης μοι ἔδοξεν εἶναι: διὰ χρόνου γὰρ καὶ ἑωράκη αὐτόν.</td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr>
+
+
+        <tr valign=top>
+            <td>1.328c</td>
+            <td>καθῆστο δὲ ἐστεφανωμένος ἐπί τινος προσκεφαλαίου τε καὶ δίφρου: τεθυκὼς γὰρ ἐτύγχανεν ἐν τῇ αὐλῇ. ἐκαθεζόμεθα οὖν παρ᾽ αὐτόν: ἔκειντο γὰρ δίφροι τινὲς αὐτόθι κύκλῳ.<p>
+
+εὐθὺς οὖν με ἰδὼν ὁ Κέφαλος ἠσπάζετό τε καὶ εἶπεν: <span class="r">&#8220;</span>ὦ Σώκρατες, οὐ δὲ θαμίζεις ἡμῖν καταβαίνων εἰς τὸν Πειραιᾶ. χρῆν μέντοι. εἰ μὲν γὰρ ἐγὼ ἔτι ἐν δυνάμει ἦ τοῦ ῥᾳδίως πορεύεσθαι πρὸς τὸ ἄστυ, οὐδὲν ἂν σὲ ἔδει δεῦρο ἰέναι, ἀλλ᾽ ἡμεῖς ἂν παρὰ σὲ ᾖμεν:</td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328d</td>
+            <td>νῦν δέ σε χρὴ πυκνότερον δεῦρο ἰέναι. ὡς εὖ ἴσθι ὅτι ἔμοιγε ὅσον αἱ ἄλλαι αἱ κατὰ τὸ σῶμα ἡδοναὶ ἀπομαραίνονται, τοσοῦτον αὔξονται αἱ περὶ τοὺς λόγους ἐπιθυμίαι τε καὶ ἡδοναί. μὴ οὖν ἄλλως ποίει, ἀλλὰ τοῖσδέ τε τοῖς νεανίσκοις σύνισθι καὶ δεῦρο παρ᾽ ἡμᾶς φοίτα ὡς παρὰ φίλους τε καὶ πάνυ οἰκείους.<span class="r">&#8221;</span><p>
+
+<span class="r">&#8220;</span>καὶ μήν,<span class="r">&#8221;</span> ἦν δ᾽ ἐγώ, <span class="r">&#8220;</span>ὦ Κέφαλε, χαίρω γε διαλεγόμενος τοῖς σφόδρα πρεσβύταις:</td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328e</td>
+            <td>δοκεῖ γάρ μοι χρῆναι παρ᾽ αὐτῶν πυνθάνεσθαι, ὥσπερ τινὰ ὁδὸν προεληλυθότων ἣν καὶ ἡμᾶς ἴσως δεήσει πορεύεσθαι, ποία τίς ἐστιν, τραχεῖα καὶ χαλεπή, ἢ ῥᾳδία καὶ εὔπορος. καὶ δὴ καὶ σοῦ ἡδέως ἂν πυθοίμην ὅτι σοι φαίνεται τοῦτο, ἐπειδὴ ἐνταῦθα ἤδη εἶ τῆς ἡλικίας ὃ δὴ “ἐπὶ γήραος οὐδῷ” φασιν εἶναι οἱ ποιηταί, πότερον χαλεπὸν τοῦ βίου, ἢ πῶς σὺ αὐτὸ ἐξαγγέλλεις.<span class="r">&#8221;</span></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+
+        <tr valign=top>
+            <td>1.329a</td>
+            <td><span class="r">&#8220;</span>ἐγώ σοι,<span class="r">&#8221;</span> ἔφη, <span class="r">&#8220;</span>νὴ τὸν Δία ἐρῶ, ὦ Σώκρατες, οἷόν γέ μοι φαίνεται. πολλάκις γὰρ συνερχόμεθά τινες εἰς ταὐτὸν παραπλησίαν ἡλικίαν ἔχοντες, διασῴζοντες τὴν παλαιὰν παροιμίαν: οἱ οὖν πλεῖστοι ἡμῶν ὀλοφύρονται συνιόντες, τὰς ἐν τῇ νεότητι ἡδονὰς ποθοῦντες καὶ ἀναμιμνῃσκόμενοι περί τε τἀφροδίσια καὶ περὶ πότους τε καὶ εὐωχίας καὶ ἄλλ᾽ ἄττα ἃ τῶν τοιούτων ἔχεται, καὶ ἀγανακτοῦσιν ὡς μεγάλων τινῶν ἀπεστερημένοι καὶ τότε μὲν εὖ ζῶντες, νῦν δὲ οὐδὲ ζῶντες.</td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+
+        <tr valign=top>
+            <td>1.329b</td>
+            <td>ἔνιοι δὲ καὶ τὰς τῶν οἰκείων προπηλακίσεις τοῦ γήρως ὀδύρονται, καὶ ἐπὶ τούτῳ δὴ τὸ γῆρας ὑμνοῦσιν ὅσων κακῶν σφίσιν αἴτιον. ἐμοὶ δὲ δοκοῦσιν, ὦ Σώκρατες, οὗτοι οὐ τὸ αἴτιον αἰτιᾶσθαι. εἰ γὰρ ἦν τοῦτ᾽ αἴτιον, κἂν ἐγὼ τὰ αὐτὰ ταῦτα ἐπεπόνθη, ἕνεκά γε γήρως, καὶ οἱ ἄλλοι πάντες ὅσοι ἐνταῦθα ἦλθον ἡλικίας. νῦν δ᾽ ἔγωγε ἤδη ἐντετύχηκα οὐχ οὕτως ἔχουσιν καὶ ἄλλοις, καὶ δὴ καὶ Σοφοκλεῖ ποτε τῷ ποιητῇ παρεγενόμην ἐρωτωμένῳ ὑπό τινος: ‘πῶς,’ ἔφη,</td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+
+        <tr valign=top>
+            <td>1.329c</td>
+            <td>‘ὦ Σοφόκλεις, ἔχεις πρὸς τἀφροδίσια; ἔτι οἷός τε εἶ γυναικὶ συγγίγνεσθαι’; καὶ ὅς, ‘εὐφήμει,’ ἔφη, ‘ὦ ἄνθρωπε: ἁσμενέστατα μέντοι αὐτὸ ἀπέφυγον, ὥσπερ λυττῶντά τινα καὶ ἄγριον δεσπότην ἀποδράς.’ εὖ οὖν μοι καὶ τότε ἔδοξεν ἐκεῖνος εἰπεῖν, καὶ νῦν οὐχ ἧττον. παντάπασι γὰρ τῶν γε τοιούτων ἐν τῷ γήρᾳ πολλὴ εἰρήνη γίγνεται καὶ ἐλευθερία: ἐπειδὰν αἱ ἐπιθυμίαι παύσωνται κατατείνουσαι καὶ χαλάσωσιν, παντάπασιν τὸ τοῦ Σοφοκλέους γίγνεται, δεσποτῶν πάνυ πολλῶν ἐστι καὶ μαινομένων ἀπηλλάχθαι.</td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.329d</td>
+            <td>ἀλλὰ καὶ τούτων πέρι καὶ τῶν γε πρὸς τοὺς οἰκείους μία τις αἰτία ἐστίν, οὐ τὸ γῆρας, ὦ Σώκρατες, ἀλλ᾽ ὁ τρόπος τῶν ἀνθρώπων. ἂν μὲν γὰρ κόσμιοι καὶ εὔκολοι ὦσιν, καὶ τὸ γῆρας μετρίως ἐστὶν ἐπίπονον: εἰ δὲ μή, καὶ γῆρας, ὦ Σώκρατες, καὶ νεότης χαλεπὴ τῷ τοιούτῳ συμβαίνει.<span class="r">&#8221;</span><p>
+
+καὶ ἐγὼ ἀγασθεὶς αὐτοῦ εἰπόντος ταῦτα, βουλόμενος ἔτι λέγειν αὐτὸν ἐκίνουν καὶ εἶπον:</td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.329e</td>
+            <td><span class="r">&#8220;</span>ὦ Κέφαλε, οἶμαί σου τοὺς πολλούς, ὅταν ταῦτα λέγῃς, οὐκ ἀποδέχεσθαι ἀλλ᾽ ἡγεῖσθαί σε ῥᾳδίως τὸ γῆρας φέρειν οὐ διὰ τὸν τρόπον ἀλλὰ διὰ τὸ πολλὴν οὐσίαν κεκτῆσθαι: τοῖς γὰρ πλουσίοις πολλὰ παραμύθιά φασιν εἶναι.<p>
+
+ἀληθῆ, ἔφη, λέγεις: οὐ γὰρ ἀποδέχονται. καὶ λέγουσι μέν τι, οὐ μέντοι γε ὅσον οἴονται: ἀλλὰ τὸ τοῦ Θεμιστοκλέους εὖ ἔχει, ὃς τῷ Σεριφίῳ λοιδορουμένῳ καὶ λέγοντι</td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+
+        <tr valign=top>
+            <td>1.330a</td>
+            <td>ὅτι οὐ δι᾽ αὑτὸν ἀλλὰ διὰ τὴν πόλιν εὐδοκιμοῖ, ἀπεκρίνατο ὅτι οὔτ᾽ ἂν αὐτὸς Σερίφιος ὢν ὀνομαστὸς ἐγένετο οὔτ᾽ ἐκεῖνος Ἀθηναῖος. καὶ τοῖς δὴ μὴ πλουσίοις, χαλεπῶς δὲ τὸ γῆρας φέρουσιν, εὖ ἔχει ὁ αὐτὸς λόγος, ὅτι οὔτ᾽ ἂν ὁ ἐπιεικὴς πάνυ τι ῥᾳδίως γῆρας μετὰ πενίας ἐνέγκοι οὔθ᾽ ὁ μὴ ἐπιεικὴς πλουτήσας εὔκολός ποτ᾽ ἂν ἑαυτῷ γένοιτο.<p>
+
+πότερον δέ, ἦν δ᾽ ἐγώ, ὦ Κέφαλε, ὧν κέκτησαι τὰ πλείω παρέλαβες ἢ ἐπεκτήσω;</td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.330b</td>
+            <td>ποῖ᾽ ἐπεκτησάμην, ἔφη, ὦ Σώκρατες; μέσος τις γέγονα χρηματιστὴς τοῦ τε πάππου καὶ τοῦ πατρός. ὁ μὲν γὰρ πάππος τε καὶ ὁμώνυμος ἐμοὶ σχεδόν τι ὅσην ἐγὼ νῦν οὐσίαν κέκτημαι παραλαβὼν πολλάκις τοσαύτην ἐποίησεν, Λυσανίας δὲ ὁ πατὴρ ἔτι ἐλάττω αὐτὴν ἐποίησε τῆς νῦν οὔσης: ἐγὼ δὲ ἀγαπῶ ἐὰν μὴ ἐλάττω καταλίπω τούτοισιν, ἀλλὰ βραχεῖ γέ τινι πλείω ἢ παρέλαβον.<p>
+
+οὗ τοι ἕνεκα ἠρόμην, ἦν δ᾽ ἐγώ, ὅτι μοι ἔδοξας οὐ σφόδρα</td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr>
+
+        <tr valign=top>
+            <td>1.330c</td>
+            <td>ἀγαπᾶν τὰ χρήματα, τοῦτο δὲ ποιοῦσιν ὡς τὸ πολὺ οἳ ἂν μὴ αὐτοὶ κτήσωνται: οἱ δὲ κτησάμενοι διπλῇ ἢ οἱ ἄλλοι ἀσπάζονται αὐτά. ὥσπερ γὰρ οἱ ποιηταὶ τὰ αὑτῶν ποιήματα καὶ οἱ πατέρες τοὺς παῖδας ἀγαπῶσιν, ταύτῃ τε δὴ καὶ οἱ χρηματισάμενοι περὶ τὰ χρήματα σπουδάζουσιν ὡς ἔργον ἑαυτῶν, καὶ κατὰ τὴν χρείαν ᾗπερ οἱ ἄλλοι. χαλεποὶ οὖν καὶ συγγενέσθαι εἰσίν, οὐδὲν ἐθέλοντες ἐπαινεῖν ἀλλ᾽ ἢ τὸν πλοῦτον.<p>
+ἀληθῆ, ἔφη, λέγεις.</td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.330d</td>
+            <td>πάνυ μὲν οὖν, ἦν δ᾽ ἐγώ. ἀλλά μοι ἔτι τοσόνδε εἰπέ: τί μέγιστον οἴει ἀγαθὸν ἀπολελαυκέναι τοῦ πολλὴν οὐσίαν κεκτῆσθαι;<p>
+
+ὅ, ἦ δ᾽ ὅς, ἴσως οὐκ ἂν πολλοὺς πείσαιμι λέγων. εὖ γὰρ ἴσθι, ἔφη, ὦ Σώκρατες, ὅτι, ἐπειδάν τις ἐγγὺς ᾖ τοῦ οἴεσθαι τελευτήσειν, εἰσέρχεται αὐτῷ δέος καὶ φροντὶς περὶ ὧν ἔμπροσθεν οὐκ εἰσῄει. οἵ τε γὰρ λεγόμενοι μῦθοι περὶ τῶν ἐν Ἅιδου, ὡς τὸν ἐνθάδε ἀδικήσαντα δεῖ ἐκεῖ διδόναι</td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.330e</td>
+            <td>δίκην, καταγελώμενοι τέως, τότε δὴ στρέφουσιν αὐτοῦ τὴν ψυχὴν μὴ ἀληθεῖς ὦσιν: καὶ αὐτός—ἤτοι ὑπὸ τῆς τοῦ γήρως ἀσθενείας ἢ καὶ ὥσπερ ἤδη ἐγγυτέρω ὢν τῶν ἐκεῖ μᾶλλόν τι καθορᾷ αὐτά—ὑποψίας δ᾽ οὖν καὶ δείματος μεστὸς γίγνεται καὶ ἀναλογίζεται ἤδη καὶ σκοπεῖ εἴ τινά τι ἠδίκησεν. ὁ μὲν οὖν εὑρίσκων ἑαυτοῦ ἐν τῷ βίῳ πολλὰ ἀδικήματα καὶ ἐκ τῶν ὕπνων, ὥσπερ οἱ παῖδες, θαμὰ ἐγειρόμενος δειμαίνει</td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <!--
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr>
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr>
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr>
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr>
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr>
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr>
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr>
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr>
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr>
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+
+        <tr valign=top>
+            <td>1.328a</td>
+            <td></td>
+            <td>eee</td>
+            <td>aaa</td>
+        </tr> 
+    -->
+
+        </table>
+    
+<script>
+$(document).ready(function() {
+    // Setup - add a text input to each footer cell
+    $('#example tfoot th').each( function () {
+        var title = $(this).text();
+        $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+    } );
+ 
+    // DataTable
+    var table = $('#example').DataTable({
+        initComplete: function () {
+            // Apply the search
+            this.api().columns().every( function () {
+                var that = this;
+ 
+                $( 'input', this.footer() ).on( 'keyup change clear', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        }
+    });
+ 
+} );
+</script>
+
+</body>
+</html>
+
+"" ''''
